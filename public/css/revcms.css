@@ -6226,4 +6226,18 @@ body {
   .rev-dropdown > .sub-menu.-down {
     top: 100%; }
 
+.-rev-tabpanel .nav-tabs > li > a, .-rev-tabpanel .nav-tabs > li > a:focus {
+  padding-left: 30px;
+  padding-right: 30px;
+  background: #34495E;
+  color: white;
+  border: 0; }
+
+.-rev-tabpanel .nav-tabs > li > a:hover, .-rev-tabpanel .nav-tabs > li.active a:hover {
+  padding: 10px 30px;
+  background: #22303d; }
+
+.-rev-tabpanel .nav-tabs > li.active a {
+  background: #22303d; }
+
 /*# sourceMappingURL=revcms.css.map */

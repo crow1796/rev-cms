@@ -26,10 +26,7 @@ Vue.filter('chunk', function(arr, len){
 Vue.component('rev-pages', require('./revcms-components/pages.vue'));
 Vue.component('rev-media-library', require('./revcms-components/media-library.vue'));
 Vue.component('rev-media-items', require('./revcms-components/media-items.vue'));
-
-// var aceEditor = ace.edit("aceEditor");
-// aceEditor.setTheme("ace/theme/monokai");
-// aceEditor.getSession().setMode("ace/mode/javascript");
+Vue.component('rev-create-page', require('./revcms-components/create-page.vue'));
 
 const app = new Vue({
     el: '#rev-cms-app'
