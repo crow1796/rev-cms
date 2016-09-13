@@ -1,0 +1,26 @@
+@keyframes selected{
+	0%{
+		transform: rotateZ(0deg);
+	},
+	16%{
+		transform: rotateZ(-3deg);
+	},
+	36%{
+		transform: rotateZ(3deg);
+	},
+	48%{
+		transform: rotateZ(-2deg);
+	},
+	60%{
+		transform: rotateZ(2deg);
+	},
+	72%{
+		transform: rotateZ(-1deg);
+	},
+	84%{
+		transform: rotateZ(1deg);
+	},
+	100%{
+		transform: rotateZ(0deg);
+	}
+}

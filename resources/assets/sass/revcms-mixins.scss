@@ -1,0 +1,16 @@
+@mixin scrollBar($thumbColor){
+	&::-webkit-scrollbar{
+		width: 6px; 
+		padding: 0 2px;
+	}
+
+	&::-webkit-scrollbar-track{
+		background: lighten(#222, 10%);
+		border-radius: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb{
+		background: $thumbColor;
+		border-radius: 5px;
+	}
+}

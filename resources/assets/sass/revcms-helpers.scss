@@ -1,0 +1,68 @@
+._v-top{
+	vertical-align: top !important;
+}
+
+._v-middle{
+	vertical-align: middle !important;
+}
+
+._v-bottom{
+	vertical-align: bottom !important;
+}
+
+._header-pad{
+	padding-top: 50px !important;
+}
+
+._pointer{
+	cursor: pointer !important;
+}
+
+._no-animation{
+	animation: none !important;
+}
+
+._animation-once{
+	animation-iteration-count: 1 !important;
+}
+
+._height-scroll-parent{
+	overflow: hidden !important;
+	position: relative !important;
+	min-height: 100% !important;
+}
+
+._height-scroll{
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	height: 100% !important;
+	@include scrollBar($brand-primary);
+}
+
+._border-right-light{
+	border-right: 1px solid rgba(black, .1) !important;
+}
+
+._clearfix{
+	clear: both !important;
+}
+
+._table{
+	display: table !important;
+
+	._table-row{
+		display: table-row !important;
+	}
+
+	._table-row ._table-cell{
+		display: table-cell !important;
+	}
+}
+
+._full-width{
+	width: 100% !important;
+}
+
+._full-height{
+	height: 100% !important;
+}
