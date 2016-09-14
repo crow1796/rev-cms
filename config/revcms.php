@@ -19,4 +19,9 @@ return [
 	 * Collapsible sidebar.
 	 */
 	'collapsible_sidebar' => true,
+
+	/**
+	 * Developer Mode
+	 */
+	'developer_mode' => true,
 ];

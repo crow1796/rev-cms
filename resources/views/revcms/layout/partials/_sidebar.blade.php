@@ -113,5 +113,80 @@
 				</ul>
 			</li>
 		</ul>
+		{{-- Developer's Menu --}}
+		@if(\Config::get('revcms.developer_mode'))
+			<ul class="menu">
+				<li class="title">
+					Developer Menu
+				</li>
+				<li class="item">
+					<a href="{{ url('#') }}" @click="$event.preventDefault()">
+						<i class="fa fa-gamepad"></i>
+						MVC
+					</a>
+					<ul class="sub-menu">
+						<li class="title">MVC Menu</li>
+						<li class="item">
+							<a href="{{ url('/admin/developer/mvc/models') }}">
+								Models
+							</a>
+						</li>
+						<li class="item">
+							<a href="{{ url('/admin/developer/mvc/views') }}">
+								Views
+							</a>
+						</li>
+						<li class="item">
+							<a href="{{ url('/admin/developer/mvc/controllers') }}">
+								Controllers
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="item">
+					<a href="#" @click="$event.preventDefault()">
+						<i class="fa fa-database"></i>
+						Database
+					</a>
+					<ul class="sub-menu">
+						<li class="title">
+							Database Menu
+						</li>
+						<li class="item">
+							<a href="{{ url('/admin/developer/database/migrations') }}">
+								Migrations
+							</a>
+						</li>
+						<li class="item">
+							<a href="{{ url('/admin/developer/database/seeders') }}">
+								Seeders
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="item">
+					<a href="#" @click="$event.preventDefault()">
+						<i class="fa fa-refresh"></i>
+						HTTP
+					</a>
+					<ul class="sub-menu">
+						<li class="title">
+							HTTP Menu
+						</li>
+						<li class="item">
+							<a href="{{ url('/admin/developer/http/requests') }}">
+								Requests
+							</a>
+						</li>
+						<li class="item">
+							<a href="{{ url('/admin/developer/http/middlewares') }}">
+								Middlewares
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		@endif
+		{{-- /Developer's Menu --}}
 	</div>
 </div>

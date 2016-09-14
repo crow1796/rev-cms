@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 class RevBaseController extends Controller
 {
+
 	/**
 	 * Create view.
 	 * @param  string $viewPath 
@@ -20,6 +21,7 @@ class RevBaseController extends Controller
 		$viewData = [
 			'title' => $title,
 		];
+		
 		if(!empty($data)){
 			array_merge($viewData, $data);
 		}
