@@ -27,6 +27,8 @@ Vue.component('rev-pages', require('./revcms-components/pages.vue'));
 Vue.component('rev-media-library', require('./revcms-components/media-library.vue'));
 Vue.component('rev-media-items', require('./revcms-components/media-items.vue'));
 Vue.component('rev-create-page', require('./revcms-components/create-page.vue'));
+// MVC Menu
+Vue.component('rev-controllers', require('./revcms-components/mvc/controllers.vue'));
 
 const app = new Vue({
     el: '#rev-cms-app'

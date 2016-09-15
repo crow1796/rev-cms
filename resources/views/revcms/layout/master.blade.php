@@ -3,6 +3,7 @@
 <head>
 	<script>
 	    window.Laravel = { csrfToken: '{{ csrf_token() }}' };
+	    window.base_url = '{{ url('/') }}';
 	</script>
 	@yield('before_header_assets')
 	@include('revcms.layout.partials._assets', ['title' => $title])

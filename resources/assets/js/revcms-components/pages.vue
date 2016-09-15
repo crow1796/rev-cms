@@ -12,54 +12,6 @@
 						url: '/homepage',
 						controller: 'PagesController',
 						action: 'index'
-					},{
-						id: 1,
-						title: 'Homepage',
-						url: '/homepage',
-						controller: 'PagesController',
-						action: 'index'
-					},{
-						id: 1,
-						title: 'Homepage',
-						url: '/homepage',
-						controller: 'PagesController',
-						action: 'index'
-					},{
-						id: 1,
-						title: 'Homepage',
-						url: '/homepage',
-						controller: 'PagesController',
-						action: 'index'
-					},{
-						id: 1,
-						title: 'Homepage',
-						url: '/homepage',
-						controller: 'PagesController',
-						action: 'index'
-					},{
-						id: 1,
-						title: 'Homepage',
-						url: '/homepage',
-						controller: 'PagesController',
-						action: 'index'
-					},{
-						id: 1,
-						title: 'Homepage',
-						url: '/homepage',
-						controller: 'PagesController',
-						action: 'index'
-					},{
-						id: 1,
-						title: 'Homepage',
-						url: '/homepage',
-						controller: 'PagesController',
-						action: 'index'
-					},{
-						id: 1,
-						title: 'Homepage',
-						url: '/homepage',
-						controller: 'PagesController',
-						action: 'index'
 					}
 				],
 				viewType: 'grid',

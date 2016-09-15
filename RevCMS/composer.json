@@ -1,0 +1,16 @@
+{
+    "name": "joshua/rev-cms",
+    "description": "CMS Package for Laravel 5.",
+    "authors": [
+        {
+            "name": "Joshua Tundag",
+            "email": "joshuatundag@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+    	"psr-4": {
+    		"RevCMS\\": "src/"
+    	}
+    }
+}

@@ -1,6 +1,11 @@
 <?php 
 return [
 	/**
+	 * Admin URI
+	 */
+	'uri' => 'admin',
+
+	/**
 	 * Title to be shown in the header.
 	 */
 	'title' => 'Laravel CMS',
@@ -24,4 +29,22 @@ return [
 	 * Developer Mode
 	 */
 	'developer_mode' => true,
+
+	/**
+	 * Controllers Base Path
+	 * Default: app/Http/Controllers/
+	 */
+	'controller_base_path' => 'app/Http/Controllers',
+
+	/**
+	 * Models Base Path
+	 * Default: app/
+	 */
+	'model_base_path' => 'app/',
+
+	/**
+	 * Views Base Path
+	 * Default: resources/views/
+	 */
+	'views_base_path' => 'resources/views/',
 ];

@@ -196,25 +196,7 @@ body{
 		font-size: 16px;
 	}
 
-	&.-primary{
-		background: $brand-primary;
-	}
-
-	&.-danger{
-		background: $brand-danger;
-	}
-
-	&.-warning{
-		background: $brand-warning;
-	}
-
-	&.-success{
-		background: $brand-success;
-	}
-
-	&.-default{
-		background: $btn-default-color;
-	}
+	@include backgrounding;
 
 	&.-success:hover, &.-success.-toggled{
 		background: darken($brand-success, 10%);	
@@ -268,21 +250,21 @@ body{
 	&.-xs{
 		height: 24px;
 		font-size: 12px;
-		padding: 1px 20px;
+		padding: 1px 10px;
 	}
 
 	&.-sm{
-		padding: 2px 24px;
+		padding: 2px 10px;
 		font-size: 13px;
 	}
 
 	&.-md{
-		padding: 5px 26px;
+		padding: 5px 10px;
 		font-size: 14px;
 	}
 
 	&.-lg{
-		padding: 6px 28px;
+		padding: 6px 10px;
 		font-size: 16px;
 	}
 
@@ -492,5 +474,53 @@ body{
 
 	.nav-tabs > li.active a{
 		background: darken(#34495E, 10%);
+	}
+}
+
+.rev-checkbox{
+	appearance: none;
+	-webkit-appearance: none;
+	display: inline-block;
+	width: 40px;
+	height: 16px;
+	vertical-align: middle;
+	position: relative;
+	outline: 0;
+	border-radius: 5px;
+
+	&:focus{
+		outline: 0;
+	}
+
+	&:after{
+		border-radius: 2px;
+		transition: all .3s ease;
+		font-size: 8px;
+		text-align: center;
+	    display: block;
+	    position: absolute;
+	    width: 18px;
+	    height: 11px;
+	    transform: translateY(-50%);
+	    top: 8px;
+	    background: #fff;
+	}
+
+	&:not(:checked):after{
+		left: 3px;
+		content: 'No';
+	}
+	
+	&:checked:after{
+	    left: 19px;
+		content: 'Yes';
+	}
+
+	@include backgrounding;
+}
+
+.rev-field-group{
+	&.-xs{
+		margin: 7px 0;
 	}
 }

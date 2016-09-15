@@ -3,50 +3,38 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-
 class ExampleTest extends TestCase
 {
 	public function tearDown(){
 		Mockery::close();
 	}
     /**
-     * A basic functional test example.
-     *
-     * @return void
+     * Get All Controllers
+     * @return Illuminate\Support\Collection 
      */
-    public function testCartAdding()
-    {
-    	$cart = Mockery::mock('App\Cart');
-    	$product = Mockery::mock('App\Product');
-    	$cart->shouldReceive('addProduct')
-    			->once()
-    			->andReturn('Product Added Successfully.');
-    	$this->assertEquals($cart->addProduct($product), 'Product Added Successfully.');
-    }
+    public function testGetAllControllers(){
+        $baseDir = base_path(trim(config('revcms.controller_base_path'), '/'));
+        $directories = \File::directories($baseDir);
+        array_push($directories, $baseDir);
 
-    public function testUserOrders(){
-    	$user = Mockery::mock('App\User');
-    	$user->shouldReceive('orders')
-    			->once()
-    			->andReturn([Mockery::mock('App\Order'), Mockery::mock('App\Order')]);
+        $controllers = array_map(function($dir){
+            if(strpos($dir, 'RevCMS')) return false;
+            return array_map(function($file) use ($dir){
+                $file = trim($file, base_path());
+                return (trim(\App::getNamespace(), '\\') . (ucfirst(preg_replace('/\//', '\\', trim($file, '.php')))));
+            }, \File::files($dir));
+        }, $directories);
 
-    	$order = $user->orders()[0];
-    	$order->shouldReceive('carts')
-    				->once()
-    				->andReturn([Mockery::mock('App\Cart'), Mockery::mock('App\Cart')]);
-
-    	$cart = $order
-					->carts()[0];
-
-    	$cart->shouldReceive('totalPayables')				
-    				->once()
-    				->andReturn(500.00);
-
-    	$order->shouldReceive('pay')
-    			->once()
-    			->andReturn(true);
-
-    	$this->assertEquals($cart->totalPayables(), 500);
-    	$this->assertEquals($order->pay(), true);
+        $controllers = collect($controllers)
+                        ->flatten()
+                        ->filter(function($item){
+                            return $item;
+                        })
+                        ->pipe(function($collection){
+                            return $collection->splice(0, $collection->count() - 1);
+                        })
+                        ->toArray();
+        // return $controllers;
+        $this->assertTrue(is_array($controllers));
     }
 }

@@ -14,3 +14,25 @@
 		border-radius: 5px;
 	}
 }
+
+@mixin backgrounding(){
+	&.-primary{
+		background: $brand-primary;
+	}
+
+	&.-danger{
+		background: $brand-danger;
+	}
+
+	&.-warning{
+		background: $brand-warning;
+	}
+
+	&.-success{
+		background: $brand-success;
+	}
+
+	&.-default{
+		background: $btn-default-color;
+	}
+}

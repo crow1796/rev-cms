@@ -110,6 +110,11 @@
 							Updates
 						</a>
 					</li>
+					<li class="item">
+						<a href="{{ url('/admin/settings/backend') }}">
+							Admin Settings
+						</a>
+					</li>
 				</ul>
 			</li>
 		</ul>
