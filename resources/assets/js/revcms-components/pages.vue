@@ -83,8 +83,8 @@
 					cancelButtonColor: '#d33',
 					confirmButtonText: 'Yes, do it!',
 					cancelButtonText: 'No, cancel!',
-					confirmButtonClass: 'rev-btn -lg -primary -flat',
-					cancelButtonClass: 'rev-btn -lg -danger -flat',
+					confirmButtonClass: 'rev-btn -lg -primary',
+					cancelButtonClass: 'rev-btn -lg -danger',
 					buttonsStyling: false
 				})
 				.then(function(){
@@ -107,20 +107,20 @@
 </script>
 
 <template>
-	<div class="rev-grid _full-height _height-scroll">
+	<div class="rev-grid">
 		<!-- Page Nav -->
 		<div class="view-nav">
-			<a href="/admin/pages/create" class="rev-btn -md -primary -flat">
+			<a href="/admin/pages/create" class="rev-btn -md -primary">
 				Add New
 			</a>
-			<button class="rev-btn -md -success -flat" 
+			<button class="rev-btn -md -success" 
 					@click="toggleSelectionMode"
 					:class="{ '-toggled': selectionMode }">
 						Selection Mode:
 						<span v-if="selectionMode">On</span>
 						<span v-else="!selectionModel">Off</span>
 			</button>
-			<button class="rev-btn -md -danger -flat" 
+			<button class="rev-btn -md -danger" 
 					v-if="selectionMode && selections.length" 
 					title="Delete Selected Items"
 					@click="deleteSelectedItems()">
@@ -155,7 +155,7 @@
 		<div class="row" v-if="!pages.length">
 			<h2 class="text-center">
 				You have no Pages. 
-				<a href="/admin/pages/create" class="rev-btn -sm -primary -flat _v-middle">
+				<a href="/admin/pages/create" class="rev-btn -sm -primary _v-middle">
 					Add New
 				</a>
 			</h2>
@@ -208,11 +208,11 @@
 						</tr>
 						<tr v-if="!selectionMode">
 							<td colspan="2">
-								<a href="#" class="rev-btn -xs -success -flat" title="Edit the Page">
+								<a href="#" class="rev-btn -xs -success" title="Edit the Page">
 									Edit
 								</a>
 								<button type="button" 
-										class="rev-btn -xs -danger -flat"
+										class="rev-btn -xs -danger"
 										title="Delete the Page"
 										@click="deletePage(page)">
 									Delete

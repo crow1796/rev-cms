@@ -5831,6 +5831,62 @@ button.close {
     -webkit-transform: rotateZ(0deg);
     transform: rotateZ(0deg); } }
 
+@-webkit-keyframes cool-spin {
+  from {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg); }
+  to {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg); } }
+
+@keyframes cool-spin {
+  from {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg); }
+  to {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg); } }
+
+@-webkit-keyframes shrink {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  20% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7); }
+  40% {
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4); }
+  60% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2); }
+  80% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes shrink {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  20% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7); }
+  40% {
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4); }
+  60% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2); }
+  80% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
 ._v-top {
   vertical-align: top !important; }
 
@@ -5898,19 +5954,42 @@ button.close {
 ._no-margin {
   margin: 0 !important; }
 
+._full-spinner-wrapper, ._relative {
+  position: relative !important; }
+
+._floating-form {
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  height: 170px;
+  background: white;
+  z-index: 999;
+  top: 100%;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5); }
+
 html,
 body {
   height: 100%;
-  overflow: hidden;
   font-family: "Raleway", "Roboto", sans-serif; }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    width: 6px;
+    padding: 0 2px; }
+  html::-webkit-scrollbar-track,
+  body::-webkit-scrollbar-track {
+    background: #3c3c3c;
+    border-radius: 5px; }
+  html::-webkit-scrollbar-thumb,
+  body::-webkit-scrollbar-thumb {
+    background: #007AFF;
+    border-radius: 5px; }
 
 #page-wrapper {
   height: 100%;
   position: relative; }
   #page-wrapper > #page-container {
     height: 100%;
-    padding-left: 200px;
-    overflow: hidden; }
+    padding-left: 200px; }
 
 .container-fluid {
   height: 100% !important; }
@@ -6292,5 +6371,118 @@ body {
 
 .rev-field-group.-xs {
   margin: 7px 0; }
+
+.rev-spinner-wrapper {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 998;
+  left: 0;
+  top: 0; }
+  .rev-spinner-wrapper > .rev-spinner-text {
+    position: absolute;
+    top: 40%;
+    left: 46%;
+    text-align: center;
+    font-size: 2em; }
+  .rev-spinner-wrapper > .rev-spinner-container {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 60px;
+    width: 60px;
+    left: 50%;
+    -webkit-animation: cool-spin 1.2s linear infinite;
+    animation: cool-spin 1.2s linear infinite;
+    -webkit-transform-origin: center;
+    transform-origin: center; }
+  .rev-spinner-wrapper > .rev-spinner-container > .rev-spinner-large {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%; }
+  .rev-spinner-wrapper > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #34495E;
+    border-radius: 50%;
+    background: #34495E; }
+  .rev-spinner-wrapper > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle-1 {
+    top: -5;
+    left: 0;
+    -webkit-animation: shrink 1s linear infinite;
+    animation: shrink 1s linear infinite;
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.2s; }
+  .rev-spinner-wrapper > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle-2 {
+    top: -10px;
+    left: 27px;
+    width: 18px;
+    height: 18px;
+    -webkit-animation: shrink 1s linear infinite;
+    animation: shrink 1s linear infinite;
+    -webkit-animation-delay: -1.4s;
+    animation-delay: -1.4s; }
+  .rev-spinner-wrapper > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle-3 {
+    top: 6px;
+    left: 48px;
+    width: 16px;
+    height: 16px;
+    -webkit-animation: shrink 1s linear infinite;
+    animation: shrink 1s linear infinite;
+    -webkit-animation-delay: -1.6s;
+    animation-delay: -1.6s; }
+  .rev-spinner-wrapper > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle-4 {
+    top: 30px;
+    left: 52px;
+    width: 14px;
+    height: 14px;
+    -webkit-animation: shrink 1s linear infinite;
+    animation: shrink 1s linear infinite;
+    -webkit-animation-delay: -1.8s;
+    animation-delay: -1.8s; }
+  .rev-spinner-wrapper > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle-5 {
+    top: 49px;
+    left: 43px;
+    width: 12px;
+    height: 12px;
+    -webkit-animation: shrink 1s linear infinite;
+    animation: shrink 1s linear infinite;
+    -webkit-animation-delay: -2s;
+    animation-delay: -2s; }
+
+.rev-list-group {
+  box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2); }
+  .rev-list-group > .list-group-item {
+    word-wrap: break-word;
+    word-break: break-word;
+    background: #34495E;
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+  .rev-list-group > .list-group-item.-active {
+    background: #22303D;
+    color: white;
+    padding-left: 25px; }
+  .rev-list-group > .list-group-item > a, .rev-list-group > .list-group-item > a:focus {
+    padding: 10px 15px;
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    -webkit-transition: padding .3s ease;
+    transition: padding .3s ease; }
+  .rev-list-group > .list-group-item > a:hover, .rev-list-group > .list-group-item > a:active {
+    text-decoration: none;
+    color: white;
+    padding-left: 25px; }
+
+#controller-list {
+  max-height: 500px; }
 
 /*# sourceMappingURL=revcms.css.map */

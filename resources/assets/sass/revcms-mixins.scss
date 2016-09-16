@@ -36,3 +36,8 @@
 		background: $btn-default-color;
 	}
 }
+
+@mixin wordWrap(){
+	word-wrap: break-word;
+	word-break: break-word;
+}

@@ -6,7 +6,7 @@ return [
 	'uri' => 'admin',
 
 	/**
-	 * Title to be shown in the header.
+	 * Title to be shown in the header and browser.
 	 */
 	'title' => 'Laravel CMS',
 

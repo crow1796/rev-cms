@@ -25,6 +25,7 @@ class ControllersController extends RevBaseController
      */
     public function create(Request $request){
     	$this->checkAjaxRequest($request);
-    	return $this->rev->makeController($request->name, $request->resource);
+    	return $this->rev
+			    	->makeController($request->name, $request->resource);
     }
 }

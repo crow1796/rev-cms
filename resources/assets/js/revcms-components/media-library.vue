@@ -23,7 +23,7 @@
 </script>
 
 <template>
-	<div class="rev-grid _full-height"
+	<div class="rev-grid"
 			style="padding-bottom: 35px;">
 		<!-- Library Nav -->
 		<div class="view-nav">

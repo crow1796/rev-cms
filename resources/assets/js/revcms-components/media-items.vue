@@ -36,10 +36,10 @@
 </script>
 
 <template>
-	<div class="row _clearfix _full-height"
+	<div class="row _clearfix"
 			style="padding-bottom: 35px;">
 		<!-- Items -->
-		<div class="col-sm-8 _full-height _height-scroll"
+		<div class="col-sm-8"
 			v-if="viewtype == 'grid'"
 			style="padding-bottom: 35px;">
 			<div class="row grid-view"

@@ -1,8 +1,8 @@
 html,
 body{
 	height: 100%;
-	overflow: hidden;
 	font-family: $font-family;
+	@include scrollBar($brand-primary);
 }
 
 #page-wrapper{
@@ -12,7 +12,6 @@ body{
 	& > #page-container{
 		height: 100%;
 		padding-left: 200px;
-		overflow: hidden;
 	}
 }
 
@@ -24,7 +23,7 @@ body{
 	position: fixed;
 	z-index: 999;
 	width: 200px;
-	background: #34495E;
+	background: $theme-bg;
 	color: white;
 	left: 0;
 	padding: 20px 0;
@@ -60,7 +59,7 @@ body{
 		// display: none;
 		top: 0;
 		left: 80%;
-		background: darken(#34495E, 10%);
+		background: darken($theme-bg, 10%);
 		color: white;
 		list-style: none;
 		padding: 0;
@@ -97,8 +96,7 @@ body{
 		border-bottom: 1px solid rgba(white, .05);
 		transition: padding .3s ease;
 		font-size: 15px;
-		word-wrap: break-word;
-		word-break: break-word;
+		@include wordWrap();
 	}
 
 	& > .menu-container > .menu > .item .sub-menu > .item > a,
@@ -367,7 +365,7 @@ body{
 	min-height: 40px;
 	
 	&.-default{
-		background: #34495E;
+		background: $theme-bg;
 		box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
 	}
 
@@ -422,7 +420,7 @@ body{
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		background: darken(#34495E, 10%);
+		background: darken($theme-bg, 10%);
 		width: 170px;
 		box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2);
 	}
@@ -462,18 +460,18 @@ body{
 	.nav-tabs > li > a, .nav-tabs > li > a:focus{
 		padding-left: 30px;
 		padding-right: 30px;
-		background: #34495E;
+		background: $theme-bg;
 		color: white;
 		border: 0;
 	}
 
 	.nav-tabs > li > a:hover, .nav-tabs > li.active a:hover{
 		padding: 10px 30px;
-		background: darken(#34495E, 10%);
+		background: darken($theme-bg, 10%);
 	}
 
 	.nav-tabs > li.active a{
-		background: darken(#34495E, 10%);
+		background: darken($theme-bg, 10%);
 	}
 }
 
@@ -523,4 +521,133 @@ body{
 	&.-xs{
 		margin: 7px 0;
 	}
+}
+
+.rev-spinner-wrapper{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.95);
+	z-index: 998;
+	left: 0;
+	top: 0;
+	
+	& > .rev-spinner-text{
+		position: absolute;
+	    top: 40%;
+	    left: 46%;
+	    text-align: center;
+	    font-size: 2em;
+	}
+	
+	& > .rev-spinner-container{
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		height: 60px;
+		width: 60px;
+		left: 50%;
+		animation: cool-spin 1.2s linear infinite;
+		transform-origin: center;
+	}
+	
+	& > .rev-spinner-container > .rev-spinner-large{
+		border-radius: 50%;
+		width: 100%;
+		height: 100%;
+	}
+
+	& > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle{
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		border: 2px solid $theme-bg;
+		border-radius: 50%;
+		background: $theme-bg;
+	}
+
+	& > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle-1{
+		top: -5;
+		left: 0;
+		animation: shrink 1s linear infinite;
+		animation-delay: -1.2s;
+	}
+
+	& > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle-2{
+		top: -10px;
+		left: 27px;
+		width: 18px;
+		height: 18px;
+		animation: shrink 1s linear infinite;
+		animation-delay: -1.4s;
+	}
+
+	& > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle-3{
+		top: 6px;
+		left: 48px;
+		width: 16px;
+		height: 16px;
+		animation: shrink 1s linear infinite;
+		animation-delay: -1.6s;
+	}
+
+	& > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle-4{
+		top: 30px;
+		left: 52px;
+		width: 14px;
+		height: 14px;
+		animation: shrink 1s linear infinite;
+		animation-delay: -1.8s;
+	}
+
+	& > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle-5{
+		top: 49px;
+		left: 43px;
+		width: 12px;
+		height: 12px;
+		animation: shrink 1s linear infinite;
+		animation-delay: -2s;
+	}	
+}
+
+.rev-list-group{
+	box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2);
+	& > .list-group-item{
+		@include wordWrap();
+		background: $theme-bg;
+		border-radius: 0;
+		border: 0;
+		padding: 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	& > .list-group-item.-active{
+		background: #22303D;
+		color: white;
+		padding-left: 25px;
+	}
+
+	& > .list-group-item > a, & > .list-group-item > a:focus{
+		padding: 10px 15px;
+		color: rgba(white, .5);
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+		display: block;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+		transition: padding .3s ease;
+	}
+
+	& > .list-group-item > a:hover, & > .list-group-item > a:active{
+		text-decoration: none;
+		color: white;
+		padding-left: 25px;
+	}
+
+	& > .list-group-item > a > .path{
+	}
+}
+
+#controller-list{
+	max-height: 500px;
 }

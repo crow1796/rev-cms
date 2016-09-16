@@ -36,10 +36,19 @@ trait ControllerHelperTrait {
 		$controllers = collect($controllers)
 		                ->flatten()
 		                ->filter(function($item){
-		                    return $item;
+		                    return $tmp['name'] = $item;
 		                })
 		                ->pipe(function($collection){
 		                    return $collection->splice(0, $collection->count() - 1);
+		                })
+		                ->pipe(function($collection){
+		                    $temp = $collection->map(function($item){
+		                        $tmp = [];
+		                        $tmp['name'] = $item;
+		                        $tmp['path'] = 'a' . trim((new \ReflectionClass($item))->getFileName(), base_path());
+		                        return $tmp;
+		                    });
+		                    return $temp;
 		                })
 		                ->toArray();
 		return $controllers;

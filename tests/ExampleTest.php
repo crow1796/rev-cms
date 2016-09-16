@@ -28,13 +28,23 @@ class ExampleTest extends TestCase
         $controllers = collect($controllers)
                         ->flatten()
                         ->filter(function($item){
-                            return $item;
+                            return $tmp['name'] = $item;
                         })
                         ->pipe(function($collection){
                             return $collection->splice(0, $collection->count() - 1);
                         })
+                        ->pipe(function($collection){
+                            $temp = $collection->map(function($item){
+                                $tmp = [];
+                                $tmp['name'] = $item;
+                                $tmp['path'] = (new \ReflectionClass($item))->getFileName();
+                                return $tmp;
+                            });
+                            return $temp;
+                        })
                         ->toArray();
         // return $controllers;
-        $this->assertTrue(is_array($controllers));
+        // dump(trim((new \ReflectionClass($controllers[0]))->getFileName(), $base));
+        // $this->assertTrue(is_array($controllers));
     }
 }

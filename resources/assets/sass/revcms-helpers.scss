@@ -74,3 +74,18 @@
 ._no-margin{
 	margin: 0 !important;
 }
+
+._full-spinner-wrapper, ._relative{
+	position: relative !important;
+}
+
+._floating-form{
+	padding: 20px;
+	position: absolute;
+	left: 0;
+	height: 170px;
+	background: white;
+	z-index: 999;
+	top: 100%;
+	box-shadow: 0px 1px 4px rgba(black, 0.5);
+}
