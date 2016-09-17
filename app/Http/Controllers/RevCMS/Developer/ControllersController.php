@@ -15,6 +15,7 @@ class ControllersController extends RevBaseController
 
     public function allControllers(){
     	return $this->rev
+                    ->mvc()
     				->allControllers();
     }
 
@@ -26,6 +27,19 @@ class ControllersController extends RevBaseController
     public function create(Request $request){
     	$this->checkAjaxRequest($request);
     	return $this->rev
+                    ->mvc()
 			    	->makeController($request->name, $request->resource);
+    }
+
+    /**
+     * Get content of the specified file.
+     * @param  Request $request 
+     * @return string           
+     */
+    public function getContent(Request $request){
+        $this->checkAjaxRequest($request);
+        return $this->rev
+                    ->mvc()
+                    ->getControllerContent($request->file_path);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace RevCMS\Traits;
 use Artisan;
+use File;
 trait ControllerHelperTrait {
 	/**
 	 * Make a controller
@@ -44,13 +45,22 @@ trait ControllerHelperTrait {
 		                ->pipe(function($collection){
 		                    $temp = $collection->map(function($item){
 		                        $tmp = [];
+		                        $controllerFile = str_replace('\\', '/', (new \ReflectionClass($item))->getFileName());
+		                        $basePath = str_replace('\\', '/', base_path());
 		                        $tmp['name'] = $item;
-		                        $tmp['path'] = 'a' . trim((new \ReflectionClass($item))->getFileName(), base_path());
+		                        $tmp['path'] = str_replace($basePath, '', $controllerFile);
+		                        $tmp['local_path'] = 'file:///' . $controllerFile;
 		                        return $tmp;
 		                    });
 		                    return $temp;
 		                })
 		                ->toArray();
 		return $controllers;
+	}
+
+	public function getControllerContent($controller = null){
+		if(!$controller) return false;
+		$content = File::get(str_replace('\\', '/', base_path(trim(str_replace('/', '\\', $controller), '\\'))));
+		return $content;
 	}
 }

@@ -6,7 +6,6 @@
  */
 
 require('./bootstrap');
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the body of the page. From here, you may begin adding components to
@@ -21,6 +20,16 @@ Vue.filter('chunk', function(arr, len){
  		chunks.push(arr.slice(i, i += len));
  	}
  	return chunks;
+});
+
+Vue.transition('rev-bounce', {
+	enterClass: 'bounceInDown',
+	leaveClass: 'bounceOutUp'
+});
+
+Vue.transition('rev-slide', {
+	enterClass: 'slideInLeft',
+	leaveClass: 'slideOutLeft'
 });
 
 Vue.component('rev-pages', require('./revcms-components/pages.vue'));

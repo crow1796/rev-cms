@@ -5,7 +5,7 @@
 			Preview Site <i class="fa fa-external-link"></i>
 		</a>
 		<div class="rev-dropdown">
-			<a href="#" class="rev-btn -sm -link" dropdown-toggle="rev-dropdown">
+			<a href="#" class="rev-btn -sm -danger" dropdown-toggle="rev-dropdown">
 				Joshua Tundag <i class="fa fa-caret-down"></i>
 			</a>
 			<ul class="sub-menu -down">

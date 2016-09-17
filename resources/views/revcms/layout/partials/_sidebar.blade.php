@@ -125,7 +125,8 @@
 					Developer Menu
 				</li>
 				<li class="item">
-					<a href="{{ url('#') }}" @click="$event.preventDefault()">
+					<a href="{{ url('#') }}" 
+						@click="$event.preventDefault()">
 						<i class="fa fa-gamepad"></i>
 						MVC
 					</a>
@@ -149,7 +150,8 @@
 					</ul>
 				</li>
 				<li class="item">
-					<a href="#" @click="$event.preventDefault()">
+					<a href="#" 
+						@click="$event.preventDefault()">
 						<i class="fa fa-database"></i>
 						Database
 					</a>
@@ -170,7 +172,8 @@
 					</ul>
 				</li>
 				<li class="item">
-					<a href="#" @click="$event.preventDefault()">
+					<a href="#" 
+						@click="$event.preventDefault()">
 						<i class="fa fa-refresh"></i>
 						HTTP
 					</a>

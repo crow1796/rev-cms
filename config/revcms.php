@@ -8,7 +8,7 @@ return [
 	/**
 	 * Title to be shown in the header and browser.
 	 */
-	'title' => 'Laravel CMS',
+	'title' => 'RevCMS - Development',
 
 	/**
 	 * Url of the logo.

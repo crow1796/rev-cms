@@ -83,7 +83,7 @@
 					cancelButtonColor: '#d33',
 					confirmButtonText: 'Yes, do it!',
 					cancelButtonText: 'No, cancel!',
-					confirmButtonClass: 'rev-btn -lg -primary',
+					confirmButtonClass: 'rev-btn -lg -danger',
 					cancelButtonClass: 'rev-btn -lg -danger',
 					buttonsStyling: false
 				})
@@ -110,10 +110,10 @@
 	<div class="rev-grid">
 		<!-- Page Nav -->
 		<div class="view-nav">
-			<a href="/admin/pages/create" class="rev-btn -md -primary">
+			<a href="/admin/pages/create" class="rev-btn -md -danger">
 				Add New
 			</a>
-			<button class="rev-btn -md -success" 
+			<button class="rev-btn -md -danger" 
 					@click="toggleSelectionMode"
 					:class="{ '-toggled': selectionMode }">
 						Selection Mode:
@@ -130,20 +130,20 @@
 				<form class="search-form">
 					<div class="rev-input-group">
 						<input type="text" name="s" id="s" placeholder="Search a page here..." class="rev-field -md">
-						<button type="submit" class="rev-btn -md -primary">
+						<button type="submit" class="rev-btn -md -danger">
 							<i class="fa fa-search"></i>
 						</button>
 					</div>
 				</form>
 				<div class="rev-input-group">
 					<button type="button" 
-							class="rev-btn -md -primary grid" 
+							class="rev-btn -md -danger grid" 
 							:class="{ '-toggled': isGridView }" 
 							@click="toggleViewType('grid')">
 						<i class="fa fa-th"></i>
 					</button>
 					<button type="button" 
-							class="rev-btn -md -primary list" 
+							class="rev-btn -md -danger list" 
 							:class="{ '-toggled': isListView }" 
 							@click="toggleViewType('list')">
 						<i class="fa fa-list"></i>
@@ -155,7 +155,7 @@
 		<div class="row" v-if="!pages.length">
 			<h2 class="text-center">
 				You have no Pages. 
-				<a href="/admin/pages/create" class="rev-btn -sm -primary _v-middle">
+				<a href="/admin/pages/create" class="rev-btn -sm -danger _v-middle">
 					Add New
 				</a>
 			</h2>
@@ -208,7 +208,7 @@
 						</tr>
 						<tr v-if="!selectionMode">
 							<td colspan="2">
-								<a href="#" class="rev-btn -xs -success" title="Edit the Page">
+								<a href="#" class="rev-btn -xs -danger" title="Edit the Page">
 									Edit
 								</a>
 								<button type="button" 

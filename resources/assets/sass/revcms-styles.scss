@@ -2,7 +2,7 @@ html,
 body{
 	height: 100%;
 	font-family: $font-family;
-	@include scrollBar($brand-primary);
+	@include scrollBar($brand-danger);
 }
 
 #page-wrapper{
@@ -20,7 +20,7 @@ body{
 }
 
 .rev-sidebar{
-	position: fixed;
+	position: absolute;
 	z-index: 999;
 	width: 200px;
 	background: $theme-bg;
@@ -50,6 +50,10 @@ body{
 		border-bottom: 1px solid rgba(black, .1);
 	}
 
+	& > .menu-container > .menu > .title{
+		color: $default-text-color;
+	}
+
 	& > .menu-container > .menu .item{
 		position: relative
 	}
@@ -59,14 +63,15 @@ body{
 		// display: none;
 		top: 0;
 		left: 80%;
-		background: darken($theme-bg, 10%);
+		@include materialShadow($btn-default-color);
+		background: darken($btn-default-color, 10%);
 		color: white;
 		list-style: none;
 		padding: 0;
 		margin: 0;
 		width: 200px;
 		z-index: 999;
-		box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2);
+		// box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2);
 		transition: all .5s ease;
 	}
 
@@ -81,7 +86,7 @@ body{
 	    display: block;
 	    border-top: 10px solid transparent;
 	    border-bottom: 10px solid transparent;
-	    border-right: 10px solid #22303D;
+	    border-right: 10px solid darken($btn-default-color, 3%);
 	}
 
 	& > .menu-container > .menu > .item > a, 
@@ -89,14 +94,22 @@ body{
 	& > .menu-container > .menu > .item .sub-menu > .item a, 
 	& > .menu-container > .menu > .item .sub-menu > .item a:focus{
 		font-family: $font-family;
-		color: rgba(white, .5);
-		text-shadow: 0 -1px 0 rgba(black,0.3);
+		color: $default-text-color;
+		font-weight: 300;
+		// color: rgba(white, .5);
+		// text-shadow: 0 -1px 0 rgba(black,0.3);
 		display: block;
 		padding: 6px 0px 6px 15px;
 		border-bottom: 1px solid rgba(white, .05);
 		transition: padding .3s ease;
-		font-size: 15px;
+		font-size: 17px;
 		@include wordWrap();
+	}
+
+
+	& > .menu-container > .menu > .item .sub-menu > .item a, 
+	& > .menu-container > .menu > .item .sub-menu > .item a:focus{
+		color: white;
 	}
 
 	& > .menu-container > .menu > .item .sub-menu > .item > a,
@@ -115,7 +128,7 @@ body{
 	& > .menu-container > .menu .item a:hover + .sub-menu:before{
 		border-top: 10px solid transparent;
 		border-bottom: 10px solid transparent;
-		border-right: 10px solid darken(#22303D, 3%);
+		border-right: 10px solid darken($btn-default-color, 3%);
 	}
 
 	& > .menu-container > .menu .item a:hover + .sub-menu > .item > a,
@@ -147,7 +160,7 @@ body{
 	& > .menu-container > .menu .item a:active,
 	& > .menu-container > .menu .item .sub-menu .item a:hover, 
 	& > .menu-container > .menu .item .sub-menu .item a:active{
-		color: white;
+		// color: white;
 		text-decoration: none;
 		padding-left: 25px;
 	}
@@ -159,7 +172,14 @@ body{
 	border: 0;
 	color: white;
 	border-radius: 4px;
-	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+	transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	text-transform: uppercase;
+	font-smoothing: subpixel-antialiased;
+	-webkit-font-smoothing: subpixel-antialiased;
+	padding: 12px;
+	will-change: box-shadow, transform;
+    font-size: 12px;
+    font-weight: 400;
 	
 	&:hover, &:focus{
 		color: #fff;
@@ -196,23 +216,23 @@ body{
 
 	@include backgrounding;
 
-	&.-success:hover, &.-success.-toggled{
+	&.-success.-toggled{
 		background: darken($brand-success, 10%);	
 	}
 
-	&.-primary:hover, &.-primary.-toggled{
+	&.-primary.-toggled{
 		background: darken($brand-primary, 10%);	
 	}
 
-	&.-danger:hover, &.-danger.-toggled{
+	&.-danger.-toggled{
 		background: darken($brand-danger, 10%);	
 	}
 
-	&.-warning:hover, &.-warning.-toggled{
+	&.-warning.-toggled{
 		background: darken($brand-warning, 10%);	
 	}
 
-	&.-default:hover, &.-default.-toggled{
+	&.-default.-toggled{
 		background: darken($btn-default-color, 10%);	
 	}
 }
@@ -242,8 +262,24 @@ body{
 
 .rev-field{
 	border: 0;
-	border-radius: 4px;
-	box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+	font-weight: 400;
+	background-size: 0 2px, 100% 1px;
+	background-repeat: no-repeat;
+	background-position: center bottom, center calc(100% - 1px);
+	background-color: transparent;
+	transition: background 0s ease-out;
+	float: none;
+	box-shadow: none;
+	background-image: linear-gradient($brand-danger, $brand-danger), linear-gradient(#D2D2D2, #D2D2D2);
+	border-radius: 0;
+	// border-radius: 4px;
+	// box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+
+	&:focus{
+		outline: 0;
+		background-size: 100% 2px, 100% 1px;
+		transition-duration: .3s;
+	}
 	
 	&.-xs{
 		height: 24px;
@@ -291,10 +327,12 @@ body{
 
 	& .row > .grid-item.-selection-mode:hover > .info,
 	& .row > .grid-item.-selected > .info{
-		border-bottom-color: $brand-primary;
+		border-bottom-color: $brand-danger;
 	}
 
 	& .row > .grid-item > .preview{
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
 		height: 150px;
 		background: url('/images/welcome-featured-bg.jpg');
 	}
@@ -304,6 +342,8 @@ body{
 	}
 
 	& .row > .grid-item > .info{
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
 		display: block;
 		padding: 9px 7px;
 		background: #fff;
@@ -394,11 +434,20 @@ body{
 		float: right;
 		padding: 13.5px 40px;
 	}
+
+	& > .navbar-brand{
+		color: $brand-danger;
+		font-weight: 700;
+	}
 }
 
 .rev-dropdown{
 	position: relative;
 	display: inline-block;
+	
+	& > a{
+		color: $brand-danger;
+	}
 	
 	& > .sub-menu:before{
 		content: '';
@@ -411,7 +460,7 @@ body{
 		top: -5px;
 		border-left: 5px solid transparent;
 		border-right: 5px solid transparent;
-		border-bottom: 5px solid #22303D;
+		border-bottom: 5px solid #fff;
 	}
 
 	& > .sub-menu{
@@ -420,7 +469,9 @@ body{
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		background: darken($theme-bg, 10%);
+		// background: darken($brand-primary, 10%);
+		background: darken($btn-default-color, 10%);
+		@include materialShadow($btn-default-color);
 		width: 170px;
 		box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2);
 	}
@@ -428,13 +479,15 @@ body{
 	& > .sub-menu > .item > a{
 		display: block;
 		padding: 6px 0px 6px 15px;
-		color: rgba(white, .5);
-		text-shadow: 0 -1px 0 rgba(black,0.3);
+		color: white;
+		font-weight: 300;
+		// color: rgba(white, .5);
+		// text-shadow: 0 -1px 0 rgba(black,0.3);
 		display: block;
 		padding: 6px 0px 6px 15px;
 		border-bottom: 1px solid rgba(white, .05);
 		transition: padding .3s ease;
-		font-size: 15px;
+		font-size: 17px;
 		word-wrap: break-word;
 		word-break: break-word;
 	}
@@ -442,7 +495,7 @@ body{
 	& > .sub-menu > .item a:hover, 
 	& > .sub-menu > .item > a:focus{
 		text-decoration: none;
-		color: white;
+		// color: white;
 		padding-left: 25px;
 	}
 
@@ -457,21 +510,23 @@ body{
 }
 
 .-rev-tabpanel{
-	.nav-tabs > li > a, .nav-tabs > li > a:focus{
-		padding-left: 30px;
-		padding-right: 30px;
-		background: $theme-bg;
+	.nav-pills{
+		margin: 10px 0;
+	}
+	.nav-pills > li > a, .nav-pills > li > a:focus{
+		background: $brand-danger;
 		color: white;
 		border: 0;
+		min-width: 140px;
+		text-align: center;
 	}
 
-	.nav-tabs > li > a:hover, .nav-tabs > li.active a:hover{
-		padding: 10px 30px;
-		background: darken($theme-bg, 10%);
+	.nav-pills > li > a:hover, .nav-pills > li.active a:hover{
+		background: darken($brand-danger, 10%);
 	}
 
-	.nav-tabs > li.active a{
-		background: darken($theme-bg, 10%);
+	.nav-pills > li.active a{
+		background: darken($brand-danger, 10%);
 	}
 }
 
@@ -518,8 +573,22 @@ body{
 }
 
 .rev-field-group{
+	position: relative;
+	margin: 10px;
 	&.-xs{
 		margin: 7px 0;
+	}
+
+	& > .error-message{
+		display: block;
+		position: absolute;
+		font-weight: 600;
+		text-align: center;
+		width: 100%;
+	}
+
+	& > .error-message.-danger{
+		color: $brand-danger;
 	}
 }
 
@@ -539,6 +608,7 @@ body{
 	    left: 46%;
 	    text-align: center;
 	    font-size: 2em;
+	    color: $brand-danger;
 	}
 	
 	& > .rev-spinner-container{
@@ -562,9 +632,9 @@ body{
 		position: absolute;
 		width: 20px;
 		height: 20px;
-		border: 2px solid $theme-bg;
+		border: 2px solid $brand-danger;
 		border-radius: 50%;
-		background: $theme-bg;
+		background: $brand-danger;
 	}
 
 	& > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle-1{
@@ -622,32 +692,66 @@ body{
 		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 	}
 
-	& > .list-group-item.-active{
-		background: #22303D;
-		color: white;
-		padding-left: 25px;
-	}
-
 	& > .list-group-item > a, & > .list-group-item > a:focus{
 		padding: 10px 15px;
-		color: rgba(white, .5);
-		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+		color: $default-text-color;
+		// // color: rgba(white, .5);
+		// // text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 		display: block;
 		text-decoration: none;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-		transition: padding .3s ease;
+		// border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+		// transition: padding .3s ease;
+		// font-size: 15px;
+		//    font-weight: 300;
+		border: 0;
+		font-weight: 400;
+		background-size: 0 2px, 100% 1px;
+		background-repeat: no-repeat;
+		background-position: center bottom, center calc(100% - 1px);
+		background-color: transparent;
+		transition: background 0s ease-out;
+		float: none;
+		box-shadow: none;
+		background-image: linear-gradient($brand-danger, $brand-danger), linear-gradient(#D2D2D2, #D2D2D2);
+		border-radius: 0;
 	}
 
 	& > .list-group-item > a:hover, & > .list-group-item > a:active{
 		text-decoration: none;
+		// // color: white;
+		// padding-left: 25px;
+		outline: 0;
+		background-size: 100% 2px, 100% 1px;
+		transition-duration: .3s;
+	}
+
+	& > .list-group-item.-active > a{
+		// background: #22303D;
+		background: $brand-danger;
 		color: white;
 		padding-left: 25px;
+		border-left: 4px solid darken($brand-danger, 10%);
 	}
 
 	& > .list-group-item > a > .path{
 	}
 }
 
+.rev-badge{
+	border-radius: 4px;
+	text-align: center;
+	color: white;
+	display: inline-block;
+
+	&.-lg{
+		padding: 6px 10px;
+	}
+
+	&.-danger{
+		background: #F44336;
+	}
+}
+
 #controller-list{
-	max-height: 500px;
+	max-height: 420px;
 }

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class TestControll1 extends Controller
+class TestController5 extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class TestControll1 extends Controller
      */
     public function index()
     {
-        echo 'this is index';
+        //
     }
 
     /**

@@ -5,4 +5,5 @@
 {{-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> --}}
 <link rel="stylesheet" type="text/css" href="{{ url('/revcms-deps/font-awesome/css/font-awesome.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('/revcms-deps/sweetalert2/sweetalert2.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url('/revcms-deps/animate/animate.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('/css/revcms.css') }}">

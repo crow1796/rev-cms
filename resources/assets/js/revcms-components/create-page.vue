@@ -5,68 +5,74 @@
 			actionEditor
 					.setTheme("ace/theme/monokai");
 			actionEditor.getSession().setUseWrapMode(true);
-			actionEditor.getSession().setMode("ace/mode/php");
+			actionEditor.getSession().setMode({
+				path: "ace/mode/php",
+				inline: true
+			});
 
 			var viewEditor = ace.edit("view-editor");
 			viewEditor
 					.setTheme("ace/theme/monokai");
 			viewEditor.getSession().setUseWrapMode(true);
-			viewEditor.getSession().setMode("ace/mode/php");
+			viewEditor.getSession().setMode({
+				path: "ace/mode/php",
+				inline: true
+			});
+		},
+		data(){
+			return {
+				baseUrl: base_url
+			}
 		}
 	}
 </script>
 
 <template>
 	<div class="container-fluid">
-		<h3 class="page-header">
-			Add New Page
-		</h3>
-
-		<div class="row">
-			<div class="col-sm-12">
-				<h4>Action</h4>
-				<div role="tabpanel" class="-rev-tabpanel">
-					<!-- Nav tabs -->
-					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active">
-							<a href="#action-editor-tab" aria-controls="home" role="tab" data-toggle="tab">Action</a>
-						</li>
-						<li role="presentation">
-							<a href="#view-editor-tab" aria-controls="tab" role="tab" data-toggle="tab">View</a>
-						</li>
-					</ul>
-				
-					<!-- Tab panes -->
-					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane active" id="action-editor-tab">
-							<div id="action-editor">&lt;?php
-							</div>
-						</div>
-						<div role="tabpanel" class="tab-pane" id="view-editor-tab">
-							<div id="view-editor">&lt;?php
-							</div>
-						</div>
+		<form>
+			<div class="row" style="margin-top: 10px;">
+				<div class="col-sm-6">
+					<div class="rev-field-group">
+						<input type="text" name="page_title" id="page_title" placeholder="Page Title" class="rev-field -lg _block">
 					</div>
 				</div>
-				<div class="rev-tabpanel">
-					<ul class="tabs">
-						<li>
-							<a href="#"></a>
-						</li>
-						<li>
-							
-						</li>
-					</ul>
-					<div class="contents">
-						<div id="action-editor-tab" class="content">
-							
-						</div>
-						<div id="view-editor-tab" class="content">
-							
+				<div class="col-sm-6">
+					<div class="rev-field-group">
+						<span class="rev-badge -lg -danger" style="width: 140px;">
+							{{ baseUrl + '/' }}
+						</span>
+						<input type="text" name="page_slug" id="page_slug" placeholder="Page Slug" class="rev-field -lg" style="width: 73%"/>
+						<small class="error-message -danger">
+							Slug already exists.
+						</small>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div role="tabpanel" class="-rev-tabpanel">
+						<!-- Nav tabs -->
+						<ul class="nav nav-pills" role="tablist">
+							<li role="presentation" class="active">
+								<a href="#action-editor-tab" class="rev-btn -md -danger" aria-controls="home" role="tab" data-toggle="tab">Action</a>
+							</li>
+							<li role="presentation">
+								<a href="#view-editor-tab" class="rev-btn -md -danger" aria-controls="tab" role="tab" data-toggle="tab">View</a>
+							</li>
+						</ul>
+					
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="action-editor-tab">
+								<div id="action-editor" class="_rev-editor-height"></div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="view-editor-tab">
+								<div id="view-editor" class="_rev-editor-height"></div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</form>
 	</div>
 </template>

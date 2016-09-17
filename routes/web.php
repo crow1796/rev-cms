@@ -10,4 +10,4 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-\RevCMS::webRoutes();
+\RevCMS::router()->webRoutes();

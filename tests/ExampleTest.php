@@ -36,8 +36,10 @@ class ExampleTest extends TestCase
                         ->pipe(function($collection){
                             $temp = $collection->map(function($item){
                                 $tmp = [];
+                                $controllerFile = str_replace('\\', '/', (new \ReflectionClass($item))->getFileName());
+                                $basePath = str_replace('\\', '/', base_path());
                                 $tmp['name'] = $item;
-                                $tmp['path'] = (new \ReflectionClass($item))->getFileName();
+                                $tmp['path'] = str_replace($basePath, '', $controllerFile);
                                 return $tmp;
                             });
                             return $temp;
@@ -46,5 +48,12 @@ class ExampleTest extends TestCase
         // return $controllers;
         // dump(trim((new \ReflectionClass($controllers[0]))->getFileName(), $base));
         // $this->assertTrue(is_array($controllers));
+    }
+
+    public function testMethodReader(){
+        $re = "~^\\s*[\\w\\s]+\\(.*\\)\\s*\\K({((?>\"(?:[^\"\\\\]*+|\\\\.)*\"|'(?:[^'\\\\]*+|\\\\.)*'|//.*$|/\\*[\\s\\S]*?\\*/|#.*$|<<<\\s*[\"']?(\\w+)[\"']?[^;]+\\3;$|[^{}<'\"/#]++|[^{}]++|(?1))*)})~m"; 
+        $block = \File::get('app/Http/Controllers/Test/TestControll1.php');
+        preg_match_all($re, $block, $matches);
+        dd(trim(trim($matches[0][0], '}'), '{'));
     }
 }
