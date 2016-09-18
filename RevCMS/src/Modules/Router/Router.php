@@ -1,5 +1,5 @@
 <?php 
-namespace RevCMS\Modules\Mvc;
+namespace RevCMS\Modules\Router;
 use Route;
 class Router {
 
@@ -14,7 +14,10 @@ class Router {
 			Route::get('/media', 'MediaController@index');
 			Route::group(['prefix' => 'settings'], function(){
 				Route::get('/settings', 'SettingsController@index');
-				// Route::get('/admin/settings/backend', 'AdminSettingsController@index');
+			});
+			// Theme Routes
+			Route::group(['prefix' => 'themes'], function(){
+				Route::get('/', 'ThemesController@index');
 			});
 
 			Route::group(['prefix' => 'developer', 'namespace' => 'Developer'], function(){
@@ -42,7 +45,9 @@ class Router {
 	public function apiRoutes(){
 		Route::group(['prefix' => 'revcms', 'namespace' => 'RevCMS\Developer'], function(){
 			Route::get('/developer/mvc/controllers', 'ControllersController@allControllers');
-			Route::post('developer/mvc/controllers/make', 'ControllersController@create');
+			Route::post('/developer/mvc/controllers/make', 'ControllersController@create');
+			Route::post('/developer/mvc/controllers/delete-controller', 'ControllersController@deleteControllers');
+			Route::patch('/developer/mvc/controllers/update-controller', 'ControllersController@updateController');
 			Route::get('/developer/mvc/controllers/get-content', 'ControllersController@getContent');
 		});
 	}

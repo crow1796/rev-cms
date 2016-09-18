@@ -1,8 +1,5 @@
 <script type="text/javascript">
 	export default {
-		created(){
-			this.populateControllers();
-		},
 		ready(){
 			var controllerEditor = ace.edit("controller-editor");
 			controllerEditor
@@ -16,9 +13,6 @@
 		],
 		data(){
 			return {
-				showMakeForm: false,
-				makeBtnText: 'Make',
-				newController: {},
 				controllers: [],
 				selectionMode: false,
 				selections: [],
@@ -27,37 +21,10 @@
 			};
 		},
 		methods: {
-			toggleMakeForm(){
-				this.showMakeForm = !this.showMakeForm;
-				if(!this.showMakeForm){
-					this.makeBtnText = 'Make';
-					return false;
-				}
-				this.makeBtnText = 'Cancel';
-			},
-			makeController(){
-				$('.rev-spinner-wrapper')
-					.fadeIn('fast');
-				this.$http
-					.post("{base_url}/api/revcms/developer/mvc/controllers/make", this.newController)
-					.then((response) => {
-						if(response.status == 200){
-							// Success
-							swal(
-								'Success',
-								'Controller has been created successfully.',
-								'success'
-								)
-							this.newController = {}
-							this.populateControllers()
-						}
-						$('.rev-spinner-wrapper')
-							.fadeOut('fast');
-					});
-			},
 			toggleSelectionMode(){
 				this.selectedController = null;
 				this.selectionMode = !this.selectionMode;
+				this.controllerEditor.setValue('');
 				if(!this.selectionMode){
 					this.selections = [];
 					for(var i = 0; i < this.controllers.length; i++){
@@ -76,8 +43,7 @@
 					this.selections.$remove(controller);
 					return true;
 				}
-				$('.rev-spinner-wrapper')
-					.fadeIn('fast');
+				showRevLoader();
 				this.selectedController = controller;
 				$.ajax({
 					'url': base_url + "/api/revcms/developer/mvc/controllers/get-content",
@@ -87,10 +53,7 @@
 					},
 					success: (response) => {
 						this.controllerEditor.setValue(response, 1);
-						setTimeout(function(){
-							$('.rev-spinner-wrapper')
-								.fadeOut('fast');
-							}, 500);
+						hideRevLoader();
 					}
 				})
 				// this.$http
@@ -101,13 +64,18 @@
 			},
 			deleteSelectedItems(){
 				this.sweetConfirm(() => {
-					this.controllers = _.difference(this.controllers, this.selections);
-					this.selections = [];	
-					swal(
-						'Success',
-						'Controller(s) has been deleted successfully.',
-						'success'
-						);
+					showRevLoader();
+					this.requestToDeleteControllers(this.selections)
+						.then((response) => {
+							this.controllers = _.difference(this.controllers, this.selections);
+							this.selections = [];
+							swal(
+								'Success',
+								'Controller(s) has been deleted successfully.',
+								'success'
+								);
+							hideRevLoader();
+						});
 				}, (dismiss) => {
 					swal(
 						'Cancelled',
@@ -118,18 +86,42 @@
 			},
 			deleteSelectedController(){
 				this.sweetConfirm(() => {
-					this.controllers.$remove(this.selectedController);
-					swal(
-						'Success',
-						'Controller has been deleted successfully.',
-						'success'
-						);
+					showRevLoader();
+					this.requestToDeleteControllers(this.selectedController)
+						.then((response) => {
+							this.controllers.$remove(this.selectedController);
+							this.controllerEditor.setValue('');
+							swal(
+								'Success',
+								'Controller has been deleted successfully.',
+								'success'
+								);
+							hideRevLoader();
+						});
 				}, (dismiss) => {
 					swal(
 						'Cancelled',
 						'Your controller is safe.',
 						'warning'
 						);
+				});
+			},
+			saveChanges(){
+				var url = "{base_url}/api/revcms/developer/mvc/controllers/update-controller";
+				var newContent = this.controllerEditor.getValue();
+				showRevLoader();
+				this.$http.post(url, {
+					_method: 'PATCH',
+					path: this.selectedController.path,
+					content: newContent
+				})
+				.then((response) => {
+					swal(
+						'Success',
+						'Controller has been updated successfully.',
+						'success'
+						);
+					hideRevLoader();
 				});
 			},
 			selectAllItems(){
@@ -147,7 +139,7 @@
 					controller.selected = true;
 					return controller;
 				});
-				this.selections = this.controllers;
+				this.selections = _.clone(this.controllers);
 			},
 			sweetConfirm: function(yes, no){
 				swal({
@@ -168,19 +160,19 @@
 					no(dismiss);
 				});
 			},
-			populateControllers(){
-				$('.rev-spinner-wrapper')
-					.fadeIn('fast');
-				this.$http
-					.get("{base_url}/api/revcms/developer/mvc/controllers")
-					.then((response) => {
-						this.controllers = _.map(response.data, function(controller){
-							controller.selected = false;
-							return controller;
-						});
-						$('.rev-spinner-wrapper')
-							.fadeOut('fast');
-					});
+			requestToDeleteControllers(controllers){
+				var controllersPath = [];
+				var controllerDeleteUrl = "{base_url}/api/revcms/developer/mvc/controllers/delete-controller"
+				if(controllers.length){
+					for(var i = 0; i < controllers.length; i++){
+						controllersPath.push(controllers[i].path);
+					}
+				}else {
+					controllersPath = controllers.path;
+				}
+				return this.$http.post(controllerDeleteUrl, {
+					paths: controllersPath
+				})
 			}
 		},
 		computed: {
@@ -204,12 +196,7 @@
 <template>
 	<div class="rev-controllers">
 		<div class="view-nav _relative">
-			<button type="button"
-				class="rev-btn -md -danger"
-				:class="{ '-toggled': showMakeForm }"
-				@click.prevent="toggleMakeForm()">
-				{{ makeBtnText }}
-			</button>
+			<rev-controller-maker :controllers.sync="controllers"></rev-controller-maker>
 			<button type="button" 
 					class="rev-btn -md -danger"
 					:class="{ '-toggled': selectionMode }"
@@ -230,33 +217,11 @@
 					@click="deleteSelectedItems()">
 				Delete
 			</button>
-			<div class="view-nav _floating-form animated _rev-radius"
-					transition="rev-bounce"
-					v-if="showMakeForm">
-				<form class="_inline-block"
-						@submit.prevent="makeController">
-					php artisan make:controller 
-					<div class="rev-field-group -xs">
-						<input type="text" name="controller_name" id="controller_name" placeholder="Name" class="rev-field -md -flat" v-model="newController.name">
-					</div>
-					<div class="rev-field-group -xs">
-						<label for="resource">
-							<input type="checkbox" name="resource" id="resource" class="rev-checkbox -danger _no-margin" v-model="newController.resource" autocomplete="off">
-							Resource
-						</label>
-					</div>
-					<div class="rev-field-group -xs text-right">
-						<button type="submit" class="rev-btn -md -danger">
-							Make
-						</button>
-					</div>
-				</form>
-			</div>	
 		</div>
 
 		<div class="row">
 			<div class="col-sm-5">
-				<div class="text-right">
+				<div class="text-right" style="margin-bottom: 8px;">
 					<input type="text" name="s" id="s" placeholder="Search controller here..." class="rev-field -md" v-model="controllerSearch">
 				</div>
 				<ul class="rev-list-group list-group _height-scroll _rev-radius" id="controller-list">
@@ -286,18 +251,26 @@
 				transition="rev-bounce"
 				v-show="hasSelectedController">
 				<div style="margin-top: 1px; margin-bottom: 7px;">
-					<button type="button" class="rev-btn -md -success" title="Save Changes">
+					<button type="button" 
+							class="rev-btn -md -success" 
+							title="Save Changes"
+							@click="saveChanges()">
 						<i class="fa fa-save"></i>
 					</button>
-					<button type="button" class="rev-btn -md -default" title="Reload Controller">
-						<i class="fa fa-refresh"></i>
-					</button>
-					<button type="button" 
-							class="rev-btn -md -danger pull-right" 
-							title="Delete Controller"
-							@click="deleteSelectedController()">
-						<i class="fa fa-trash"></i>
-					</button>
+					<span class="pull-right">
+						<button type="button" 
+								class="rev-btn -md -default" 
+								title="Reload Controller"
+								@click="selectController(selectedController)">
+							<i class="fa fa-refresh"></i>
+						</button>
+						<button type="button" 
+								class="rev-btn -md -danger" 
+								title="Delete Controller"
+								@click="deleteSelectedController()">
+							<i class="fa fa-trash"></i>
+						</button>
+					</span>
 				</div>
 				<div id="controller-editor" class="_rev-editor-height"></div>
 			</div>

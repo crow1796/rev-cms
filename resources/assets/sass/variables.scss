@@ -14,7 +14,8 @@ $brand-primary: #2196F3;
 $brand-info: #80DEEA;
 $brand-success: #00E676;
 $brand-warning: #FFEB3B;
-$brand-danger:  #F44336;
+// $brand-danger:  #F44336;
+$brand-danger: #f4645f;
 
 // Typography
 $font-family-sans-serif: sans-serif;
@@ -35,7 +36,7 @@ $input-color-placeholder: lighten($text-color, 30%);
 // Panels
 $panel-default-heading-bg: #fff;
 
-$font-family: "Roboto",sans-serif;
+$font-family: "Source Sans Pro", "Roboto", sans-serif;
 
 // $theme-bg: #34495E;
 $theme-bg: #fff;

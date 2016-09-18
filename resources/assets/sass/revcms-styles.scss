@@ -6,12 +6,13 @@ body{
 }
 
 #page-wrapper{
-	height: 100%;
+	min-height: 100%;
 	position: relative;
 
 	& > #page-container{
 		height: 100%;
 		padding-left: 200px;
+		padding-top: 10px;
 	}
 }
 
@@ -161,6 +162,7 @@ body{
 	& > .menu-container > .menu .item .sub-menu .item a:hover, 
 	& > .menu-container > .menu .item .sub-menu .item a:active{
 		// color: white;
+		color: $brand-danger;
 		text-decoration: none;
 		padding-left: 25px;
 	}
@@ -179,7 +181,7 @@ body{
 	padding: 12px;
 	will-change: box-shadow, transform;
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 500;
 	
 	&:hover, &:focus{
 		color: #fff;
@@ -298,6 +300,7 @@ body{
 	}
 
 	&.-lg{
+		height: 37px;
 		padding: 6px 10px;
 		font-size: 16px;
 	}
@@ -312,36 +315,36 @@ body{
 	& .row{
 	}
 
-	& .row > .grid-item{
+	& .grid-view > .grid-item{
 		margin-bottom: 10px;
 	}
 
-	& .row > .grid-item.-selected{
+	& .grid-view > .grid-item.-selected{
 		transform-origin: top center;
 		animation: selected 1.5s ease infinite;
 	}
 
-	& .row > .grid-item.-selection-mode{
+	& .grid-view > .grid-item.-selection-mode{
 		cursor: pointer;
 	}
 
-	& .row > .grid-item.-selection-mode:hover > .info,
-	& .row > .grid-item.-selected > .info{
+	& .grid-view > .grid-item.-selection-mode:hover > .info,
+	& .grid-view > .grid-item.-selected > .info{
 		border-bottom-color: $brand-danger;
 	}
 
-	& .row > .grid-item > .preview{
+	& .grid-view > .grid-item > .preview{
 		border-top-left-radius: 4px;
 		border-top-right-radius: 4px;
 		height: 150px;
 		background: url('/images/welcome-featured-bg.jpg');
 	}
 
-	& .row > .grid-item > .preview.-lg{
+	& .grid-view > .grid-item > .preview.-lg{
 		height: 250px;
 	}
 
-	& .row > .grid-item > .info{
+	& .grid-view > .grid-item > .info{
 		border-bottom-left-radius: 4px;
 		border-bottom-right-radius: 4px;
 		display: block;
@@ -353,14 +356,14 @@ body{
 		border-bottom: 4px solid #fff;
 	}
 
-	& .row > .grid-item > .info > tbody > tr > td{
+	& .grid-view > .grid-item > .info > tbody > tr > td{
 		width: 50%;
 		padding: 3px;
 		line-height: 1.6;
 		vertical-align: middle;	
 	}
 
-	& .row > .grid-item > .info > .nav{
+	& .grid-view > .grid-item > .info > .nav{
 		
 	}
 }
@@ -403,6 +406,7 @@ body{
 .rev-navbar{
 	width: 100%;
 	min-height: 40px;
+	border-top: 10px solid $brand-danger;
 	
 	&.-default{
 		background: $theme-bg;
@@ -541,10 +545,6 @@ body{
 	outline: 0;
 	border-radius: 5px;
 
-	&:focus{
-		outline: 0;
-	}
-
 	&:after{
 		border-radius: 2px;
 		transition: all .3s ease;
@@ -567,6 +567,10 @@ body{
 	&:checked:after{
 	    left: 19px;
 		content: 'Yes';
+	}
+
+	&:focus, &:active, &:checked{
+		outline: 0;
 	}
 
 	@include backgrounding;
@@ -748,10 +752,18 @@ body{
 	}
 
 	&.-danger{
-		background: #F44336;
+		background: $brand-danger;
+	}
+
+	&.-flat{
+		border-radius: 0;
 	}
 }
 
 #controller-list{
 	max-height: 420px;
+}
+
+textarea{
+	resize: none;
 }

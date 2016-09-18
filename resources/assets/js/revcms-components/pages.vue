@@ -83,9 +83,7 @@
 					cancelButtonColor: '#d33',
 					confirmButtonText: 'Yes, do it!',
 					cancelButtonText: 'No, cancel!',
-					confirmButtonClass: 'rev-btn -lg -danger',
-					cancelButtonClass: 'rev-btn -lg -danger',
-					buttonsStyling: false
+					buttonsStyling: true
 				})
 				.then(function(){
 					yes();

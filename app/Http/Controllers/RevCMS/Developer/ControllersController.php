@@ -42,4 +42,28 @@ class ControllersController extends RevBaseController
                     ->mvc()
                     ->getControllerContent($request->file_path);
     }
+
+    /**
+     * Delete Controllers
+     * @param  Request $request 
+     * @return mixed           
+     */
+    public function deleteControllers(Request $request){
+        $this->checkAjaxRequest($request);
+        return $this->rev
+                    ->mvc()
+                    ->deleteControllers($request->paths) ? 'success' : 'failed';
+    }
+
+    /**
+     * Update controller's content.
+     * @param  Request $request 
+     * @return mixed
+     */
+    public function updateController(Request $request){
+        $this->checkAjaxRequest($request);
+        return $this->rev
+                    ->mvc()
+                    ->updateControllerContent($request->except(['_method'])) ? 'success': 'failed';
+    }
 }

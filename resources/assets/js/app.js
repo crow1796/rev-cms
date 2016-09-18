@@ -12,6 +12,18 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
+window.showRevLoader = function(){
+	$('.rev-spinner-wrapper')
+		.fadeIn('fast');
+};
+
+window.hideRevLoader = function(){
+	setTimeout(function(){
+		$('.rev-spinner-wrapper')
+			.fadeOut('fast');
+	}, 500);
+};
+
 Vue.filter('chunk', function(arr, len){
  	var chunks = [];
  	var i = 0;
@@ -36,6 +48,7 @@ Vue.component('rev-pages', require('./revcms-components/pages.vue'));
 Vue.component('rev-media-library', require('./revcms-components/media-library.vue'));
 Vue.component('rev-media-items', require('./revcms-components/media-items.vue'));
 Vue.component('rev-create-page', require('./revcms-components/create-page.vue'));
+Vue.component('rev-controller-maker', require('./revcms-components/mvc/controller-maker.vue'));
 // MVC Menu
 Vue.component('rev-controllers', require('./revcms-components/mvc/controllers.vue'));
 

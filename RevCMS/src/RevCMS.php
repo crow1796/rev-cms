@@ -2,15 +2,21 @@
 
 namespace RevCMS;
 use RevCMS\Modules\Mvc\Mvc;
-use RevCMS\Modules\Mvc\Router;
+use RevCMS\Modules\Router\Router;
+use RevCMS\Modules\Theme\ThemeManager;
+
 class RevCMS {
 
 	protected $mvcInstance;
 	protected $routerInstance;
 
+	/**
+	 * Instantiate Modules.
+	 */
 	public function __construct(){
 		$this->mvcInstance = new Mvc();
 		$this->routerInstance = new Router();
+		$this->themeInstance = new ThemeManager();
 	}
 
 	/**
@@ -27,5 +33,13 @@ class RevCMS {
 	 */
 	public function router(){
 		return $this->routerInstance;
+	}
+
+	/**
+	 * Get RevCMS Theme Manager Intance.
+	 * @return RevCMS\Modules\Theme\ThemeManager 
+	 */
+	public function theme(){
+		return $this->themeInstance;
 	}
 }

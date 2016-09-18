@@ -11,10 +11,13 @@ trait ControllerHelperTrait {
 	 * @return mixed            
 	 */
 	public function makeController($name, $resource = false){
-		return Artisan::call('make:controller', [
+		$params = [
 			'name' => $name,
-			'--resource' => $resource,
-			]);
+		];
+		if($resource){
+			$params['--resource'] = true;
+		}
+		return Artisan::call('make:controller', $params);
 	}
 
 	/**
@@ -58,9 +61,40 @@ trait ControllerHelperTrait {
 		return $controllers;
 	}
 
+	/**
+	 * Get controllers content.
+	 * @param  string $controller 
+	 * @return string             
+	 */
 	public function getControllerContent($controller = null){
 		if(!$controller) return false;
 		$content = File::get(str_replace('\\', '/', base_path(trim(str_replace('/', '\\', $controller), '\\'))));
 		return $content;
+	}
+
+	/**
+	 * Delete controller(s).
+	 * @param  mixed  $controllers 
+	 * @return mixed              
+	 */
+	public function deleteControllers($controllers = array()){
+		if(!is_array($controllers)){
+			$controller = $controllers;
+			return File::delete(base_path($controller));
+		}
+
+		foreach($controllers as $controller){
+			File::delete(base_path($controller));
+		}
+		return true;
+	}
+
+	/**
+	 * Update controller's content.
+	 * @param  array $newData 
+	 * @return mixed          
+	 */
+	public function updateControllerContent($newData){
+		return File::put(base_path($newData['path']), $newData['content']);
 	}
 }

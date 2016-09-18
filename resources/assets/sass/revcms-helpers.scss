@@ -111,3 +111,36 @@
 ._rev-editor-height{
 	height: 420px !important;
 }
+
+._weight-normal{
+	font-weight: normal !important;
+}
+
+._height-auto{
+	height: auto !important;
+}
+
+._bordered-center{
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	color: $default-text-color;
+	padding: 10px 0;
+	font-weight: 1.4em;
+	
+	&:before, &:after{
+		content: '';
+		display: inline-block;
+		background: $default-text-color;
+		height: 1px;
+		width: 30%;
+		vertical-align: middle;
+	}
+
+	&:before{
+		margin-right: 10px;
+	}
+	&:after{
+		margin-left: 10px;
+	}
+}
