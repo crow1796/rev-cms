@@ -2,13 +2,13 @@
 	<div class="menu-container">
 		<ul class="menu">
 			<li class="item">
-				<a href="{{ url('admin') }}">
+				<a href="{{ url(trim(config('revcms.uri'), '/')) }}">
 					<i class="fa fa-dashboard"></i>
 					Dashboard
 				</a>
 			</li>
 			<li class="item">
-				<a href="{{ url('admin/pages') }}">
+				<a href="{{ url(trim(config('revcms.uri'), '/') . '/pages') }}">
 					<i class="fa fa-file-o"></i>
 					Page
 				</a>
@@ -17,19 +17,19 @@
 						Page Menu
 					</li>
 					<li class="item">
-						<a href="{{ url('admin/pages') }}">
+						<a href="{{ url(trim(config('revcms.uri'), '/') . '/pages') }}">
 							All Pages
 						</a>
 					</li>
 					<li class="item">
-						<a href="{{ url('admin/pages/create') }}">
+						<a href="{{ url(trim(config('revcms.uri'), '/') . '/pages/create') }}">
 							Add New
 						</a>
 					</li>
 				</ul>
 			</li>
 			<li class="item">
-				<a href="{{ url('admin/partials') }}">
+				<a href="{{ url(trim(config('revcms.uri'), '/') . '/partials') }}">
 					<i class="fa fa-file-text-o"></i>
 					Partials
 				</a>
@@ -50,7 +50,7 @@
 				</ul>
 			</li>
 			<li class="item">
-				<a href="{{ url(Config::get('revcms.uri') . '/media') }}">
+				<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/media') }}">
 					<i class="fa fa-picture-o"></i>
 					Media
 				</a>
@@ -59,7 +59,7 @@
 						Media Menu
 					</li>
 					<li class="item">
-						<a href="{{ url(Config::get('revcms.uri') . '/media') }}">
+						<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/media') }}">
 							Library
 						</a>
 					</li>
@@ -71,7 +71,7 @@
 				</ul>
 			</li>
 			<li class="item">
-				<a href="{{ url('admin/components') }}">
+				<a href="{{ url(trim(config('revcms.uri'), '/') . '/components') }}">
 					<i class="fa fa-puzzle-piece"></i>
 					Components
 				</a>
@@ -92,7 +92,7 @@
 				</ul>
 			</li>
 			<li class="item">
-				<a href="{{ url(Config::get('revcms.uri') . '/themes') }}">
+				<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/themes') }}">
 					<i class="fa fa-television"></i>
 					Themes
 				</a>
@@ -101,24 +101,24 @@
 						Theme Menu
 					</li>
 					<li class="item">
-						<a href="{{ url('/admin/themes') }}">
+						<a href="{{ url(trim(config('revcms.uri'), '/') . '/themes') }}">
 							Installed Themes
 						</a>
 					</li>
 					<li class="item">
-						<a href="{{ url('/admin/themes') }}">
+						<a href="{{ url(trim(config('revcms.uri'), '/') . '/themes') }}">
 							Active Theme
 						</a>
 					</li>
 					<li class="item">
-						<a href="{{ url('/admin/install') }}">
+						<a href="{{ url(trim(config('revcms.uri'), '/') . '/install') }}">
 							Add Theme
 						</a>
 					</li>
 				</ul>
 			</li>
 			<li class="item">
-				<a href="{{ url('admin/settings') }}">
+				<a href="{{ url(trim(config('revcms.uri'), '/') . '/settings') }}">
 					<i class="fa fa-cogs"></i>
 					Settings
 				</a>
@@ -137,7 +137,7 @@
 						</a>
 					</li>
 					<li class="item">
-						<a href="{{ url(Config::get('revcms.uri') . '/settings/backend') }}">
+						<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/settings/backend') }}">
 							Admin Settings
 						</a>
 					</li>
@@ -159,17 +159,17 @@
 					<ul class="sub-menu">
 						<li class="title">MVC Menu</li>
 						<li class="item">
-							<a href="{{ url(Config::get('revcms.uri') . '/developer/mvc/models') }}">
+							<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/developer/mvc/models') }}">
 								Models
 							</a>
 						</li>
 						<li class="item">
-							<a href="{{ url(Config::get('revcms.uri') . '/developer/mvc/views') }}">
+							<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/developer/mvc/views') }}">
 								Views
 							</a>
 						</li>
 						<li class="item">
-							<a href="{{ url(Config::get('revcms.uri') . '/developer/mvc/controllers') }}">
+							<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/developer/mvc/controllers') }}">
 								Controllers
 							</a>
 						</li>
@@ -186,12 +186,12 @@
 							Database Menu
 						</li>
 						<li class="item">
-							<a href="{{ url(Config::get('revcms.uri') . '/developer/database/migrations') }}">
+							<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/developer/database/migrations') }}">
 								Migrations
 							</a>
 						</li>
 						<li class="item">
-							<a href="{{ url(Config::get('revcms.uri') . '/developer/database/seeders') }}">
+							<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/developer/database/seeders') }}">
 								Seeders
 							</a>
 						</li>
@@ -208,12 +208,12 @@
 							HTTP Menu
 						</li>
 						<li class="item">
-							<a href="{{ url(Config::get('revcms.uri') . '/developer/http/requests') }}">
+							<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/developer/http/requests') }}">
 								Requests
 							</a>
 						</li>
 						<li class="item">
-							<a href="{{ url(Config::get('revcms.uri') . '/developer/http/middlewares') }}">
+							<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/developer/http/middlewares') }}">
 								Middlewares
 							</a>
 						</li>

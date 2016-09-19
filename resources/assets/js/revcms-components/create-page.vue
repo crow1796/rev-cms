@@ -41,7 +41,7 @@
 			populateControllers(){
 				showRevLoader();
 				this.$http
-					.get("{base_url}/api/revcms/developer/mvc/controllers")
+					.get("{admin_base_url}/api/revcms/developer/mvc/controllers")
 					.then((response) => {
 						this.controllers = _.map(response.data, function(controller){
 							controller.selected = false;

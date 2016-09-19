@@ -5,6 +5,7 @@
 		},
 		data() {
 			return {
+				adminBaseUrl: admin_base_url,
 				pages: [
 					{
 						id: 1,
@@ -108,7 +109,7 @@
 	<div class="rev-grid">
 		<!-- Page Nav -->
 		<div class="view-nav">
-			<a href="/admin/pages/create" class="rev-btn -md -danger">
+			<a href="{{ adminBaseUrl }}/pages/create" class="rev-btn -md -danger">
 				Add New
 			</a>
 			<button class="rev-btn -md -danger" 

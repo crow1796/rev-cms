@@ -65,12 +65,14 @@ class RevCMSTest extends TestCase
             $tmpTheme = [];
             $tmpTheme['path'] = $theme;
             $tmpTheme['info'] = Yaml::parse(\File::get($theme . '\theme.yaml'));
-            $tmpTheme['info']['screenshot'] = str_replace('\\', '/', collect(\File::allFiles($theme))->filter(function($file){
-                return startsWith($file->getFilename(), 'screenshot');
-            })->first()->getPath());
+            $themeFiles = collect(\File::allFiles($theme));
+            $screenshot = $themeFiles->filter(function($file){
+                return \Illuminate\Support\Str::startsWith($file->getFilename(), 'screenshot') ? $file->getFilename() : false;
+            })->first();
+            $tmpTheme['info']['screenshot'] = str_replace('\\', '/', $screenshot ? $screenshot->getPathname() : null);
             return $tmpTheme;
         });
-        // dd($themes);
+        dd($themes);
     }
 
     public function testPageCodeTrimmer(){

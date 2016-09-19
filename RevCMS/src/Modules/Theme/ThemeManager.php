@@ -27,12 +27,11 @@ class ThemeManager {
 	 * @return string        
 	 */
 	protected function getScreenshotOf($theme){
-		$files = collect(File::allFiles($theme));
-		$filesStartsWithScreenshot = $files->filter(function($file){
-			return startsWith($file->getFilename(), 'screenshot');
-		});
-		$screenshot = $filesStartsWithScreenshot->first();
-		$screenshotPath = str_replace('\\', '/', $screenshot->getPath());
+		$themeFiles = collect(\File::allFiles($theme));
+		$screenshot = $themeFiles->filter(function($file){
+		    return \Illuminate\Support\Str::startsWith($file->getFilename(), 'screenshot') ? $file->getFilename() : false;
+		})->first();
+		$screenshotPath = str_replace('\\', '/', $screenshot ? $screenshot->getPathname() : null);
 		return $screenshotPath;
 	}
 }

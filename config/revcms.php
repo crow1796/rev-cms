@@ -3,12 +3,17 @@ return [
 	/**
 	 * Admin URI
 	 */
-	'uri' => 'admin',
+	'uri' => '/backend/administrator/',
 
 	/**
 	 * Title to be shown in the header and browser.
 	 */
 	'title' => 'RevCMS - Development',
+
+	/**
+	 * Logo visibility.
+	 */
+	'show_logo' => false,
 
 	/**
 	 * Url of the logo.

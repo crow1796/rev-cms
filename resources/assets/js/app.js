@@ -49,6 +49,8 @@ Vue.component('rev-media-library', require('./revcms-components/media-library.vu
 Vue.component('rev-media-items', require('./revcms-components/media-items.vue'));
 Vue.component('rev-create-page', require('./revcms-components/create-page.vue'));
 Vue.component('rev-controller-maker', require('./revcms-components/mvc/controller-maker.vue'));
+Vue.component('rev-themes', require('./revcms-components/theme/themes.vue'));
+Vue.component('rev-theme-card', require('./revcms-components/theme/theme-card.vue'));
 // MVC Menu
 Vue.component('rev-controllers', require('./revcms-components/mvc/controllers.vue'));
 

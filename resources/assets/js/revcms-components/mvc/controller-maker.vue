@@ -18,7 +18,7 @@
 				$('.rev-spinner-wrapper')
 					.fadeIn('fast');
 				this.$http
-					.post("{base_url}/api/revcms/developer/mvc/controllers/make", this.newController)
+					.post("{admin_base_url}/api/revcms/developer/mvc/controllers/make", this.newController)
 					.then((response) => {
 						if(response.status == 200){
 							// Success
@@ -39,7 +39,7 @@
 				$('.rev-spinner-wrapper')
 					.fadeIn('fast');
 				this.$http
-					.get("{base_url}/api/revcms/developer/mvc/controllers")
+					.get("{admin_base_url}/api/revcms/developer/mvc/controllers")
 					.then((response) => {
 						this.controllers = _.map(response.data, function(controller){
 							controller.selected = false;

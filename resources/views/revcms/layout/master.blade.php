@@ -4,6 +4,7 @@
 	<script>
 	    window.Laravel = { csrfToken: '{{ csrf_token() }}' };
 	    window.base_url = '{{ url('/') }}';
+	    window.admin_base_url = '{{ url(trim(config('revcms.uri'), '/')) }}';
 	</script>
 	@yield('before_header_assets')
 	@include('revcms.layout.partials._assets', ['title' => $title])

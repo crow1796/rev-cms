@@ -43,12 +43,20 @@ class Router {
 	 * @return  void
 	 */
 	public function apiRoutes(){
-		Route::group(['prefix' => 'revcms', 'namespace' => 'RevCMS\Developer'], function(){
-			Route::get('/developer/mvc/controllers', 'ControllersController@allControllers');
-			Route::post('/developer/mvc/controllers/make', 'ControllersController@create');
-			Route::post('/developer/mvc/controllers/delete-controller', 'ControllersController@deleteControllers');
-			Route::patch('/developer/mvc/controllers/update-controller', 'ControllersController@updateController');
-			Route::get('/developer/mvc/controllers/get-content', 'ControllersController@getContent');
+		Route::group(['namespace' => 'RevCMS', 'prefix' => 'revcms'], function(){
+			Route::group(['namespace' => 'Developer'], function(){
+				Route::group(['prefix' => '/developer/mvc/controllers'], function(){
+					Route::get('/', 'ControllersController@allControllers');
+					Route::post('/make', 'ControllersController@create');
+					Route::post('/delete-controller', 'ControllersController@deleteControllers');
+					Route::patch('/update-controller', 'ControllersController@updateController');
+					Route::get('/get-content', 'ControllersController@getContent');
+				});
+			});
+
+			Route::group(['prefix' => '/themes'], function(){
+				Route::get('/installed-themes', 'ThemesController@getInstalledThemes');
+			});
 		});
 	}
 }
