@@ -3,7 +3,7 @@ return [
 	/**
 	 * Admin URI
 	 */
-	'uri' => '/backend/administrator/',
+	'uri' => 'admin',
 
 	/**
 	 * Title to be shown in the header and browser.

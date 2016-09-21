@@ -1,14 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\RevCMS;
+namespace RevCMS\Http\Controllers;
 
 use Illuminate\Http\Request;
 use RevCMS\RevCMS;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class RevBaseController extends Controller
+class RevBaseController extends BaseController
 {
+	use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
 	protected $rev;
 
 	public function __construct(RevCMS $rev){

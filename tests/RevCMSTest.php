@@ -72,7 +72,7 @@ class RevCMSTest extends TestCase
             $tmpTheme['info']['screenshot'] = str_replace('\\', '/', $screenshot ? $screenshot->getPathname() : null);
             return $tmpTheme;
         });
-        dd($themes);
+        // dd($themes);
     }
 
     public function testPageCodeTrimmer(){
@@ -117,15 +117,16 @@ class RevCMSTest extends TestCase
                 // Protected End
                 // Helpers End';
         // $reg = '/\/\/\s?Action Start(.*)\/\/\s?Action End/';
-        $actionReg = '~\/\/\s*action\s*start(.*)\/\/\s*action\s*end~mi';
-        $helpersReg = '~\/\/\s*helpers\s*start(.*)\/\/\s*helpers\s*end~mi';
-        $publicHelpersReg = '~\/\/\s*public\s*start(.*)\/\/\s*public\s*end~mi';
-        $protectedHelpersReg = '~\/\/\s*protected\s*start(.*)\/\/\s*protected\s*end~mi';
-        $privateHelpersReg = '~\/\/\s*private\s*start(.*)\/\/\s*private\s*end~mi';
-        $usesReg = '~\/\/\s*uses\s*\:\s*(.*)~mi';
-        $injectReg = '~\/\/\s*inject\s*\:\s*(.*)~mi';
-        preg_match_all($injectReg, $codeSample2, $matches);
-        // dd($matches);
+        $actionReg = '~\/\/\s*action\s*start(.*)\/\/\s*action\s*end~si';
+        $helpersReg = '~\/\/\s*helpers\s*start(.*)\/\/\s*helpers\s*end~si';
+        $publicHelpersReg = '~\/\/\s*public\s*start(.*)\/\/\s*public\s*end~si';
+        $protectedHelpersReg = '~\/\/\s*protected\s*start(.*)\/\/\s*protected\s*end~si';
+        $privateHelpersReg = '~\/\/\s*private\s*start(.*)\/\/\s*private\s*end~si';
+        $usesReg = '~\/\/\s*uses\s*\:\s*(.*)~i';
+        $injectReg = '~\/\/\s*inject\s*\:\s*(.*)~i';
+        preg_match_all($helpersReg, $codeSample2, $matches);
+        $content = isset($matches[1]) ? isset($matches[1][0]) ? $matches[1][0] : null : $matches[1];
+        dd($content);
     }
 
     

@@ -24,6 +24,11 @@
 
 <template>
 	<h2>Installed Themes</h2>
+	<div class="view-nav">
+		<button class="rev-btn -md -danger" type="button">
+			Add New
+		</button>
+	</div>
 	<div class="rev-grid">
 		<div class="row grid-view"
 				v-for="themeRow in themes | chunk 3">

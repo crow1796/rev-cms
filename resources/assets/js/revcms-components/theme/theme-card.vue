@@ -8,11 +8,29 @@
 	<div class="preview -lg" style="background-image: {{ theme.info.screenshot }};">
 	</div>
 	<div class="info">
-		{{ theme.info.name }}
-		{{ theme.info.description }}
-		{{ theme.info.url }}
-		{{ theme.info.author }}
-		{{ theme.path }}
+		<h3 class="text-center _no-margin">
+			{{ theme.info.name }}
+		</h3>
+		<p>
+			<div>
+				<h5 class="_no-margin">Description:</h5>
+				<div style="padding: 4px 4px 4px 20px;">
+					{{ theme.info.description }}
+				</div>
+			</div>
+			<div>
+				<h5 class="_no-margin">URL:</h5>
+				<div style="padding: 4px 4px 4px 20px;">
+					{{ theme.info.url }}
+				</div>
+			</div>
+			<div>
+				<h5 class="_no-margin">Author:</h5>
+				<div style="padding: 4px 4px 4px 20px;">
+					{{ theme.info.author }}
+				</div>
+			</div>
+		</p>
 		<div class="text-center">
 			<button type="button" class="rev-btn -md -success">
 				Activate

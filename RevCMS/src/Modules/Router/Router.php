@@ -8,7 +8,7 @@ class Router {
 	 * @return void 
 	 */
 	public function webRoutes(){
-		Route::group(['prefix' => \Config::get('revcms.uri'), 'namespace' => 'RevCMS'], function(){
+		Route::group(['namespace' => 'RevCMS\Http\Controllers', 'prefix' => \Config::get('revcms.uri')], function(){
 			Route::get('/', 'DashboardController@index');
 			Route::resource('/pages', 'PagesController');
 			Route::get('/media', 'MediaController@index');
@@ -43,7 +43,7 @@ class Router {
 	 * @return  void
 	 */
 	public function apiRoutes(){
-		Route::group(['namespace' => 'RevCMS', 'prefix' => 'revcms'], function(){
+		Route::group(['namespace' => 'RevCMS\Http\Controllers', 'prefix' => 'revcms'], function(){
 			Route::group(['namespace' => 'Developer'], function(){
 				Route::group(['prefix' => '/developer/mvc/controllers'], function(){
 					Route::get('/', 'ControllersController@allControllers');

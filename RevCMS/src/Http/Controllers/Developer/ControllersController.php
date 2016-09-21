@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\RevCMS\Developer;
+namespace RevCMS\Http\Controllers\Developer;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\RevCMS\RevBaseController;
+use RevCMS\Http\Controllers\RevBaseController;
 
 class ControllersController extends RevBaseController
 {
