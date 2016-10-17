@@ -12,10 +12,10 @@
 </head>
 <body id="rev-cms-app" class="{{ \Config::get('revcms.show_header') ? '_header-pad' : '' }}">
 	<div id="page-wrapper">
-		@include('revcms.layout.partials._sidebar')
 		@if(\Config::get('revcms.show_header'))
 			@include('revcms.layout.partials._header')
 		@endif
+		@include('revcms.layout.partials._sidebar')
 		<div id="page-container">
 			@yield('content')
 		</div>

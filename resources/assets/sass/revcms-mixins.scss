@@ -25,11 +25,11 @@
 	}
 
 	&.-danger{
-		background: $brand-danger;
+		background: $theme-btn-color;
 	}
 
 	&.-danger:hover{
-		@include materialShadow($brand-danger);
+		@include materialShadow($theme-btn-color);
 	}
 
 	&.-warning{

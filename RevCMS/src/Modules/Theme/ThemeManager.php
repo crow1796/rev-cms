@@ -3,6 +3,7 @@ namespace RevCMS\Modules\Theme;
 
 use Symfony\Component\Yaml\Yaml;
 use File;
+use Illuminate\Support\Str;
 
 class ThemeManager {
 	/**
@@ -13,10 +14,10 @@ class ThemeManager {
 		$themes = collect(File::directories(resource_path('views\themes')));
 		$themes = $themes->map(function($theme){
 		    $tmpTheme = [];
-		    $tmpTheme['path'] = $theme;
-		    $tmpTheme['info'] = Yaml::parse(File::get($theme . '\theme.yaml'));
-		    $tmpTheme['info']['screenshot'] = $this->getScreenshotOf($theme);
-		    return $tmpTheme;
+            $tmpTheme['path'] = $theme;
+            $tmpTheme['info'] = Yaml::parse(File::get($theme . '\theme.yaml'));
+            $tmpTheme['info']['screenshot'] = $this->getScreenshotOf($theme);
+            return $tmpTheme;
 		});
 		return $themes;
 	}
@@ -27,11 +28,18 @@ class ThemeManager {
 	 * @return string        
 	 */
 	protected function getScreenshotOf($theme){
-		$themeFiles = collect(\File::allFiles($theme));
-		$screenshot = $themeFiles->filter(function($file){
-		    return \Illuminate\Support\Str::startsWith($file->getFilename(), 'screenshot') ? $file->getFilename() : false;
-		})->first();
-		$screenshotPath = str_replace('\\', '/', $screenshot ? $screenshot->getPathname() : null);
-		return $screenshotPath;
+	    preg_match('~(themes.*)~', $theme, $matches);
+	    $theme = public_path($matches[1]);
+	    if(!File::isDirectory($theme)){
+	        return null;
+	    }
+	    $themeFiles = collect(File::allFiles($theme));
+	    $screenshot = $themeFiles->filter(function($file){
+	        return Str::startsWith($file->getFilename(), 'screenshot') ? $file->getFilename() : false;
+	    })->first();
+	    if($screenshot){
+	        return url(str_replace('\\', '/', $matches[1] . '/' . $screenshot->getFilename()));
+	    }
+	    return null;
 	}
 }

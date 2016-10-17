@@ -11,6 +11,10 @@ class PagesController extends RevBaseController
     	return $this->makeView('revcms.pages.index', 'Pages');
     }
 
+    public function store(Request $request){
+    	
+    }
+
     public function create(){
     	return $this->makeView('revcms.pages.create', 'New Page');
     }

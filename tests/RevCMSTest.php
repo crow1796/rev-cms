@@ -26,27 +26,21 @@ class RevCMSTest extends TestCase
                 return (trim(\App::getNamespace(), '\\') . (ucfirst(preg_replace('/\//', '\\', trim($file, '.php')))));
             }, \File::files($dir));
         }, $directories);
-
+        
         $controllers = collect($controllers)
                         ->flatten()
                         ->filter(function($item){
                             return $tmp['name'] = $item;
-                        })
-                        ->pipe(function($collection){
-                            return $collection->splice(0, $collection->count() - 1);
-                        })
-                        ->pipe(function($collection){
-                            $temp = $collection->map(function($item){
-                                $tmp = [];
-                                $controllerFile = str_replace('\\', '/', (new \ReflectionClass($item))->getFileName());
-                                $basePath = str_replace('\\', '/', base_path());
-                                $tmp['name'] = $item;
-                                $tmp['path'] = str_replace($basePath, '', $controllerFile);
-                                return $tmp;
-                            });
-                            return $temp;
+                        })->map(function($item){
+                            $tmp = [];
+                            $controllerFile = str_replace('\\', '/', (new \ReflectionClass($item))->getFileName());
+                            $basePath = str_replace('\\', '/', base_path());
+                            $tmp['name'] = $item;
+                            $tmp['path'] = str_replace($basePath, '', $controllerFile);
+                            return $tmp;
                         })
                         ->toArray();
+        // dd($controllers);
         // return $controllers;
         // dump(trim((new \ReflectionClass($controllers[0]))->getFileName(), $base));
         // $this->assertTrue(is_array($controllers));
@@ -60,74 +54,82 @@ class RevCMSTest extends TestCase
     }
 
     public function testThemesInfoReader(){
-        $themes = collect(\File::directories(resource_path('views\themes')));
+        $themes = collect(File::directories(resource_path('views\themes')));
         $themes = $themes->map(function($theme){
             $tmpTheme = [];
             $tmpTheme['path'] = $theme;
-            $tmpTheme['info'] = Yaml::parse(\File::get($theme . '\theme.yaml'));
-            $themeFiles = collect(\File::allFiles($theme));
-            $screenshot = $themeFiles->filter(function($file){
-                return \Illuminate\Support\Str::startsWith($file->getFilename(), 'screenshot') ? $file->getFilename() : false;
-            })->first();
-            $tmpTheme['info']['screenshot'] = str_replace('\\', '/', $screenshot ? $screenshot->getPathname() : null);
+            $tmpTheme['info'] = Yaml::parse(File::get($theme . '\theme.yaml'));
+            $tmpTheme['info']['screenshot'] = $this->getScreenshotOf($theme);
             return $tmpTheme;
         });
+        // return $themes;
         // dd($themes);
     }
 
+    protected function getScreenshotOf($theme){
+        preg_match('~(themes.*)~', $theme, $matches);
+        $theme = public_path($matches[1]);
+        if(!File::isDirectory($theme)){
+            return null;
+        }
+        $themeFiles = collect(File::allFiles($theme));
+        $screenshot = $themeFiles->filter(function($file){
+            return \Illuminate\Support\Str::startsWith($file->getFilename(), 'screenshot') ? $file->getFilename() : false;
+        })->first();
+        if($screenshot){
+            return url(str_replace('\\', '/', $matches[1] . '/' . $screenshot->getFilename()));
+        }
+        return null;
+    }
+
     public function testPageCodeTrimmer(){
-        $codeSample1 = '// Action Start
-                // Uses: App\User, Illuminate\Http\Request, Illuminate\Http\Response, RevCMS\RevCMS, Carbon\Carbon
-                // Inject: $id, \Request $request, Rev $rev
+        $codeSample1 = '
+// Inject: $id
 
-                if(!$request->ajax()) return response("Access Denied.", 402);
+$viewData["user"] = \App\User::findOrFail($id);';
+        // $codeSample2 = '// Uses: App\Post, Illuminate\Http\Request, Illuminate\Http\Response, File, Carbon\Carbon
+        //         // Inject: $slug, Request $request
+        //         // Action Start
 
-                $user = User::findOrFail($id);
-                $age = $this->getAgeOf($user);
-                $viewData["user"] = $user;
+        //         $post = Post::findBySlugOrFail($slug);
+        //         $viewData["post"] = $post;
 
-                // Action End
-                // Helpers Start
+        //         // Action End
+        //         // Helpers Start
+        //         // Protected Start
+        //         function getAuthorOf($post = null){
+        //             if(!$post) return false;
 
-                // Public Start
-                function getAgeOf($user = null){
-                    if(!$user) return false;
-
-                    return $user->birth_date
-                                ->diffInYears(Carbon::now()->format("Y"));
-                }
-                // Public End
-
-                // Helpers End';
-        $codeSample2 = '// Uses: App\Post, Illuminate\Http\Request, Illuminate\Http\Response, File, Carbon\Carbon
-                // Inject: $slug, Request $request
-                // Action Start
-
-                $post = Post::findBySlugOrFail($slug);
-                $viewData["post"] = $post;
-
-                // Action End
-                // Helpers Start
-                // Protected Start
-                function getAuthorOf($post = null){
-                    if(!$post) return false;
-
-                    return $post->author->full_name;
-                }
-                // Protected End
-                // Helpers End';
+        //             return $post->author->full_name;
+        //         }
+        //         // Protected End
+        //         // Helpers End';
         // $reg = '/\/\/\s?Action Start(.*)\/\/\s?Action End/';
         $actionReg = '~\/\/\s*action\s*start(.*)\/\/\s*action\s*end~si';
         $helpersReg = '~\/\/\s*helpers\s*start(.*)\/\/\s*helpers\s*end~si';
         $publicHelpersReg = '~\/\/\s*public\s*start(.*)\/\/\s*public\s*end~si';
         $protectedHelpersReg = '~\/\/\s*protected\s*start(.*)\/\/\s*protected\s*end~si';
         $privateHelpersReg = '~\/\/\s*private\s*start(.*)\/\/\s*private\s*end~si';
+
         $usesReg = '~\/\/\s*uses\s*\:\s*(.*)~i';
         $injectReg = '~\/\/\s*inject\s*\:\s*(.*)~i';
-        preg_match_all($helpersReg, $codeSample2, $matches);
+        preg_match_all($usesReg, $codeSample1, $matches);
         $content = isset($matches[1]) ? isset($matches[1][0]) ? $matches[1][0] : null : $matches[1];
-        dd($content);
+
+        $pageInfo = array(
+                'action' => 'update',
+                'view' => 'pages.products.update',
+                'title' => 'Products Page',
+                'controller' => 'App\Http\Controllers\Test\TestController1',
+                'template' => 'default',
+                'source' => $codeSample1,
+            );
+        $pageSource = \RevCMS::cms()->createPage($pageInfo);
+        // \File::put('actionwriter.txt', $this->buildBlockFor($page, $codeSample1));
+        // dd($this->buildBlockFor($page, $codeSample1));
     }
 
-    
+    public function testDashboardSidebarFactory(){
+        (\RevCMS::dashboard()->addSidebarMenu('test/menu', 'MyTestController@index'));
+    }
 }

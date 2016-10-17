@@ -7,7 +7,8 @@
 		data(){
 			return {
 				showMakeForm: false,
-				newController: {}
+				newController: {},
+				nameFailed: false
 			};
 		},
 		methods: {
@@ -15,6 +16,10 @@
 				this.showMakeForm = !this.showMakeForm;
 			},
 			makeController(){
+				if(this.newController.name.trim() == ''){
+					this.nameFailed = true;
+					return false;
+				}
 				$('.rev-spinner-wrapper')
 					.fadeIn('fast');
 				this.$http
@@ -73,7 +78,14 @@
 				@submit.prevent="makeController">
 			php artisan make:controller 
 			<div class="rev-field-group -xs">
-				<input type="text" name="controller_name" id="controller_name" placeholder="Name" class="rev-field -md -flat" v-model="newController.name">
+				<input type="text" 
+						name="controller_name" 
+						id="controller_name" 
+						placeholder="Name" 
+						:class="{ '-error': nameFailed }"
+						class="rev-field -md" 
+						v-model="newController.name"
+						required>
 			</div>
 			<div class="rev-field-group -xs">
 				<label for="resource">

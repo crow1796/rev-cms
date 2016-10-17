@@ -91,6 +91,7 @@
 						.then((response) => {
 							this.controllers.$remove(this.selectedController);
 							this.controllerEditor.setValue('');
+							this.selectedController = null;
 							swal(
 								'Success',
 								'Controller has been deleted successfully.',

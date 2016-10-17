@@ -27,7 +27,7 @@ class RevServiceProvider extends ServiceProvider
             return (new RevCMS());
         });
 
-        $this->app->bind('RevCMS\RevCMS', function(){
+        $this->app->singleton('RevCMS\RevCMS', function(){
            return (new RevCMS()); 
         });
     }

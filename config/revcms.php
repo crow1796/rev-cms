@@ -52,4 +52,10 @@ return [
 	 * Default: resources/views/
 	 */
 	'views_base_path' => 'resources/views/',
+
+	/**
+	 * Custom Sidebar Menu Title
+	 * Default: 'Custom Menu'
+	 */
+	'custom_sidebar_menu_title' => 'Custom Menu',
 ];
