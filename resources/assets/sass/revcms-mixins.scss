@@ -1,0 +1,69 @@
+@mixin scrollBar($thumbColor){
+	&::-webkit-scrollbar{
+		width: 6px; 
+		padding: 0 2px;
+	}
+
+	&::-webkit-scrollbar-track{
+		// background: lighten(#222, 10%);
+		border-radius: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb{
+		background: $thumbColor;
+		border-radius: 5px;
+	}
+}
+
+@mixin backgrounding(){
+	&.-primary{
+		background: $brand-primary;
+	}
+
+	&.-primary:hover{
+		@include materialShadow($brand-primary);
+	}
+
+	&.-danger{
+		background: $theme-btn-color;
+	}
+
+	&.-danger:hover{
+		@include materialShadow($theme-btn-color);
+	}
+
+	&.-warning{
+		background: $brand-warning;
+	}
+
+	&.-warning:hover{
+		@include materialShadow($brand-warning);
+	}
+
+	&.-success{
+		background: $brand-success;
+	}
+
+	&.-success:hover{
+		@include materialShadow($brand-success);
+	}
+
+	&.-default{
+		// @include materialShadow($btn-default-color);
+		background: $btn-default-color;
+	}
+
+	&.-default:hover{
+		@include materialShadow($btn-default-color);
+	}
+}
+
+@mixin wordWrap(){
+	word-wrap: break-word;
+	word-break: break-word;
+}
+
+@mixin materialShadow($color){
+	// box-shadow: 0 16px 26px -10px rgba($color, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba($color, 0.2);
+	box-shadow: 0 14px 26px -12px rgba($color, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba($color, 0.2);
+}

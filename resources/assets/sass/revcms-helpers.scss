@@ -1,0 +1,164 @@
+._v-top{
+	vertical-align: top !important;
+}
+
+._v-middle{
+	vertical-align: middle !important;
+}
+
+._v-bottom{
+	vertical-align: bottom !important;
+}
+
+._header-pad{
+	padding-top: 50px !important;
+}
+
+._pointer{
+	cursor: pointer !important;
+}
+
+._no-animation{
+	animation: none !important;
+}
+
+._animation-once{
+	animation-iteration-count: 1 !important;
+}
+
+._height-scroll-parent{
+	overflow: hidden !important;
+	position: relative !important;
+	min-height: 100% !important;
+}
+
+._height-scroll{
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	height: 100% !important;
+	@include scrollBar(darken($theme-btn-color, 10%));
+}
+
+._border-right-light{
+	border-right: 1px solid rgba(black, .1) !important;
+}
+
+._clearfix{
+	clear: both !important;
+}
+
+._table{
+	display: table !important;
+
+	._table-row{
+		display: table-row !important;
+	}
+
+	._table-row ._table-cell{
+		display: table-cell !important;
+	}
+}
+
+._full-width{
+	width: 100% !important;
+}
+
+._full-height{
+	height: 100% !important;
+}
+
+._inline-block {
+	display: inline-block !important;
+}
+
+._no-margin{
+	margin: 0 !important;
+}
+
+._no-margin-left{
+	margin-left: 0 !important;
+}
+
+._no-margin-right{
+	margin-right: 0 !important;
+}
+
+._full-spinner-wrapper, ._relative{
+	position: relative !important;
+}
+
+._static{
+	position: static !important;
+}
+
+._floating-form{
+	color: $theme-text-color;
+	padding: 20px !important;
+	position: absolute !important;
+	left: 0 !important;
+	height: 170px !important;
+	background: $theme-bg !important;
+	z-index: 999 !important;
+	top: 100% !important;
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2) !important;
+}
+
+._rev-time{
+	animation-duration: 15s !important;
+	animation-delay: -2s !important;
+}
+
+._rev-radius{
+	border-radius: 4px !important;
+}
+
+._block{
+	display: block !important;
+	width: 100% !important;
+}
+
+._material-normal-shadow{
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2) !important;
+}
+
+._rev-editor-height{
+	height: 420px !important;
+}
+
+._weight-normal{
+	font-weight: normal !important;
+}
+
+._height-auto{
+	height: auto !important;
+}
+
+._bordered-center{
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	color: $theme-text-color;
+	padding: 10px 0;
+	font-weight: 1.4em;
+	
+	&:before, &:after{
+		content: '';
+		display: inline-block;
+		background: $theme-text-color;
+		height: 1px;
+		width: 30%;
+		vertical-align: middle;
+	}
+
+	&:before{
+		margin-right: 10px;
+	}
+	&:after{
+		margin-left: 10px;
+	}
+}
+
+._word-wrap{
+	word-wrap: break-word;
+	word-break: break-word;
+}
