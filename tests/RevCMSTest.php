@@ -26,7 +26,6 @@ class RevCMSTest extends TestCase
                 return (trim(\App::getNamespace(), '\\') . (ucfirst(preg_replace('/\//', '\\', trim($file, '.php')))));
             }, \File::files($dir));
         }, $directories);
-        
         $controllers = collect($controllers)
                         ->flatten()
                         ->filter(function($item){

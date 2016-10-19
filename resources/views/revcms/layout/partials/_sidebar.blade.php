@@ -4,15 +4,28 @@
 			<li class="item">
 				<a href="{{ url(trim(config('revcms.uri'), '/')) }}">
 					<i class="fa fa-dashboard"></i>
+<<<<<<< HEAD
 					<span class="title">Dashboard</span>
+=======
+					Dashboard
+>>>>>>> 29c506dd6efd13b0676a586d0945390032f8e0f1
 				</a>
 			</li>
 			<li class="item">
 				<a href="{{ url(trim(config('revcms.uri'), '/') . '/pages') }}">
 					<i class="fa fa-file-o"></i>
+<<<<<<< HEAD
 					<span class="title">Pages</span>
 				</a>
 				<ul class="sub-menu">
+=======
+					Page
+				</a>
+				<ul class="sub-menu">
+					<li class="title">
+						Page Menu
+					</li>
+>>>>>>> 29c506dd6efd13b0676a586d0945390032f8e0f1
 					<li class="item">
 						<a href="{{ url(trim(config('revcms.uri'), '/') . '/pages') }}">
 							All Pages
@@ -28,9 +41,18 @@
 			<li class="item">
 				<a href="{{ url(trim(config('revcms.uri'), '/') . '/partials') }}">
 					<i class="fa fa-file-text-o"></i>
+<<<<<<< HEAD
 					<span class="title">Partials</span>
 				</a>
 				<ul class="sub-menu">
+=======
+					Partials
+				</a>
+				<ul class="sub-menu">
+					<li class="title">
+						Partials Menu
+					</li>
+>>>>>>> 29c506dd6efd13b0676a586d0945390032f8e0f1
 					<li class="item">
 						<a href="#">
 							All Partials
@@ -46,9 +68,18 @@
 			<li class="item">
 				<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/media') }}">
 					<i class="fa fa-picture-o"></i>
+<<<<<<< HEAD
 					<span class="title">Media</span>
 				</a>
 				<ul class="sub-menu">
+=======
+					Media
+				</a>
+				<ul class="sub-menu">
+					<li class="title">
+						Media Menu
+					</li>
+>>>>>>> 29c506dd6efd13b0676a586d0945390032f8e0f1
 					<li class="item">
 						<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/media') }}">
 							Library
@@ -64,9 +95,18 @@
 			<li class="item">
 				<a href="{{ url(trim(config('revcms.uri'), '/') . '/components') }}">
 					<i class="fa fa-puzzle-piece"></i>
+<<<<<<< HEAD
 					<span class="title">Components</span>
 				</a>
 				<ul class="sub-menu">
+=======
+					Components
+				</a>
+				<ul class="sub-menu">
+					<li class="title">
+						Components Menu
+					</li>
+>>>>>>> 29c506dd6efd13b0676a586d0945390032f8e0f1
 					<li class="item">
 						<a href="#">
 							Installed
@@ -82,6 +122,7 @@
 			<li class="item">
 				<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/themes') }}">
 					<i class="fa fa-television"></i>
+<<<<<<< HEAD
 					<span class="title">Theme</span>
 				</a>
 				<ul class="sub-menu">
@@ -97,12 +138,33 @@
 					</li>
 					<li class="item">
 						<a href="{{ url(trim(config('revcms.uri'), '/') . '/themes/install') }}">
+=======
+					Themes
+				</a>
+				<ul class="sub-menu">
+					<li class="title">
+						Theme Menu
+					</li>
+					<li class="item">
+						<a href="{{ url(trim(config('revcms.uri'), '/') . '/themes') }}">
+							Installed Themes
+						</a>
+					</li>
+					<li class="item">
+						<a href="{{ url(trim(config('revcms.uri'), '/') . '/themes') }}">
+							Active Theme
+						</a>
+					</li>
+					<li class="item">
+						<a href="{{ url(trim(config('revcms.uri'), '/') . '/install') }}">
+>>>>>>> 29c506dd6efd13b0676a586d0945390032f8e0f1
 							Add Theme
 						</a>
 					</li>
 				</ul>
 			</li>
 			<li class="item">
+<<<<<<< HEAD
 				<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/users') }}">
 					<i class="fa fa-user"></i>
 					<span class="title">Users</span>
@@ -131,6 +193,15 @@
 					<span class="title">Settings</span>
 				</a>
 				<ul class="sub-menu">
+=======
+				<a href="{{ url(trim(config('revcms.uri'), '/') . '/settings') }}">
+					<i class="fa fa-cogs"></i>
+					Settings
+				</a>
+				<ul class="sub-menu">
+					<li class="title">
+						Settings Menu
+					</li>
 					<li class="item">
 						<a href="#">
 							Maintenance Mode
