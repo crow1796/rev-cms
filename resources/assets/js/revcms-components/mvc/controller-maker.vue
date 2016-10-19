@@ -3,7 +3,12 @@
 		created(){
 			this.populateControllers();
 		},
-		props: ['controllers'],
+		props: {
+			controllers: {},
+			size: {
+				default: '-md'
+			}
+		},
 		data(){
 			return {
 				showMakeForm: false,
@@ -65,8 +70,8 @@
 
 <template>
 	<button type="button"
-		class="rev-btn -md -danger"
-		:class="{ '-toggled': showMakeForm }"
+		class="rev-btn -danger"
+		:class="[{ '-toggled': showMakeForm }, size]"
 		@click.prevent="toggleMakeForm()">
 		{{ makeBtnText }}
 	</button>

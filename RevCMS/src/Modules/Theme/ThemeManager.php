@@ -15,6 +15,7 @@ class ThemeManager {
 		$themes = $themes->map(function($theme){
 		    $tmpTheme = [];
             $tmpTheme['path'] = $theme;
+            $tmpTheme['active'] = strpos($theme, str_replace('/', '\\', config('revcms.active_theme'))) ? true : false;
             $tmpTheme['info'] = Yaml::parse(File::get($theme . '\theme.yaml'));
             $tmpTheme['info']['screenshot'] = $this->getScreenshotOf($theme);
             return $tmpTheme;

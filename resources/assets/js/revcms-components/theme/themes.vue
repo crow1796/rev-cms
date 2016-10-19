@@ -30,7 +30,7 @@
 		</button>
 	</div>
 	<div class="rev-grid">
-		<div class="row grid-view"
+		<div class="row grid-view _row-eq-height"
 				v-for="themeRow in themes | chunk 3">
 			<div class="col-sm-4 grid-item _word-wrap"
 					v-for="theme in themeRow">

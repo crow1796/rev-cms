@@ -8,54 +8,29 @@ use App\Http\Controllers\Controller;
 
 class TestController1 extends Controller
 {
-    //
 
-	public function show($id){
-		$viewData['title'] = 'Products Page';
-		//pageblock:		
-		$viewData["user"] = \App\User::findOrFail($id);
-		//endpageblock
-		 return view('pages.products.show', $viewData);
+	public function homepage($id, Request $request){
+		$viewData = array();
+		$viewData['title'] = 'Homepage';
+		//revpageblock:
+		$viewData['meta_title'] = '';
+		$viewData['meta_description'] = '';
+		$viewData['meta_keywords'] = '';		
+		$viewData['user'] = \App\User::findOrFail($id);
+		//endrevpageblock
+		 return view('test.test.homepage', $viewData);
 	}
 
-	public function index($id){
-		$viewData['title'] = 'Products Page';
-		//pageblock:		
-		$viewData["user"] = \App\User::findOrFail($id);
-		//endpageblock
-		 return view('pages.products.index', $viewData);
-	}
 
-	public function delete($id){
-		$viewData['title'] = 'Products Page';
-		//pageblock:		
-		$viewData["user"] = \App\User::findOrFail($id);
-		//endpageblock
-		 return view('pages.products.delete', $viewData);
-	}
-
-	public function create($id){
-		$viewData['title'] = 'Products Page';
-		//pageblock:		
-		$viewData["user"] = \App\User::findOrFail($id);
-		//endpageblock
-		 return view('pages.products.create', $viewData);
-	}
-
-	public function edit($id){
-		$viewData['title'] = 'Products Page';
-		//pageblock:		
-		$viewData["user"] = \App\User::findOrFail($id);
-		//endpageblock
-		 return view('pages.products.edit', $viewData);
-	}
-
-	public function update($id){
-		$viewData['title'] = 'Products Page';
-		//pageblock:		
-		
-		$viewData["user"] = \App\User::findOrFail($id);
-		//endpageblock
-		 return view('pages.products.update', $viewData);
+	public function index($id, Request $request){
+		$viewData = array();
+		$viewData['title'] = 'index';
+		//revpageblock:
+		$viewData['meta_title'] = '';
+		$viewData['meta_description'] = '';
+		$viewData['meta_keywords'] = '';		
+		$viewData['user'] = \App\User::findOrFail($id);
+		//endrevpageblock
+		 return view('test.test.index', $viewData);
 	}
 }

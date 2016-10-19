@@ -27,7 +27,7 @@
 			</li>
 			<li class="item">
 				<a href="{{ url(trim(config('revcms.uri'), '/') . '/partials') }}">
-					<i class="fa fa-file-text-o"></i>
+					<i class="fa fa-tags"></i>
 					<span class="title">Partials</span>
 				</a>
 				<ul class="sub-menu">
@@ -39,6 +39,11 @@
 					<li class="item">
 						<a href="#">
 							Add New
+						</a>
+					</li>
+					<li class="item">
+						<a href="#">
+							Menus
 						</a>
 					</li>
 				</ul>
@@ -116,6 +121,11 @@
 					<li class="item">
 						<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/users/create') }}">
 							Add New
+						</a>
+					</li>
+					<li class="item">
+						<a href="{{ url(trim(Config::get('revcms.uri'), '/') . '/users/groups') }}">
+							Groups
 						</a>
 					</li>
 				</ul>

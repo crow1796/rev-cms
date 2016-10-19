@@ -58,4 +58,10 @@ return [
 	 * Default: 'Custom Menu'
 	 */
 	'custom_sidebar_menu_title' => 'Custom Menu',
+
+	/**
+	 * Current active theme.
+	 * Default: 
+	 */
+	'active_theme' => 'themes/Aimer',
 ];

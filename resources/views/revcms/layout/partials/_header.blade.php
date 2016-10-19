@@ -1,5 +1,5 @@
 <div class="rev-navbar -fixed -top -default">
-	<a class="navbar-brand" href="#">{{ \Config::get('revcms.title') }}</a>
+	<a class="navbar-brand" href="{{ url(\Config::get('revcms.uri')) }}">{{ \Config::get('revcms.title') }}</a>
 	<div class="right">
 		<a href="{{ url('/') }}" target="_blank" class="rev-btn -sm -danger">
 			Preview Site <i class="fa fa-external-link"></i>

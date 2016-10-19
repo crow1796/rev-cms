@@ -9,7 +9,31 @@
 	}
 </script>
 
+<style type="text/css">
+	.active-theme{
+		position: absolute;
+		width: 93%;
+		height: 100%;
+		text-align: center;
+		font-size: 4em;
+		font-weight: bold;
+		line-height: 400px;
+	}
+
+	.active-theme > span{
+		border-radius: 50%;
+		width: 250px;
+		height: 250px;
+		display: inline-block;
+		line-height: 250px;
+	}
+</style>
+
 <template>
+	<div class="active-theme"
+		v-if="theme.active">
+		<span>Active</span>
+	</div>
 	<div class="preview -lg" 
 		:style="{ 'background-image': 'url(' + themeScreenshot + ')' }">
 	</div>
@@ -37,7 +61,8 @@
 				</div>
 			</div>
 		</p>
-		<div class="text-center">
+		<div class="text-center"
+				v-if="!theme.active">
 			<button type="button" class="rev-btn -md -success">
 				Activate
 			</button>

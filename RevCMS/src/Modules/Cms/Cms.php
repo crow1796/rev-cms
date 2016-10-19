@@ -1,6 +1,8 @@
 <?php 
 namespace RevCMS\Modules\Cms;
 use RevCMS\Modules\Cms\Builder\PageDirector;
+use RevCMS\Modules\Cms\Wrapper\Page;
+use Validator;
 
 class Cms{
 
@@ -19,8 +21,35 @@ class Cms{
 		if(!is_array($pageInfo) || empty($pageInfo)) return array();
 		$page = array();
 
-		$page['action'] = $this->pageDirector->buildActionBlockFor($pageInfo);
+		$validation = $this->validatePageCreation($pageInfo);
+		if($validation->fails()){
+			return $validation;
+		}
 
-		return $page;
+		$page['action'] = $this->pageDirector
+								->buildActionBlockFor($pageInfo);
+		return (new Page($pageInfo, $page));
+	}
+
+	private function validatePageCreation($pageInfo){
+		$rules = [
+			'action_name' => 'required',
+			'title' => 'required',
+			'controller' => 'required',
+			'layout' => 'required',
+		];
+
+		return Validator::make($pageInfo, $rules);
+	}
+
+	/**
+	 * Generate slug and action name from page title.
+	 * @param  string $title 
+	 * @return array        
+	 */
+	public function generateFieldsFor($title = ''){
+		if(!$title) return array();
+		$fields = $this->pageDirector->generateFieldsFrom($title);
+		return $fields;
 	}
 }

@@ -75,6 +75,14 @@
 	margin: 0 !important;
 }
 
+._no-margin-left{
+	margin-left: 0 !important;
+}
+
+._no-margin-right{
+	margin-right: 0 !important;
+}
+
 ._full-spinner-wrapper, ._relative{
 	position: relative !important;
 }
@@ -153,4 +161,12 @@
 ._word-wrap{
 	word-wrap: break-word;
 	word-break: break-word;
+}
+
+._row-eq-height{
+	overflow: hidden !important;
+	& > [class*="col-"]{
+		margin-bottom: -99999px !important;
+		padding-bottom: 99999px !important;
+	}
 }

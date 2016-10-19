@@ -58,6 +58,7 @@ class RevCMSTest extends TestCase
         $themes = $themes->map(function($theme){
             $tmpTheme = [];
             $tmpTheme['path'] = $theme;
+            $tmpTheme['active'] = strpos($theme, str_replace('/', '\\', config('revcms.active_theme'))) ? true : false;
             $tmpTheme['info'] = Yaml::parse(File::get($theme . '\theme.yaml'));
             $tmpTheme['info']['screenshot'] = $this->getScreenshotOf($theme);
             return $tmpTheme;
@@ -83,28 +84,10 @@ class RevCMSTest extends TestCase
     }
 
     public function testPageCodeTrimmer(){
-        $codeSample1 = '
-// Inject: $id
+        $codeSample1 = '// Inject: $post_slug
 
-$viewData["user"] = \App\User::findOrFail($id);';
-        // $codeSample2 = '// Uses: App\Post, Illuminate\Http\Request, Illuminate\Http\Response, File, Carbon\Carbon
-        //         // Inject: $slug, Request $request
-        //         // Action Start
-
-        //         $post = Post::findBySlugOrFail($slug);
-        //         $viewData["post"] = $post;
-
-        //         // Action End
-        //         // Helpers Start
-        //         // Protected Start
-        //         function getAuthorOf($post = null){
-        //             if(!$post) return false;
-
-        //             return $post->author->full_name;
-        //         }
-        //         // Protected End
-        //         // Helpers End';
-        // $reg = '/\/\/\s?Action Start(.*)\/\/\s?Action End/';
+$post = \App\Post::findBySlugOrFail($post_slug);
+$viewData["post"] = $post;';
         $actionReg = '~\/\/\s*action\s*start(.*)\/\/\s*action\s*end~si';
         $helpersReg = '~\/\/\s*helpers\s*start(.*)\/\/\s*helpers\s*end~si';
         $publicHelpersReg = '~\/\/\s*public\s*start(.*)\/\/\s*public\s*end~si';
@@ -117,16 +100,44 @@ $viewData["user"] = \App\User::findOrFail($id);';
         $content = isset($matches[1]) ? isset($matches[1][0]) ? $matches[1][0] : null : $matches[1];
 
         $pageInfo = array(
-                'action' => 'update',
-                'view' => 'pages.products.update',
+                'action_name' => 'aimer',
+                'view' => 'pages.products.aimer',
                 'title' => 'Products Page',
                 'controller' => 'App\Http\Controllers\Test\TestController1',
-                'template' => 'default',
-                'source' => $codeSample1,
+                'layout' => 'default',
+                'hidden' => false,
+                'action_source' => $codeSample1,
+                'view_source' => '',
+                'meta' => array(
+                        'title' => 'Simple Product Page',
+                        'description' => 'Simple Product Page',
+                        'keywords' => 'product, simple, page',
+                    ),
             );
         $pageSource = \RevCMS::cms()->createPage($pageInfo);
-        // \File::put('actionwriter.txt', $this->buildBlockFor($page, $codeSample1));
         // dd($this->buildBlockFor($page, $codeSample1));
+    }
+
+    public function testGenerateViewName(){
+        $data = [
+            'title' => 'About Us',
+            'controller' => 'App\Http\Controllers\Test\TestController1'
+        ];
+
+        $fileName = str_slug($data['title']);
+        preg_match('~http\\\controllers\\\(.*)~i', $data['controller'], $matches);
+        $viewDir = strtolower(preg_replace('~controller.*~i', '', str_replace('\\', '/', $matches[1])));
+
+        $viewPath = $viewDir . '/' . $fileName;
+        // Actual Blade File Path
+        $actualBladePath = $viewPath . '.blade.php';
+        // Returned by actions
+        $actionResponseView = str_replace('/', '.', $viewPath);
+
+        dump($actionResponseView);
+        dd($actualBladePath);
+        // dd($this->generateSlugFrom($title));
+        // dd($this->generateActionNameFrom($title));
     }
 
     public function testDashboardSidebarFactory(){

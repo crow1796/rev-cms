@@ -5,11 +5,9 @@ class ActionBlockBuilder {
 	public function buildBlockFor($page = array()){
 	    if(!is_array($page) || empty($page)) return '';
 
-	    $source = isset($page['source']) ? $page['source'] : '';
+	    $source = isset($page['action_source']) ? $page['action_source'] : '';
 
 	    if(!$source) return '';
-
-	    $block = '';
 
 	    $extractedUses = $this->extract('uses', $source);
 	    $extractedInjections = $this->extract('injections', $source);
@@ -21,17 +19,60 @@ class ActionBlockBuilder {
 	        $newSource .= "\t\t$sourceLine\n";
 	    }
 
-	    $block .= "\tpublic function {$page['action']}({$extractedInjections['inline']}){\n";
-	    $block .= "\t\t" . '$viewData[\'title\'] = ' . '\'' . $page['title'] . '\';';
-	    $block .="\n\t\t//pageblock:";
-	    $block .= $newSource;
-	    $block .="\t\t//endpageblock";
-	    $block .= "\n\t\t return view('{$page['view']}', " . '$viewData' . ");";
-	    $block .= "\n\t}";
+	    $data = array(
+	    		'page' => $page,
+	    		'extractedUses' => $extractedUses,
+	    		'extractedInjections' => $extractedInjections,
+	    		'trimmedSource' => $trimmedSource,
+	    		'explodedSource' => $explodedSource,
+	    		'newSource' => $newSource,
+	    	);
+	   	return $this->buildAndWriteMethod($data);
+	}
 
-	    $this->writeActionToController($page, $block);
+	private function buildAndWriteMethod($data = array()){
+		if(!is_array($data)) return '';
 
-	    return $block;
+		extract($data);
+		// Generate action returnable view name.
+		$viewName = $this->generateViewNameFor($data['page']);
+
+		$block = '';
+		$block .= "\tpublic function {$page['action_name']}({$extractedInjections['inline']}){\n";
+		$block .= "\t\t" . '$viewData = array();' . "\n";
+		$block .= "\t\t" . '$viewData[\'title\'] = ' . '\'' . $page['title'] . '\';' . "\n";
+		$block .="\t\t//revpageblock:\n";
+		$block .= "\t\t" . '$viewData[\'meta_title\'] = ' . '\'' . (isset($page['meta']['title']) ? $page['meta']['title'] : '') . '\';' . "\n";
+		$block .= "\t\t" . '$viewData[\'meta_description\'] = ' . '\'' . (isset($page['meta']['description']) ? $page['meta']['description'] : '') . '\';' . "\n";
+		$block .= "\t\t" . '$viewData[\'meta_keywords\'] = ' . '\'' . (isset($page['meta']['keywords']) ? $page['meta']['keywords'] : '') . '\';';
+		$block .= $newSource;
+		$block .="\t\t//endrevpageblock";
+		$block .= "\n\t\t return view('{$viewName}', " . '$viewData' . ");";
+		$block .= "\n\t}";
+
+		$this->writeActionToController($page, $block);
+
+		return $block;
+	}
+
+	/**
+	 * Generate View Name.
+	 * @param  array $page 
+	 * @return mixed       
+	 */
+	private function generateViewNameFor($page){
+
+		$fileName = str_slug($page['title']);
+		preg_match('~http\\\controllers\\\(.*)~i', $page['controller'], $matches);
+		$viewDir = strtolower(preg_replace('~controller.*~i', '', str_replace('\\', '/', $matches[1])));
+
+		$viewPath = $viewDir . '/' . $fileName;
+		// Actual Blade File Path
+		$actualBladePath = $viewPath . '.blade.php';
+		// Returned by actions
+		$actionResponseView = str_replace('/', '.', $viewPath);
+
+		return $actionResponseView;
 	}
 
 	/**
@@ -107,13 +148,14 @@ class ActionBlockBuilder {
 
 	    $controller = new \ReflectionClass($pageInfo['controller']);
 
-	    if($controller->hasMethod($pageInfo['action'])) return false;
+	    if($controller->hasMethod($pageInfo['action_name'])) return false;
 	    
 	    $controllerContent = \File::get($controller->getFileName());
-	    $explodedContent = explode("\n", $controllerContent);
-	    array_pop($explodedContent);
+	    $explodedContent = preg_replace('~^(.*)}$~s', '$1', $controllerContent);
+	    // $explodedContent = explode("\n", $controllerContent);
+	    // array_pop($explodedContent);
 
-	    $openContent = implode($explodedContent, "\n");
+	    $openContent = $explodedContent;
 	    $openContent .= "\n\n" . $pageSource;
 	    $newContent = $openContent . "\n}";
 

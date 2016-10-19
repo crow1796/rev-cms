@@ -60,6 +60,7 @@ class Router {
 
 			Route::group(['prefix' => 'pages'], function(){
 				Route::post('/store', '\RevCMS\Http\Controllers\PagesController@store');
+				Route::get('/generate-fields', '\RevCMS\Http\Controllers\PagesController@generateFields');
 			});
 
 			Route::group(['prefix' => 'themes'], function(){
