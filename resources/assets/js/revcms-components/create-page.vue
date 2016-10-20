@@ -14,7 +14,8 @@
 				inline: true
 			});
 			this.actionEditor.setOptions({
-				fontSize: "13pt"
+				fontSize: "13pt",
+				enableEmmet: false
 			});
 
 			this.viewEditor = ace.edit("view-editor");
@@ -67,7 +68,14 @@
 							for(let counter = 0; counter < Object.keys(responseData).length; counter++){
 								toastr.error(responseData[counter], 'Oops!');
 							}
+							hideRevLoader();
+							return false;
 						}
+						swal(
+							'Success',
+							'Page Saved!',
+							'success'
+							);
 						hideRevLoader();
 					});
 			},

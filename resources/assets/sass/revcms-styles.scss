@@ -514,16 +514,16 @@ select{
 		box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 	}
 
-	& > .right > .rev-dropdown-toggle:before{
-		content: '';
-		display: block;
-		position: absolute;
-		border-left: 15px solid transparent;
-		border-right: 15px solid transparent;
-		border-bottom: 15px solid lighten($theme-bg, 10%);
-		top: -15px;
-		right: 10px;
-	}
+	// & > .right > .rev-dropdown-toggle:before{
+	// 	content: '';
+	// 	display: block;
+	// 	position: absolute;
+	// 	border-left: 15px solid transparent;
+	// 	border-right: 15px solid transparent;
+	// 	border-bottom: 15px solid lighten($theme-bg, 10%);
+	// 	top: -15px;
+	// 	right: 10px;
+	// }
 
 	& > .right > .rev-dropdown-toggle > .item{
 		
