@@ -64,4 +64,11 @@ return [
 	 * Default: 
 	 */
 	'active_theme' => 'themes/Aimer',
+
+	/**
+	 * User Mode
+	 * Default: developer
+	 * Values: developer, simple
+	 */
+	'user_mode' => 'developer'
 ];

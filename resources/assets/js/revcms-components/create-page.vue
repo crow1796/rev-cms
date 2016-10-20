@@ -13,6 +13,9 @@
 				path: "ace/mode/php",
 				inline: true
 			});
+			this.actionEditor.setOptions({
+				fontSize: "13pt"
+			});
 
 			this.viewEditor = ace.edit("view-editor");
 			this.viewEditor
@@ -21,6 +24,10 @@
 			this.viewEditor.getSession().setMode({
 				path: "ace/mode/html",
 				inline: true
+			});
+			this.viewEditor.setOptions({
+				fontSize: "13pt",
+				enableEmmet: true
 			});
 		},
 		props: {

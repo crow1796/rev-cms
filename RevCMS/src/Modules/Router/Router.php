@@ -1,14 +1,26 @@
 <?php 
 namespace RevCMS\Modules\Router;
+use RevCMS\Traits\Router\RegistersRoute;
 use Route;
 class Router {
+
+	use RegistersRoute;
+
+	protected $webRoutes;
+	protected $apiRoutes;
+
+	public function __construct(){
+		$this->webRoutes = array();
+		$this->apiRoutes = array();
+	}
 
 	/**
 	 * Web Routes
 	 * @return void 
 	 */
 	public function webRoutes(){
-		Route::group(['prefix' => \Config::get('revcms.uri')], function(){
+		$customWebRoutes = $this->webRoutes;
+		Route::group(['prefix' => \Config::get('revcms.uri')], function() use ($customWebRoutes){
 			Route::get('/', '\RevCMS\Http\Controllers\DashboardController@index');
 			Route::get('/login', '\RevCMS\Http\Controllers\Auth\LoginController@showLoginForm');
 
@@ -41,6 +53,10 @@ class Router {
 					});
 				});
 			});
+
+			foreach($customWebRoutes as $route){
+				Route::{$route['type']}($route['uri'], $route['params'] + ['uses' => $route['uses']]);
+			}
 		});
 	}
 

@@ -223,7 +223,14 @@
 		@endif
 		{{-- /Developer's Menu --}}
 		<ul class="menu">
-		
+			@foreach(\RevCMS::router()->customWebRoutes() as $route)
+				<li class="item">
+					<a href="{{ url(trim(Config::get('revcms.uri'), '/') . $route['uri']) }}">
+						<i class="{{ $route['iconClass'] }}"></i>
+						<span class="title">{{ $route['title'] }}</span>
+					</a>
+				</li>
+			@endforeach
 		</ul>
 	</div>
 </div>

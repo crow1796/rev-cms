@@ -2,12 +2,15 @@
 namespace RevCMS\Modules\CMS\Builder;
 
 class ActionBlockBuilder {
+	/**
+	 * Start Building action block for page.
+	 * @param  array  $page 
+	 * @return mixed       
+	 */
 	public function buildBlockFor($page = array()){
 	    if(!is_array($page) || empty($page)) return '';
 
 	    $source = isset($page['action_source']) ? $page['action_source'] : '';
-
-	    if(!$source) return '';
 
 	    $extractedUses = $this->extract('uses', $source);
 	    $extractedInjections = $this->extract('injections', $source);
@@ -30,15 +33,21 @@ class ActionBlockBuilder {
 	   	return $this->buildAndWriteMethod($data);
 	}
 
+	/**
+	 * Build, format and write function to controller.
+	 * @param  array  $data 
+	 * @return string       
+	 */
 	private function buildAndWriteMethod($data = array()){
 		if(!is_array($data)) return '';
 
 		extract($data);
 		// Generate action returnable view name.
 		$viewName = $this->generateViewNameFor($data['page']);
+		$params = isset($extractedInjections['inline']) ? $extractedInjections['inline'] : '';
 
 		$block = '';
-		$block .= "\tpublic function {$page['action_name']}({$extractedInjections['inline']}){\n";
+		$block .= "\tpublic function {$page['action_name']}({$params}){\n";
 		$block .= "\t\t" . '$viewData = array();' . "\n";
 		$block .= "\t\t" . '$viewData[\'title\'] = ' . '\'' . $page['title'] . '\';' . "\n";
 		$block .="\t\t//revpageblock:\n";
