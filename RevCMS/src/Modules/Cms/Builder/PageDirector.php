@@ -13,10 +13,20 @@ class PageDirector {
 		$this->viewBuilder = new ViewBuilder();
 	}
 
-	public function buildActionBlockFor($page){
-		return $this->actionBlockBuilder
-					->buildBlockFor($page);
+	/**
+	 * Build method for page.
+	 * @param  array $page 
+	 * @return mixed       
+	 */
+	public function buildActionFor($page){
+		$page = $this->actionBlockBuilder
+						->buildFor($page);
+		$page = $this->viewBuilder
+						->buildFor($page);
+		return $page;
 	}
+
+
 
 	/**
 	 * Generate slug and action name from page title.

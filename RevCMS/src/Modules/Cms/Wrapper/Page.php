@@ -3,7 +3,7 @@ namespace RevCMS\Modules\Cms\Wrapper;
 
 class Page{
 	protected $actionName;
-	protected $viewName;
+	protected $viewNames;
 	protected $title;
 	protected $actionSource;
 	protected $viewSource;
@@ -12,17 +12,17 @@ class Page{
 	protected $isHidden;
 	protected $meta;
 
-	public function __construct($pageInfo = array(), $pageSource = array()){
+	public function __construct($pageInfo = array()){
 		$this->actionName = $this->getPropFrom($pageInfo, 'action_name');
-		$this->viewName = $this->getPropFrom($pageInfo, 'view_name');
+		$this->viewNames = $this->getPropFrom($pageInfo, 'view_names');
 		$this->title = $this->getPropFrom($pageInfo, 'title');
 		$this->controller = $this->getPropFrom($pageInfo, 'controller');
 		$this->layout = $this->getPropFrom($pageInfo, 'layout');
 		$this->isHidden = $this->getPropFrom($pageInfo, 'hidden');
 		$this->meta = $this->getPropFrom($pageInfo, 'meta');
 
-		$this->actionSource = $this->getPropFrom($pageSource, 'action');
-		$this->viewSource = $this->getPropFrom($pageSource, 'view');
+		$this->actionSource = $this->getPropFrom($pageInfo, 'action');
+		$this->viewSource = $this->getPropFrom($pageInfo, 'view');
 	}
 
 	private function getPropFrom($source, $name){

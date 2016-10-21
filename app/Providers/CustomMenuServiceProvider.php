@@ -30,15 +30,7 @@ class CustomMenuServiceProvider extends ServiceProvider
                         'type' => 'get',
                         'title' => 'Menu 1',
                         'iconClass' => 'fa fa-home',
-                    ));
-
-        \RevCMS::router()
-                ->register('web', array(
-                        'uri' => '/custom-menu-2',
-                        'uses' => 'CustomMenuController@show',
-                        'type' => 'get',
-                        'title' => 'Menu 2',
-                        'iconClass' => 'fa fa-file-o',
+                        'params' => array(),
                     ));
     }
 }

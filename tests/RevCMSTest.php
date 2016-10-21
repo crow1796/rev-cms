@@ -134,8 +134,6 @@ $viewData["post"] = $post;';
         // Returned by actions
         $actionResponseView = str_replace('/', '.', $viewPath);
 
-        dump($actionResponseView);
-        dd($actualBladePath);
         // dd($this->generateSlugFrom($title));
         // dd($this->generateActionNameFrom($title));
     }

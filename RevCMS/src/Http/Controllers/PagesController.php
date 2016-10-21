@@ -24,7 +24,9 @@ class PagesController extends RevBaseController
     		return $page->fails() ? $page->errors()->all() + ['failed' => true] : $page;
     	}
 
-    	dd($page);
+        $response = $page instanceof Page ? ['creation' => true] : ['creation' => false];
+
+    	return $response;
     }
 
     public function create(){

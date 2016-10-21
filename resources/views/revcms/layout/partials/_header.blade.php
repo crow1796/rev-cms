@@ -8,7 +8,7 @@
 			
 		<a href="#rev-header-user-dropdown"
 			data-toggle="rev-dropdown">
-			Joshua Tundag<i class="fa fa-caret-down"></i>
+			Joshua Tundag <i class="fa fa-caret-down"></i>
 		</a>
 		<ul class="rev-dropdown-toggle animated"
 			id="rev-header-user-dropdown">

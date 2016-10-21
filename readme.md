@@ -1,26 +1,58 @@
-# Laravel PHP Framework
+# RevCMS - CMS for Laravel
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+RevCMS is a Content Management System made for Developers and Non-Developers. Every content in a website can be managed by using raw code or WYSIWYG. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Documentation
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+#### Table of Contents
+[Installation]()
 
-## Official Documentation
+[Introduction]()
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+[Modules]()
 
-## Contributing
+[Router](#router)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+[CMS]()
 
-## Security Vulnerabilities
+[Theme]()
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+[Components](#components)
+
+## \# Router
+
+### Custom Admin Menu
+
+By registering custom admin menu you need only to create your custom service provider (read more about laravel's [service providers](http://laravel.com/docs/5.3/providers)) and add it inside your config/app.php:
+##### For Example:
+###### In your terminal, run:
+	php artisan make:provider CustomMenuServiceProvider
+
+###### In your config/app.php, add your service provider:
+Make sure to add it after RevCMS' Service Provider.
+
+	RevCMS\RevServiceProvider::class,
+	App\Providers\CustomMenuServiceProvider::class,
+
+###### You can register Custom Admin Menu by using the following syntax inside your service provider's register method: 
+	\RevCMS::router()
+	        ->register('web', array(
+	                'uri' => '/custom-menu',
+	                'uses' => 'CustomMenuController@index',
+	                'type' => 'get',
+	                'title' => 'Menu 1',
+	                'iconClass' => 'fa fa-home',
+	                'params' => array(
+	                	'middleware' => array(),
+	                	),
+	            ));
+###### Arguments:
+
+###### Output:
+You can now see your custom menu at the very bottom.
+
+[![ajs](docsimages/Screenshot_8.png)]()
+
 
 ## License
 

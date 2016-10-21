@@ -1,13 +1,14 @@
 <?php 
 namespace RevCMS\Modules\CMS\Builder;
+use RevCMS\Modules\CMS\Builder\Abstracts\PageBuilder;
 
-class ActionBlockBuilder {
+class ActionBlockBuilder extends PageBuilder{
 	/**
 	 * Start Building action block for page.
 	 * @param  array  $page 
 	 * @return mixed       
 	 */
-	public function buildBlockFor($page = array()){
+	public function buildFor($page = array()){
 	    if(!is_array($page) || empty($page)) return '';
 
 	    $source = isset($page['action_source']) ? $page['action_source'] : '';
@@ -21,6 +22,8 @@ class ActionBlockBuilder {
 	    foreach($explodedSource as $sourceLine){
 	        $newSource .= "\t\t$sourceLine\n";
 	    }
+
+	    $page['view_names'] = $this->generateViewNameFor($page);
 
 	    $data = array(
 	    		'page' => $page,
@@ -43,7 +46,7 @@ class ActionBlockBuilder {
 
 		extract($data);
 		// Generate action returnable view name.
-		$viewName = $this->generateViewNameFor($data['page']);
+		$viewName = $data['page']['view_names']['response'];
 		$params = isset($extractedInjections['inline']) ? $extractedInjections['inline'] : '';
 
 		$block = '';
@@ -61,7 +64,7 @@ class ActionBlockBuilder {
 
 		$this->writeActionToController($page, $block);
 
-		return $block;
+		return $page;
 	}
 
 	/**
@@ -77,11 +80,14 @@ class ActionBlockBuilder {
 
 		$viewPath = $viewDir . '/' . $fileName;
 		// Actual Blade File Path
-		$actualBladePath = $viewPath . '.blade.php';
+		$actualBladePath = 'pages/' . $viewPath . '.blade.php';
 		// Returned by actions
-		$actionResponseView = str_replace('/', '.', $viewPath);
+		$actionResponseView = 'pages.' . str_replace('/', '.', $viewPath);
 
-		return $actionResponseView;
+		$viewNames['filePath'] = $actualBladePath;
+		$viewNames['response'] = $actionResponseView;
+
+		return $viewNames;
 	}
 
 	/**

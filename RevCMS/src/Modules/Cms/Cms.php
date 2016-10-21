@@ -26,9 +26,9 @@ class Cms{
 			return $validation;
 		}
 
-		$page['action'] = $this->pageDirector
-								->buildActionBlockFor($pageInfo);
-		return (new Page($pageInfo, $page));
+		$page = $this->pageDirector
+						->buildActionFor($pageInfo);
+		return (new Page($page));
 	}
 
 	private function validatePageCreation($pageInfo){

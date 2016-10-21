@@ -11,3 +11,5 @@
 |
 */
 \RevCMS::router()->webRoutes();
+
+Route::get('/home', 'Test\TestController1@home');
