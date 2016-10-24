@@ -2,9 +2,13 @@
 namespace RevCMS\Modules\Cms\Builder;
 use RevCMS\Modules\Cms\Builder\ActionBlockBuilder;
 use RevCMS\Modules\Cms\Builder\ViewBuilder;
+use RevCMS\Traits\Cms\Builder\PermalinkValidatorTrait;
 use Illuminate\Support\Str;
 
 class PageDirector {
+
+	use PermalinkValidatorTrait;
+
 	protected $actionBlockBuilder;
 	protected $viewBuilder;
 
@@ -40,7 +44,7 @@ class PageDirector {
 			);
 	    if(!$title) return $fields;
 
-	    $slug = str_slug($title);
+	    $slug = $this->validatePermalink(str_slug($title));
 	    $actionName = Str::camel($slug);
 
 	    $fields['slug'] = $slug;

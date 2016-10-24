@@ -58,6 +58,8 @@ class Router {
 				Route::{$route['type']}($route['uri'], $route['params'] + ['uses' => $route['uses']]);
 			}
 		});
+
+		include base_path('routes/revcms_web.php');
 	}
 
 	/**
