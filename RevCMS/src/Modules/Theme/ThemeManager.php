@@ -4,6 +4,7 @@ namespace RevCMS\Modules\Theme;
 use Symfony\Component\Yaml\Yaml;
 use File;
 use Illuminate\Support\Str;
+use RevCMS\Modules\Theme\Wrapper\Theme;
 
 class ThemeManager {
 	/**

@@ -4,6 +4,7 @@ use RevCMS\Modules\Cms\Builder\ActionBlockBuilder;
 use RevCMS\Modules\Cms\Builder\ViewBuilder;
 use RevCMS\Traits\Cms\Builder\PermalinkValidatorTrait;
 use Illuminate\Support\Str;
+use File;
 
 class PageDirector {
 
@@ -27,10 +28,29 @@ class PageDirector {
 						->buildFor($page);
 		$page = $this->viewBuilder
 						->buildFor($page);
+		if($page){
+			$this->createRouteFor($page);
+		}
 		return $page;
 	}
 
-
+	/**
+	 * Create route for page.
+	 * @param  array  $page 
+	 * @return mixed       
+	 */
+	private function createRouteFor($page = array()){
+		$route = "Route::get('{$page['slug']}', ['uses' => '\\{$page['controller']}@{$page['action_name']}']);";
+		$revWebRoutesPath = base_path('routes/revcms_web.php');
+		$routeMatch = str_replace('\\', '\\\\', $route);
+		$routeMatch = preg_replace('~([\(|\)|\[|\]])~si', '\\\$1', $routeMatch);
+		preg_match('~' . $routeMatch . '~is', File::get($revWebRoutesPath), $matches);
+		if(!count($matches)){
+			$route = "\n" . $route;
+			File::append($revWebRoutesPath, $route);
+		}
+		return $route;
+	}
 
 	/**
 	 * Generate slug and action name from page title.

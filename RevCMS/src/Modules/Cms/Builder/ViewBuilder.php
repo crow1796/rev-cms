@@ -21,8 +21,10 @@ class ViewBuilder extends PageBuilder{
 
 	    if(!File::exists($viewPath)){
 	    	File::makeDirectory($viewDir, 0755, true, true);
-	    	File::put($viewPath, $source);
 	    }
+
+    	File::put($viewPath, $source);
+    	
 	    return $page;
 	}
 }

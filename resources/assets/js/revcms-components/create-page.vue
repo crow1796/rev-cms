@@ -235,7 +235,7 @@
 									v-model="page.hidden">
 							Hidden?
 						</label>
-						<a href="#"
+						<a href="{{ baseUrl }}/{{ page.slug ? page.slug : '' }}"
 							class="rev-btn -md -danger"
 							target="_blank">
 							Go To Page

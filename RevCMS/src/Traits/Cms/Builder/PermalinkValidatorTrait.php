@@ -27,12 +27,13 @@ trait PermalinkValidatorTrait{
 	 * @param  integer $startCount 
 	 * @return string              
 	 */
-	private function tryAndGeneratePermalink($webRoutes, $permalink, $startCount = 2){
+	private function tryAndGeneratePermalink($webRoutes, $permalink, $startCount = 0){
 	    $permalink = trim($permalink, '/');
 	    foreach($webRoutes as $route){
 	        if(strcasecmp(trim($route->getPath(), '/'), $permalink) !== 0) continue;
+	        $startCount++;
 	        $permalink = preg_replace('/^(.+)\-' . ($startCount - 1) . '$/', '\\1', $permalink);
-	        $permalink = $this->tryAndGeneratePermalink($webRoutes, $permalink . '-' . $startCount, $startCount++);
+	        $permalink = $this->tryAndGeneratePermalink($webRoutes, $permalink . '-' . $startCount, $startCount);
 	    }
 	    return $permalink;
 	}

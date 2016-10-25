@@ -56,7 +56,7 @@ class ActionBlockBuilder extends PageBuilder{
 		$block .="\t\t//revpageblock:\n";
 		$block .= "\t\t" . '$viewData[\'meta_title\'] = ' . '\'' . (isset($page['meta']['title']) ? $page['meta']['title'] : '') . '\';' . "\n";
 		$block .= "\t\t" . '$viewData[\'meta_description\'] = ' . '\'' . (isset($page['meta']['description']) ? $page['meta']['description'] : '') . '\';' . "\n";
-		$block .= "\t\t" . '$viewData[\'meta_keywords\'] = ' . '\'' . (isset($page['meta']['keywords']) ? $page['meta']['keywords'] : '') . '\';';
+		$block .= "\t\t" . '$viewData[\'meta_keywords\'] = ' . '\'' . (isset($page['meta']['keywords']) ? $page['meta']['keywords'] : '') . '\';' . "\n";
 		$block .= $newSource;
 		$block .="\t\t//endrevpageblock";
 		$block .= "\n\t\t return view('{$viewName}', " . '$viewData' . ");";

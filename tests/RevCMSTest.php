@@ -54,33 +54,10 @@ class RevCMSTest extends TestCase
     }
 
     public function testThemesInfoReader(){
-        $themes = collect(File::directories(resource_path('views\themes')));
-        $themes = $themes->map(function($theme){
-            $tmpTheme = [];
-            $tmpTheme['path'] = $theme;
-            $tmpTheme['active'] = strpos($theme, str_replace('/', '\\', config('revcms.active_theme'))) ? true : false;
-            $tmpTheme['info'] = Yaml::parse(File::get($theme . '\theme.yaml'));
-            $tmpTheme['info']['screenshot'] = $this->getScreenshotOf($theme);
-            return $tmpTheme;
-        });
+        $themes = \RevCMS::theme()
+                        ->getInstalledThemes();
         // return $themes;
         // dd($themes);
-    }
-
-    protected function getScreenshotOf($theme){
-        preg_match('~(themes.*)~', $theme, $matches);
-        $theme = public_path($matches[1]);
-        if(!File::isDirectory($theme)){
-            return null;
-        }
-        $themeFiles = collect(File::allFiles($theme));
-        $screenshot = $themeFiles->filter(function($file){
-            return \Illuminate\Support\Str::startsWith($file->getFilename(), 'screenshot') ? $file->getFilename() : false;
-        })->first();
-        if($screenshot){
-            return url(str_replace('\\', '/', $matches[1] . '/' . $screenshot->getFilename()));
-        }
-        return null;
     }
 
     public function testPageCodeTrimmer(){
@@ -108,6 +85,7 @@ $viewData["post"] = $post;';
                 'hidden' => false,
                 'action_source' => $codeSample1,
                 'view_source' => '',
+                'slug' => 'aimer',
                 'meta' => array(
                         'title' => 'Simple Product Page',
                         'description' => 'Simple Product Page',
