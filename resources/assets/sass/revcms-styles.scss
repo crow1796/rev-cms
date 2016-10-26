@@ -22,6 +22,14 @@ select{
 	}
 }
 
+.rev-panel{
+	background: #fff;
+	padding: 20px;
+	margin-top: 80px;
+	box-shadow: 0px 7px 8px rgba(0, 0, 0, .3);
+	border-radius: 4px;
+}
+
 .container-fluid{
 	height: 100% !important;
 }
@@ -38,7 +46,7 @@ select{
 	& > .menu-container{
 		background: $theme-bg;
 		box-shadow: 1px 0px 5px rgba(black, .2);
-		padding-top: 10px;
+		padding-top: 44px;
 		padding-bottom: 80px;
 	}
 
@@ -187,7 +195,7 @@ select{
 	& > .menu-container > .menu .item a:active{
 		// color: white;
 		opacity: 1;
-		color: $theme-btn-color;
+		color: $theme-header-bg;
 		text-decoration: none;
 		// padding-left: 25px;
 	}
@@ -449,10 +457,10 @@ select{
 .rev-navbar{
 	width: 100%;
 	min-height: 40px;
-	border-top: 10px solid $theme-btn-color;
+	border-top: 10px solid $theme-header-border-top;
 	
 	&.-default{
-		background: $theme-bg;
+		background: $theme-header-bg;
 		box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
 	}
 
@@ -461,7 +469,8 @@ select{
 	}
 
 	&.-fixed{
-		z-index: 9999;
+		z-index: 999;
+		padding-left: 80px;
 		position: fixed;
 	}
 
@@ -577,13 +586,13 @@ select{
 		padding: 15px 10px;
 		line-height: initial;
 		text-decoration: none;
-		color: $theme-text-color;
+		color: rgba($theme-text-color, .6);
 		border-bottom: 1px solid rgba($theme-text-color, .1);
 	}
 
 	& > .right > .rev-dropdown-toggle > .item > a:hover,
 	& > .right > .rev-dropdown-toggle > .item > a:active{
-		color: $theme-btn-color;
+		color: $theme-header-bg;
 		border-radius: 4px;
 	}
 

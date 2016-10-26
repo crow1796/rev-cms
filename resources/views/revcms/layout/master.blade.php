@@ -10,7 +10,7 @@
 	@include('revcms.layout.partials._assets', ['title' => $title])
 	@yield('after_header_assets')
 </head>
-<body id="rev-cms-app" class="{{ \Config::get('revcms.show_header') ? '_header-pad' : '' }}">
+<body id="rev-cms-app">
 	<div id="page-wrapper">
 		@if(\Config::get('revcms.show_header'))
 			@include('revcms.layout.partials._header')

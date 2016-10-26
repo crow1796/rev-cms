@@ -3,7 +3,9 @@
 @section('content')
 	<div class="container-fluid _full-spinner-wrapper">
 		@include('revcms.layout.partials._spinner')
-		<rev-create-page>
-		</rev-create-page>
+		<div class="rev-panel">
+			<rev-create-page>
+			</rev-create-page>
+		</div>
 	</div>
 @endsection
