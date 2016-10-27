@@ -23,4 +23,14 @@ class ThemesController extends RevBaseController
     				->theme()
     				->getInstalledThemes();
     }
+
+    public function activateTheme(Request $request){
+        $this->checkAjaxRequest($request);
+
+        $path = trim(str_replace(resource_path('views'), '', $request->path), '\\');
+
+        return $this->rev
+                    ->theme()
+                    ->activateTheme($path);
+    }
 }

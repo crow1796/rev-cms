@@ -1,9 +1,43 @@
 <script type="text/javascript">
 	export default{
-		props: ['theme'],
+		props: ['theme', 'themes'],
 		computed: {
 			themeScreenshot(){
 				return this.theme.info.screenshot ? this.theme.info.screenshot : '';
+			}
+		},
+		methods: {
+			activateTheme(theme){
+				console.log(theme);
+				showRevLoader();
+				this.$http
+					.post('{admin_base_url}/api/revcms/themes/activate-theme', theme)
+					.then(function(response){
+						let responseData = response.data;
+
+						if(responseData.status == 'failed'){
+							swal(
+								'Activation Failed!',
+								responseData.messages[0],
+								'error'
+								)
+							return false;
+						}
+
+						for(let counter = 0; counter < this.themes.length; counter++){
+							this.$set("themes[" + counter + "].active", false);
+						}
+
+						this.$set('theme.active', true);
+						// theme.$set('active', true);
+
+						hideRevLoader();
+						swal(
+							'Theme Activated!',
+							'Theme has been successfully activated.',
+							'success'
+							)
+					}.bind(this))
 			}
 		}
 	}
@@ -26,6 +60,10 @@
 		height: 250px;
 		display: inline-block;
 		line-height: 250px;
+	}
+
+	.theme-controls{
+		min-height: 30px;
 	}
 </style>
 
@@ -61,14 +99,22 @@
 				</div>
 			</div>
 		</p>
-		<div class="text-center"
-				v-if="!theme.active">
-			<button type="button" class="rev-btn -md -success">
-				Activate
-			</button>
-			<button type="button" class="rev-btn -md -danger">
-				Delete
-			</button>
+		<div class="text-center theme-controls">
+			<div class="rev-input-group">
+				<button type="button" 
+						class="rev-btn -md -success"
+						@click="activateTheme(theme)"
+						v-if="!theme.active">
+					<i class="fa fa-check-circle"></i>
+					Activate
+				</button>
+				<button type="button" 
+						class="rev-btn -md -danger"
+						v-if="!theme.active">
+					Delete
+					<i class="fa fa-times-circle"></i>
+				</button>
+			</div>
 		</div>
 	</div>
 </template>

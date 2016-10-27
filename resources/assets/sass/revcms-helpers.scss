@@ -36,7 +36,6 @@
 	overflow-x: hidden !important;
 	overflow-y: auto !important;
 	height: 100% !important;
-	@include scrollBar(darken($theme-btn-color, 10%));
 }
 
 ._border-right-light{

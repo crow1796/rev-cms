@@ -34,7 +34,7 @@
 				v-for="themeRow in themes | chunk 3">
 			<div class="col-sm-4 grid-item _word-wrap"
 					v-for="theme in themeRow">
-				<rev-theme-card :theme.sync="theme"></rev-theme-card>
+				<rev-theme-card :theme.sync="theme" :themes.sync="themes"></rev-theme-card>
 			</div>
 		</div>
 	</div>

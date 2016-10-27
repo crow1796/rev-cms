@@ -63,7 +63,7 @@ return [
 	 * Current active theme.
 	 * Default: 
 	 */
-	'active_theme' => 'themes/Aimer',
+	'active_theme' => 'themes\TestTheme1',
 
 	/**
 	 * User Mode

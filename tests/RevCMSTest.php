@@ -117,6 +117,12 @@ $viewData["post"] = $post;';
         // dd($this->generateActionNameFrom($title));
     }
 
+    public function testEditRevConfig(){
+        $config = new Larapack\ConfigWriter\Repository('revcms');
+        $config->set('active_theme', 'themes/Aimer');
+        $config->save();
+    }
+
     public function testDashboardSidebarFactory(){
         (\RevCMS::dashboard()->addSidebarMenu('test/menu', 'MyTestController@index'));
     }

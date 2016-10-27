@@ -2,6 +2,8 @@
 
 @section('content')
 	<div class="container-fluid">
-		<rev-media-library></rev-media-library>
+		<div class="rev-panel">
+			<rev-media-library></rev-media-library>
+		</div>
 	</div>
 @endsection

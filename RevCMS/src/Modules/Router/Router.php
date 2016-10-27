@@ -83,6 +83,7 @@ class Router {
 
 			Route::group(['prefix' => 'themes'], function(){
 				Route::get('/installed-themes', '\RevCMS\Http\Controllers\ThemesController@getInstalledThemes');
+				Route::post('/activate-theme', '\RevCMS\Http\Controllers\ThemesController@activateTheme');
 			});
 		});
 	}

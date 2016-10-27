@@ -5,7 +5,7 @@ use Symfony\Component\Yaml\Yaml;
 use File;
 use Illuminate\Support\Str;
 use RevCMS\Modules\Theme\Wrapper\Theme;
-
+use Larapack\ConfigWriter\Repository as LarapackRepository;
 class ThemeManager {
 	/**
 	 * Get Installed Themes.
@@ -43,5 +43,20 @@ class ThemeManager {
 	        return url(str_replace('\\', '/', $matches[1] . '/' . $screenshot->getFilename()));
 	    }
 	    return null;
+	}
+
+	/**
+	 * Activate theme
+	 * @param  string $theme 
+	 * @return mixed        
+	 */
+	public function activateTheme($theme){
+		if(!$theme) return ['status' => 'failed', 'messages' => ['Unknown theme.']];
+
+		$config = new LarapackRepository('revcms');
+		$config->set('active_theme', $theme);
+		$config->save();
+
+		return ['status' => 'success'];
 	}
 }

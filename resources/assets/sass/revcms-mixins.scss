@@ -1,18 +1,22 @@
-@mixin scrollBar($thumbColor){
-	&::-webkit-scrollbar{
-		width: 6px; 
-		padding: 0 2px;
-	}
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
 
-	&::-webkit-scrollbar-track{
-		// background: lighten(#222, 10%);
-		border-radius: 5px;
-	}
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
 
-	&::-webkit-scrollbar-thumb{
-		background: $thumbColor;
-		border-radius: 5px;
-	}
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
 }
 
 @mixin backgrounding(){

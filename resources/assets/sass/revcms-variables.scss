@@ -1,7 +1,7 @@
 // Brands
-$brand-primary: #2196F3;
+$brand-primary: #3273DC;
 $brand-info: #80DEEA;
-$brand-success: #00E676;
+$brand-success: #23D160;
 $brand-warning: #FFEB3B;
 $brand-danger: #f4645f;
 
@@ -13,6 +13,9 @@ $brand-danger: #f4645f;
 // $theme-text-color: #222222;
 // $theme-content-text-color: #222222;
 // $theme-logo-color: #fff;
+// $theme-header-bg: #fff;
+// $theme-header-border-top: #2C383C;
+// $theme-panel-bg: #fff;
 
 // Deep Dark Theme
 // $font-family: "Roboto", sans-serif;
@@ -22,6 +25,9 @@ $brand-danger: #f4645f;
 // $theme-text-color: #fff;
 // $theme-content-text-color: #333333;
 // $theme-logo-color: #fff;
+// $theme-header-bg: #fff;
+// $theme-header-border-top: #2C383C;
+// $theme-panel-bg: #fff;
 
 // Expression Theme
 // $font-family: "Open Sans", sans-serif;
@@ -31,17 +37,33 @@ $brand-danger: #f4645f;
 // $theme-text-color: #fff;
 // $theme-content-text-color: #333333;
 // $theme-logo-color: #fff;
+// $theme-header-bg: #fff;
+// $theme-header-border-top: #2C383C;
+// $theme-panel-bg: #fff;
 
 // State Theme
-$font-family: "Roboto", sans-serif;
+// $font-family: "Lato", sans-serif;
+// $body-bg: #EFEFEF;
+// $theme-btn-color: #DA0523;
+// $theme-bg: #2C383C;
+// $theme-text-color: #fff;
+// $theme-content-text-color: #474645;
+// $theme-logo-color: #2C383C;
+// $theme-header-bg: #fff;
+// $theme-header-border-top: #2C383C;
+// $theme-panel-bg: #fff;
+
+// Bull Theme
+$font-family: "Lato", sans-serif;
 $body-bg: #EFEFEF;
-$theme-btn-color: #32A2E6;
-$theme-bg: #2C383C;
+$theme-btn-color: #FF3860;
+$theme-bg: #7a7a7a;
 $theme-text-color: #fff;
 $theme-content-text-color: #474645;
 $theme-logo-color: #2C383C;
 $theme-header-bg: #fff;
-$theme-header-border-top: #2C383C;
+$theme-header-border-top: #7a7a7a;
+$theme-panel-bg: #fff;
 
 // Sidebar Submenu bg
 $btn-default-color: #607D8B;

@@ -80,12 +80,18 @@ const initTinyMCE = function(){
 				if($(target).hasClass('bounceInDown')){
 					$(target).removeClass('bounceInDown')
 								.addClass('bounceOutUp');
+					$(this).children('.fa')
+							.removeClass('fa-caret-up')
+							.addClass('fa-caret-down');
 					return false;
 				}
 				$(target)
 					.removeClass('bounceOutUp')
 					.css('display', 'block')
 					.addClass('bounceInDown');
+				$(this).children('.fa')
+						.removeClass('fa-caret-down')
+						.addClass('fa-caret-up');
 			});
 	})
 })(window.jQuery);

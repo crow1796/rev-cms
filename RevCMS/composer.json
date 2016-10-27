@@ -7,7 +7,8 @@
             "email": "joshuatundag@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+    },
     "autoload": {
     	"psr-4": {
     		"RevCMS\\": "src/"
