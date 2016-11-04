@@ -16,8 +16,8 @@ require('laravel-elixir-vue');
 elixir(mix => {
     mix.sass([
     		'app.scss'
-    	], 'public/css/revcms.css')
+    	], 'public/revcms-deps/rev-assets/css/revcms.css')
     	.webpack([
     		'app.js'
-    		], 'public/js/revcms.js');
+    		], 'public/revcms-deps/rev-assets/js/revcms.js');
 });

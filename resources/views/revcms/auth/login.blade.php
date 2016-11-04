@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="row">
-		<div class="col-sm-4 col-sm-offset-4 rev-card" style="margin-top: 120px;">
+		<div class="col-sm-4 col-sm-offset-4 login-form" style="margin-top: 200px; margin-bottom: 200px;">
 			<form method="POST" action="{{ url(trim(\Config::get('revcms.uri'), '/') . '/login') }}">
 				<h2 class="text-center">Login</h2>
 				{!! csrf_field() !!}
@@ -22,6 +22,7 @@
 						Login
 					</button>
 				</div>
+				<div id="form-shadow"></div>
 			</form>
 		</div>
 	</div>

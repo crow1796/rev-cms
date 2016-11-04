@@ -23,7 +23,6 @@
 </script>
 
 <template>
-	<h2>Installed Themes</h2>
 	<div class="view-nav">
 		<button class="rev-btn -md -danger" type="button">
 			Add New

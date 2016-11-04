@@ -3,13 +3,14 @@ namespace RevCMS\Modules\Cms;
 use RevCMS\Modules\Cms\Builder\PageDirector;
 use RevCMS\Modules\Cms\Wrapper\Page;
 use Validator;
+use RevCMS\Modules\Abstracts\RevCMSModule;
 
-class Cms{
+class Cms extends RevCMSModule{
 
 	protected $pageDirector;
 
-	public function __construct(){
-		$this->pageDirector = new PageDirector();
+	public function __construct(PageDirector $pageDirector){
+		$this->pageDirector = $pageDirector;
 	}
 
 	/**
@@ -51,5 +52,25 @@ class Cms{
 		if(!$title) return array();
 		$fields = $this->pageDirector->generateFieldsFrom($title);
 		return $fields;
+	}
+
+	/**
+	 * Get current active theme's layouts.
+	 * @return array 
+	 */
+	public function getActiveThemesLayouts(){
+		$activeThemePath = str_replace('/', '\\', resource_path('views/' . config('revcms.active_theme')));
+		$layouts = \File::allFiles($activeThemePath . '\\layouts');
+		$layoutMaps = array();
+
+		foreach($layouts as $layout){
+		    $viewName = str_replace('.blade.php', '', $layout->getRelativePathname());
+		    array_push($layoutMaps, array(
+		            'view_name' => $viewName,
+		            'view_returnable_path' => str_replace('/', '.', config('revcms.active_theme') . '/' . $viewName),
+		            'easy_name' => \Illuminate\Support\Str::title(preg_replace('~[^\w]+~', ' ', $viewName)),
+		        ));
+		}
+		return $layoutMaps;
 	}
 }

@@ -1,5 +1,13 @@
-<div class="rev-navbar -fixed -top -default">
-	<a class="navbar-brand" href="{{ url(\Config::get('revcms.uri')) }}">{{ \Config::get('revcms.title') }}</a>
+<div class="rev-navbar -top -default{{ config('revcms.sticky_header') ? ' -fixed' : ' -absolute' }}">
+	@if(config('revcms.show_logo'))
+		<a class="navbar-brand" href="{{ url( config('revcms.uri')) }}">
+			@if(!config('revcms.logo_url'))
+				{{ config('revcms.title') }}
+			@else
+				<img src="{{ config('revcms.logo_url') }}" alt="{{ config('revcms.title') }}">
+			@endif
+		</a>
+	@endif
 	<div class="right _relative">
 		<a href="{{ url('/') }}" target="_blank">
 			Preview Site 
@@ -20,21 +28,33 @@
 					<div class="info">
 						<span class="fullname">Joshua Tundag</span>
 						<span class="role">Administrator</span>
-						@if(config('revcms.user_mode'))
-							<button type="button" class="mode rev-btn -flat {{ config('revcms.user_mode') == 'developer' ? '-danger' : '-success' }}">
-								{{ config('revcms.user_mode') == 'developer' ? 'Dev' : 'Simple' }} Mode
-							</button>
-						@endif
+						<button type="button" class="mode rev-btn -flat {{ config('revcms.developer_mode') ? '-danger' : '-success' }}">
+							{{ config('revcms.developer_mode') ? 'Dev' : 'Simple' }} Mode
+						</button>
 					</div>
 				</div>
 			</li>
 			<li class="item">
 				<a href="{{ url(config('revcms.uri') . '/user/') }}">
+					<i class="fa fa-inbox"></i>
+					Messages
+				</a>
+			</li>
+			<li class="item">
+				<a href="{{ url(config('revcms.uri') . '/user/') }}">
+					<i class="fa fa-globe"></i>
+					Notifications
+				</a>
+			</li>
+			<li class="item">
+				<a href="{{ url(config('revcms.uri') . '/user/') }}">
+					<i class="revicon-settings"></i>
 					Settings
 				</a>
 			</li>
 			<li class="item">
 				<a href="{{ url(config('revcms.uri') . '/user/') }}">
+					<i class="revicon-switch"></i>
 					Sign Out
 				</a>
 			</li>

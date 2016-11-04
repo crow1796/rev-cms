@@ -6,33 +6,44 @@ use RevCMS\Modules\Router\Router;
 use RevCMS\Modules\Theme\ThemeManager;
 use RevCMS\Modules\Dashboard\Dashboard;
 use RevCMS\Modules\Cms\Cms;
+use RevCMS\Modules\Settings\SettingsManager;
+use Illuminate\Container\Container as App;
 
 class RevCMS {
 
 	/**
 	 * RevCMS Modules.
 	 * 
-	 * @var $mvcInstance RevCMS\Modules\Mvc\Mvc
-	 * @var $routerInstance  RevCMS\Modules\Router\Router
-	 * @var $themeInstance  RevCMS\Modules\Theme\ThemeManager
+	 * @var $mvc RevCMS\Modules\Mvc\Mvc
+	 * @var $router  RevCMS\Modules\Router\Router
+	 * @var $theme  RevCMS\Modules\Theme\ThemeManager
 	 * @var $dashboard  RevCMS\Modules\Dashboard\Dashboard
 	 * @var $cms  RevCMS\Modules\Cms\Cms
 	 */
-	protected $mvcInstance;
-	protected $routerInstance;
-	protected $themeInstance;
+	protected $mvc;
+	protected $router;
+	protected $theme;
 	protected $dashboard;
 	protected $cms;
+	protected $settings;
 
 	/**
 	 * Instantiate Modules.
 	 */
-	public function __construct(){
-		$this->mvcInstance = new Mvc();
-		$this->routerInstance = new Router();
-		$this->themeInstance = new ThemeManager();
-		$this->dashboard = new Dashboard();
-		$this->cms = new Cms();
+	public function __construct(
+		Mvc $mvc,
+		Router $router, 
+		ThemeManager $theme, 
+		Dashboard $dashboard, 
+		Cms $cms, 
+		SettingsManager $settings){
+
+		$this->mvc = $mvc;
+		$this->router = $router;
+		$this->theme = $theme;
+		$this->dashboard = $dashboard;
+		$this->cms = $cms;
+		$this->settings = $settings;
 	}
 
 	/**
@@ -40,7 +51,7 @@ class RevCMS {
 	 * @return RevCMS\Modules\Mvc\Mvc
 	 */
 	public function mvc(){
-		return $this->mvcInstance;
+		return $this->mvc;
 	}
 
 	/**
@@ -48,7 +59,7 @@ class RevCMS {
 	 * @return RevCMS\Modules\Mvc\Router 
 	 */
 	public function router(){
-		return $this->routerInstance;
+		return $this->router;
 	}
 
 	/**
@@ -56,7 +67,7 @@ class RevCMS {
 	 * @return RevCMS\Modules\Theme\ThemeManager 
 	 */
 	public function theme(){
-		return $this->themeInstance;
+		return $this->theme;
 	}
 
 	/**
@@ -73,5 +84,13 @@ class RevCMS {
 	 */
 	public function cms(){
 		return $this->cms;
+	}
+
+	/**
+	 * Get RevCMS' SettingsManager Instance.
+	 * @return RevCMS\Modules\Settings\SettingsManager 
+	 */
+	public function settings(){
+		return $this->settings;
 	}
 }

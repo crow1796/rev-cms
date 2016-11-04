@@ -10,6 +10,7 @@ use RevCMS\Http\Controllers\RevBaseController;
 class ControllersController extends RevBaseController
 {
     public function index(){
+        $this->menuOrder = 9;
     	return $this->makeView('revcms.developer.mvc.controllers.index', 'Controllers');
     }
 

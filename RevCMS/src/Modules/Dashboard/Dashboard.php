@@ -1,17 +1,18 @@
 <?php 
 namespace RevCMS\Modules\Dashboard;
-use RevCMS\Modules\Dashboard\Factories\SidebarMenu as SidebarMenuFactory;
-use RevCMS\Modules\Dashboard\Decorators\SidebarMenu as SidebarMenuDecorator;
+use RevCMS\Modules\Abstracts\RevCMSModule;
 
-class Dashboard {
-	protected $sidebarMenuFactory;
+class Dashboard extends RevCMSModule {
 
 	public function __construct(){
-		$this->sidebarMenuFactory = new SidebarMenuFactory();
 	}
 
-	public function addSidebarMenu($uri = null, $action = null){
-		return $this->sidebarMenuFactory
-				->makePage($uri, $action);
+	public function render($partialName = '', $title = '', $menuOrder = null){
+		$viewData = array(
+			'title' => $title,
+			'partialName' => $partialName,
+			'revActiveMenu' => $menuOrder ? 'custom-menu-' . $menuOrder : 0
+			);
+		return view('revcms.layout.custommenu.master', $viewData);
 	}
 }

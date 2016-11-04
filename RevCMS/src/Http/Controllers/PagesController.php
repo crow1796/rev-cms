@@ -10,9 +10,15 @@ class PagesController extends RevBaseController
 {
 
     public function index(){
+        $this->menuOrder = 2;
     	return $this->makeView('revcms.pages.index', 'Pages');
     }
 
+    /**
+     * Create new page.
+     * @param  Request $request 
+     * @return mixed           
+     */
     public function store(Request $request){
     	$this->checkAjaxRequest($request);
 
@@ -30,9 +36,28 @@ class PagesController extends RevBaseController
     }
 
     public function create(){
+        $this->menuOrder = 2;
     	return $this->makeView('revcms.pages.create', 'New Page');
     }
 
+    /**
+     * Populate controllers and layouts fields.
+     * @param  Request $request 
+     * @return array           
+     */
+    public function populateFields(Request $request){
+        $fieldValues = [
+            'controllers' => $this->rev->mvc()->allControllers(),
+            'layouts' => $this->rev->cms()->getActiveThemesLayouts(),
+        ];
+        return $fieldValues;
+    }
+
+    /**
+     * Generate slug and action name based on page's title.
+     * @param  Request $request 
+     * @return array           
+     */
     public function generateFields(Request $request){
     	$this->checkAjaxRequest($request);
 

@@ -5,20 +5,20 @@ $brand-success: #23D160;
 $brand-warning: #FFEB3B;
 $brand-danger: #f4645f;
 
-// Theme Font Family
-// $font-family: "Roboto", sans-serif;
+// Light Theme
+// $font-family: "Segoe UI", sans-serif;
 // $body-bg: #f5f8fa;
 // $theme-btn-color: #f4645f;
 // $theme-bg: #fff;
 // $theme-text-color: #222222;
 // $theme-content-text-color: #222222;
-// $theme-logo-color: #fff;
+// $theme-logo-color: #222222;
 // $theme-header-bg: #fff;
-// $theme-header-border-top: #2C383C;
+// $theme-sidebar-hover-color: #222222;
 // $theme-panel-bg: #fff;
 
-// Deep Dark Theme
-// $font-family: "Roboto", sans-serif;
+// Black State Theme
+// $font-family: "Segoe UI", sans-serif;
 // $body-bg: #F1F1F1;
 // $theme-btn-color: #DA0523;
 // $theme-bg: #000000;
@@ -26,11 +26,11 @@ $brand-danger: #f4645f;
 // $theme-content-text-color: #333333;
 // $theme-logo-color: #fff;
 // $theme-header-bg: #fff;
-// $theme-header-border-top: #2C383C;
+// $theme-sidebar-hover-color: #222222;
 // $theme-panel-bg: #fff;
 
 // Expression Theme
-// $font-family: "Open Sans", sans-serif;
+// $font-family: "Segoe UI", sans-serif;
 // $body-bg: #F1F1F1;
 // $theme-btn-color: #1863d2;
 // $theme-bg: #06152b;
@@ -38,32 +38,32 @@ $brand-danger: #f4645f;
 // $theme-content-text-color: #333333;
 // $theme-logo-color: #fff;
 // $theme-header-bg: #fff;
-// $theme-header-border-top: #2C383C;
+// $theme-sidebar-hover-color: #222222;
 // $theme-panel-bg: #fff;
 
 // State Theme
-// $font-family: "Lato", sans-serif;
-// $body-bg: #EFEFEF;
-// $theme-btn-color: #DA0523;
-// $theme-bg: #2C383C;
-// $theme-text-color: #fff;
-// $theme-content-text-color: #474645;
-// $theme-logo-color: #2C383C;
-// $theme-header-bg: #fff;
-// $theme-header-border-top: #2C383C;
-// $theme-panel-bg: #fff;
-
-// Bull Theme
-$font-family: "Lato", sans-serif;
+$font-family: "Segoe UI", sans-serif;
 $body-bg: #EFEFEF;
-$theme-btn-color: #FF3860;
-$theme-bg: #7a7a7a;
+$theme-btn-color: #DA0523;
+$theme-bg: #2C383C;
 $theme-text-color: #fff;
 $theme-content-text-color: #474645;
 $theme-logo-color: #2C383C;
 $theme-header-bg: #fff;
-$theme-header-border-top: #7a7a7a;
+$theme-sidebar-hover-color: #fff;
 $theme-panel-bg: #fff;
+
+// Bull Theme
+// $font-family: "Segoe UI", sans-serif;
+// $body-bg: #EFEFEF;
+// $theme-btn-color: #FF3860;
+// $theme-bg: #7a7a7a;
+// $theme-text-color: #fff;
+// $theme-content-text-color: #474645;
+// $theme-logo-color: #2C383C;
+// $theme-header-bg: #fff;
+// $theme-sidebar-hover-color: #fff;
+// $theme-panel-bg: #fff;
 
 // Sidebar Submenu bg
 $btn-default-color: #607D8B;

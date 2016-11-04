@@ -14,6 +14,7 @@ class ThemesController extends RevBaseController
 	 */
     public function index()
     {
+        $this->menuOrder = 6;
         return $this->makeView('revcms.themes.index', 'Installed Themes');
     }
 

@@ -15,7 +15,13 @@ class CustomMenuController extends Controller
      */
     public function index()
     {
-        
+        return \RevCMS::dashboard()
+                        ->render('custommenu.index', 'Custom Menu 1', 1);
+    }
+
+    public function submenu1(){
+        return \RevCMS::dashboard()
+                        ->render('custommenu.submenu1', 'Custom Sub Menu 1', 1);
     }
 
     /**

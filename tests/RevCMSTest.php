@@ -60,6 +60,12 @@ class RevCMSTest extends TestCase
         // dd($themes);
     }
 
+    public function testGetActiveThemesLayouts(){
+        $layouts = \RevCMS::cms()->getActiveThemesLayouts();
+
+        // dd($layouts);
+    }
+
     public function testPageCodeTrimmer(){
         $codeSample1 = '// Inject: $post_slug
 
@@ -91,8 +97,12 @@ $viewData["post"] = $post;';
                         'description' => 'Simple Product Page',
                         'keywords' => 'product, simple, page',
                     ),
+                'view_names' => [
+                    'filePath' => 'pages/products/aimer.blade.php',
+                    'response' => 'pages.products.aimer'
+                ]
             );
-        $pageSource = \RevCMS::cms()->createPage($pageInfo);
+        // $pageSource = \RevCMS::cms()->createPage($pageInfo);
 
         // dd($this->buildBlockFor($page, $codeSample1));
     }

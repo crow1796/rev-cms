@@ -9,7 +9,7 @@ class ActionBlockBuilder extends PageBuilder{
 	 * @return mixed       
 	 */
 	public function buildFor($page = array()){
-	    if(!is_array($page) || empty($page)) return '';
+	    parent::buildFor($page);
 
 	    $source = isset($page['action_source']) ? $page['action_source'] : '';
 
@@ -24,7 +24,7 @@ class ActionBlockBuilder extends PageBuilder{
 	    }
 
 	    $page['view_names'] = $this->generateViewNameFor($page);
-
+	    
 	    $data = array(
 	    		'page' => $page,
 	    		'extractedUses' => $extractedUses,
@@ -45,7 +45,7 @@ class ActionBlockBuilder extends PageBuilder{
 		if(!is_array($data)) return '';
 
 		extract($data);
-		// Generate action returnable view name.
+		// Generate action-returnable view name.
 		$viewName = $data['page']['view_names']['response'];
 		$params = isset($extractedInjections['inline']) ? $extractedInjections['inline'] : '';
 
@@ -53,10 +53,10 @@ class ActionBlockBuilder extends PageBuilder{
 		$block .= "\tpublic function {$page['action_name']}({$params}){\n";
 		$block .= "\t\t" . '$viewData = array();' . "\n";
 		$block .= "\t\t" . '$viewData[\'title\'] = ' . '\'' . $page['title'] . '\';' . "\n";
-		$block .="\t\t//revpageblock:\n";
 		$block .= "\t\t" . '$viewData[\'meta_title\'] = ' . '\'' . (isset($page['meta']['title']) ? $page['meta']['title'] : '') . '\';' . "\n";
 		$block .= "\t\t" . '$viewData[\'meta_description\'] = ' . '\'' . (isset($page['meta']['description']) ? $page['meta']['description'] : '') . '\';' . "\n";
 		$block .= "\t\t" . '$viewData[\'meta_keywords\'] = ' . '\'' . (isset($page['meta']['keywords']) ? $page['meta']['keywords'] : '') . '\';' . "\n";
+		$block .="\t\t//revpageblock:\n";
 		$block .= $newSource;
 		$block .="\t\t//endrevpageblock";
 		$block .= "\n\t\t return view('{$viewName}', " . '$viewData' . ");";
@@ -73,8 +73,8 @@ class ActionBlockBuilder extends PageBuilder{
 	 * @return mixed       
 	 */
 	private function generateViewNameFor($page){
-
-		$fileName = str_slug($page['title']);
+		// $fileName = str_slug($page['title']);
+		$fileName = str_slug($page['action_name']);
 		preg_match('~http\\\controllers\\\(.*)~i', $page['controller'], $matches);
 		$viewDir = strtolower(preg_replace('~controller.*~i', '', str_replace('\\', '/', $matches[1])));
 

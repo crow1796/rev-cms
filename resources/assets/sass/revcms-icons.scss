@@ -1,0 +1,3294 @@
+$icomoon-font-path: "fonts" !default;
+
+$revicon-mobile: "\e000";
+$revicon-laptop: "\e001";
+$revicon-desktop: "\e002";
+$revicon-tablet: "\e003";
+$revicon-phone: "\e004";
+$revicon-picture: "\e00f";
+$revicon-pictures: "\e010";
+$revicon-video: "\e011";
+$revicon-camera2: "\e012";
+$revicon-printer5: "\e013";
+$revicon-focus: "\e01b";
+$revicon-puzzle: "\e026";
+$revicon-gears: "\e02b";
+$revicon-anchor: "\e03f";
+$revicon-profile-male: "\e040";
+$revicon-profile-female: "\e041";
+$revicon-chat: "\e049";
+$revicon-compass9: "\e053";
+$revicon-link: "\eb02";
+$revicon-phone2: "\eb01";
+$revicon-tablet2: "\eb00";
+$revicon-window: "\eaff";
+$revicon-monitor: "\eaea";
+$revicon-cog: "\eafd";
+$revicon-cogs: "\eafc";
+$revicon-cog2: "\eafe";
+$revicon-picture2: "\eaed";
+$revicon-pictures2: "\eaec";
+$revicon-pictures3: "\eaeb";
+$revicon-cord: "\eaee";
+$revicon-layout: "\eaef";
+$revicon-layout2: "\eaf0";
+$revicon-layout3: "\eaf1";
+$revicon-layout4: "\eaf2";
+$revicon-chat2: "\eaf6";
+$revicon-comments: "\eaf5";
+$revicon-chat3: "\eaf4";
+$revicon-chat4: "\eaf3";
+$revicon-stats: "\eaf7";
+$revicon-stats2: "\eaf8";
+$revicon-abacus: "\eaf9";
+$revicon-atom: "\eafb";
+$revicon-switch: "\eafa";
+$revicon-mail-envelope-open: "\e900";
+$revicon-mail-envelope-open2: "\e901";
+$revicon-mail-envelope-closed: "\e902";
+$revicon-mail-envelope-closed2: "\e903";
+$revicon-mail-envelope-open3: "\e904";
+$revicon-mail-envelope-open4: "\e905";
+$revicon-mail-envelope-open5: "\e906";
+$revicon-mail-envelope-open6: "\e907";
+$revicon-mail-envelope-closed3: "\e908";
+$revicon-mail-envelope-closed4: "\e909";
+$revicon-mail-envelope-open7: "\e90a";
+$revicon-mail-envelope-open8: "\e90b";
+$revicon-mail-error: "\e90c";
+$revicon-mail-error2: "\e90d";
+$revicon-mail-checked: "\e90e";
+$revicon-mail-checked2: "\e90f";
+$revicon-mail-cancel: "\e910";
+$revicon-mail-cancel2: "\e911";
+$revicon-mail--forbidden: "\e912";
+$revicon-mail--forbidden2: "\e913";
+$revicon-mail-add: "\e914";
+$revicon-mail-add2: "\e915";
+$revicon-mail-remove: "\e916";
+$revicon-mail-remove2: "\e917";
+$revicon-flag: "\e918";
+$revicon-flag2: "\e919";
+$revicon-flag3: "\e91a";
+$revicon-flag4: "\e91b";
+$revicon-bookmark-add: "\e91c";
+$revicon-bookmark-add2: "\e91d";
+$revicon-bookmark-remove: "\e91e";
+$revicon-bookmark-remove2: "\e91f";
+$revicon-eye-hidden: "\e920";
+$revicon-eye-hidden2: "\e921";
+$revicon-eye: "\e922";
+$revicon-eye2: "\e923";
+$revicon-star: "\e924";
+$revicon-star2: "\e925";
+$revicon-key: "\e926";
+$revicon-key2: "\e927";
+$revicon-key3: "\e928";
+$revicon-key4: "\e929";
+$revicon-trash-can: "\e92a";
+$revicon-trash-can2: "\e92b";
+$revicon-trash-can3: "\e92c";
+$revicon-trash-can4: "\e92d";
+$revicon-information: "\e92e";
+$revicon-information2: "\e92f";
+$revicon-information3: "\e930";
+$revicon-information4: "\e931";
+$revicon-book: "\e932";
+$revicon-book2: "\e933";
+$revicon-book-bookmark: "\e934";
+$revicon-book-bookmark2: "\e935";
+$revicon-clipboard-edit: "\e936";
+$revicon-clipboard-edit2: "\e937";
+$revicon-clipboard-add: "\e938";
+$revicon-clipboard-add2: "\e939";
+$revicon-clipboard-remove: "\e93a";
+$revicon-clipboard-remove2: "\e93b";
+$revicon-clipboard-checked: "\e93c";
+$revicon-clipboard-list: "\e93d";
+$revicon-clipboard-list2: "\e93e";
+$revicon-note: "\e93f";
+$revicon-note2: "\e940";
+$revicon-note-add: "\e941";
+$revicon-note-add2: "\e942";
+$revicon-note-remove: "\e943";
+$revicon-note-remove2: "\e944";
+$revicon-note-text: "\e945";
+$revicon-note-text2: "\e946";
+$revicon-note-list: "\e947";
+$revicon-note-list2: "\e948";
+$revicon-note-checked: "\e949";
+$revicon-note-checked2: "\e94a";
+$revicon-note-important: "\e94b";
+$revicon-note-important2: "\e94c";
+$revicon-notebook: "\e94d";
+$revicon-notebook2: "\e94e";
+$revicon-notebook3: "\e94f";
+$revicon-notebook4: "\e950";
+$revicon-notebook5: "\e951";
+$revicon-notebook6: "\e952";
+$revicon-notebook7: "\e953";
+$revicon-notebook8: "\e954";
+$revicon-notebook-text: "\e955";
+$revicon-notebook-text2: "\e956";
+$revicon-notebook-list: "\e957";
+$revicon-notebook-list2: "\e958";
+$revicon-document: "\e959";
+$revicon-document2: "\e95a";
+$revicon-document-text: "\e95b";
+$revicon-document-text2: "\e95c";
+$revicon-document-text3: "\e95d";
+$revicon-document-text4: "\e95e";
+$revicon-document-download: "\e95f";
+$revicon-document-download2: "\e960";
+$revicon-document-upload: "\e961";
+$revicon-document-upload2: "\e962";
+$revicon-document-bookmark: "\e963";
+$revicon-document-bookmark2: "\e964";
+$revicon-document-diagrams: "\e965";
+$revicon-document-diagrams2: "\e966";
+$revicon-document-recording: "\e967";
+$revicon-document-recording2: "\e968";
+$revicon-document-table: "\e969";
+$revicon-document-table2: "\e96a";
+$revicon-document-music: "\e96b";
+$revicon-document-music2: "\e96c";
+$revicon-document-movie: "\e96d";
+$revicon-document-movie2: "\e96e";
+$revicon-document-play: "\e96f";
+$revicon-document-play2: "\e970";
+$revicon-document-graph: "\e971";
+$revicon-document-time: "\e972";
+$revicon-document-code: "\e973";
+$revicon-document-code2: "\e974";
+$revicon-document-cloud: "\e975";
+$revicon-document-cloud2: "\e976";
+$revicon-documents: "\e977";
+$revicon-document-search: "\e978";
+$revicon-document-star: "\e979";
+$revicon-document-star2: "\e97a";
+$revicon-document-unlocked: "\e97b";
+$revicon-document-unlocked2: "\e97c";
+$revicon-document-locked: "\e97d";
+$revicon-document-locked2: "\e97e";
+$revicon-document-error: "\e97f";
+$revicon-document-error2: "\e980";
+$revicon-document-cancel: "\e981";
+$revicon-document-cancel2: "\e982";
+$revicon-document-checked: "\e983";
+$revicon-document-checked2: "\e984";
+$revicon-document-add: "\e985";
+$revicon-document-add2: "\e986";
+$revicon-document-remove: "\e987";
+$revicon-document-remove2: "\e988";
+$revicon-document-forbidden: "\e989";
+$revicon-document-forbidden2: "\e98a";
+$revicon-document-information: "\e98b";
+$revicon-document-information2: "\e98c";
+$revicon-folder-information: "\e98d";
+$revicon-folder-information2: "\e98e";
+$revicon-document-font: "\e98f";
+$revicon-document-font2: "\e990";
+$revicon-inbox: "\e991";
+$revicon-inbox2: "\e992";
+$revicon-inboxes: "\e993";
+$revicon-inboxes2: "\e994";
+$revicon-inbox-document: "\e995";
+$revicon-inbox-document2: "\e996";
+$revicon-inbox-document-text: "\e997";
+$revicon-inbox-document-text2: "\e998";
+$revicon-inbox-download: "\e999";
+$revicon-inbox-download2: "\e99a";
+$revicon-inbox-upload: "\e99b";
+$revicon-inbox-upload2: "\e99c";
+$revicon-folder: "\e99d";
+$revicon-folder2: "\e99e";
+$revicon-folder3: "\e99f";
+$revicon-folders: "\e9a0";
+$revicon-folders2: "\e9a1";
+$revicon-folder-download: "\e9a2";
+$revicon-folder-download2: "\e9a3";
+$revicon-folder-upload: "\e9a4";
+$revicon-folder-upload2: "\e9a5";
+$revicon-folder-unlocked: "\e9a6";
+$revicon-folder-unlocked2: "\e9a7";
+$revicon-folder-locked: "\e9a8";
+$revicon-folder-locked2: "\e9a9";
+$revicon-folder-search: "\e9aa";
+$revicon-folder-search2: "\e9ab";
+$revicon-folder-error: "\e9ac";
+$revicon-folder-error2: "\e9ad";
+$revicon-folder-cancel: "\e9ae";
+$revicon-folder-cancel2: "\e9af";
+$revicon-folder-checked: "\e9b0";
+$revicon-folder-checked2: "\e9b1";
+$revicon-folder-add: "\e9b2";
+$revicon-folder-add2: "\e9b3";
+$revicon-folder-remove: "\e9b4";
+$revicon-folder-remove2: "\e9b5";
+$revicon-folder-forbidden: "\e9b6";
+$revicon-folder-forbidden2: "\e9b7";
+$revicon-folder-bookmark: "\e9b8";
+$revicon-folder-bookmark2: "\e9b9";
+$revicon-document-zip: "\e9ba";
+$revicon-document-zip2: "\e9bb";
+$revicon-zip: "\e9bc";
+$revicon-zip2: "\e9bd";
+$revicon-search: "\e9be";
+$revicon-search2: "\e9bf";
+$revicon-search-plus: "\e9c0";
+$revicon-search-plus2: "\e9c1";
+$revicon-search-minus: "\e9c2";
+$revicon-search-minus2: "\e9c3";
+$revicon-lock: "\e9c4";
+$revicon-lock2: "\e9c5";
+$revicon-lock-open: "\e9c6";
+$revicon-lock-open2: "\e9c7";
+$revicon-lock-open3: "\e9c8";
+$revicon-lock-open4: "\e9c9";
+$revicon-lock-stripes: "\e9ca";
+$revicon-lock-stripes2: "\e9cb";
+$revicon-lock-rounded: "\e9cc";
+$revicon-lock-rounded2: "\e9cd";
+$revicon-lock-rounded-open: "\e9ce";
+$revicon-lock-rounded-open2: "\e9cf";
+$revicon-lock-rounded-open3: "\e9d0";
+$revicon-lock-rounded-open4: "\e9d1";
+$revicon-combination-lock: "\e9d2";
+$revicon-combination-lock2: "\e9d3";
+$revicon-printer: "\e9d4";
+$revicon-printer2: "\e9d5";
+$revicon-printer3: "\e9d6";
+$revicon-printer4: "\e9d7";
+$revicon-printer-text: "\e9d8";
+$revicon-printer-text2: "\e9d9";
+$revicon-printer-text3: "\e9da";
+$revicon-printer-text4: "\e9db";
+$revicon-cloud-download: "\e9dc";
+$revicon-cloud-download2: "\e9dd";
+$revicon-cloud-upload: "\e9de";
+$revicon-cloud-upload2: "\e9df";
+$revicon-cloud-error: "\e9e0";
+$revicon-cloud-error2: "\e9e1";
+$revicon-cloud: "\e9e2";
+$revicon-cloud2: "\e9e3";
+$revicon-inbox-filled: "\e9e4";
+$revicon-inbox-filled2: "\e9e5";
+$revicon-pen: "\e9e6";
+$revicon-pen2: "\e9e7";
+$revicon-pen-angled: "\e9e8";
+$revicon-pen-angled2: "\e9e9";
+$revicon-document-edit: "\e9ea";
+$revicon-document-edit2: "\e9eb";
+$revicon-package: "\e9ec";
+$revicon-package2: "\e9ed";
+$revicon-box: "\e9ee";
+$revicon-box2: "\e9ef";
+$revicon-box-filled: "\e9f0";
+$revicon-box-filled2: "\e9f1";
+$revicon-box3: "\e9f2";
+$revicon-box4: "\e9f3";
+$revicon-box5: "\e9f4";
+$revicon-box6: "\e9f5";
+$revicon-box-bookmark: "\e9f6";
+$revicon-box-bookmark2: "\e9f7";
+$revicon-tag-cord: "\e9f8";
+$revicon-tag-cord2: "\e9f9";
+$revicon-tag: "\e9fa";
+$revicon-tag2: "\e9fb";
+$revicon-tags: "\e9fc";
+$revicon-tags2: "\e9fd";
+$revicon-tag-add: "\e9fe";
+$revicon-tag-add2: "\e9ff";
+$revicon-tag-remove: "\ea00";
+$revicon-tag-remove2: "\ea01";
+$revicon-tag-checked: "\ea02";
+$revicon-tag-checked2: "\ea03";
+$revicon-tag-cancel: "\ea04";
+$revicon-tag-cancel2: "\ea05";
+$revicon-paperclip: "\ea06";
+$revicon-trophy: "\ea07";
+$revicon-trophy-one: "\ea08";
+$revicon-trophy-one2: "\ea09";
+$revicon-trophy2: "\ea0a";
+$revicon-trophy3: "\ea0b";
+$revicon-medal: "\ea0c";
+$revicon-medal2: "\ea0d";
+$revicon-medal3: "\ea0e";
+$revicon-medal4: "\ea0f";
+$revicon-weights: "\ea10";
+$revicon-award: "\ea11";
+$revicon-award2: "\ea12";
+$revicon-medal5: "\ea13";
+$revicon-medal6: "\ea14";
+$revicon-medal7: "\ea15";
+$revicon-medal8: "\ea16";
+$revicon-target-arrow: "\ea17";
+$revicon-clouds: "\ea18";
+$revicon-clouds2: "\ea19";
+$revicon-moonrise: "\ea1a";
+$revicon-moonrise2: "\ea1b";
+$revicon-moonset: "\ea1c";
+$revicon-moonset2: "\ea1d";
+$revicon-wind: "\ea1e";
+$revicon-wind2: "\ea1f";
+$revicon-barometer: "\ea20";
+$revicon-barometer2: "\ea21";
+$revicon-compass-north: "\ea22";
+$revicon-compass-north2: "\ea23";
+$revicon-compass-west: "\ea24";
+$revicon-compass-west2: "\ea25";
+$revicon-compass-east: "\ea26";
+$revicon-compass-east2: "\ea27";
+$revicon-compass-south: "\ea28";
+$revicon-compass-south2: "\ea29";
+$revicon-warning: "\ea2a";
+$revicon-warning2: "\ea2b";
+$revicon-compass: "\ea2c";
+$revicon-compass2: "\ea2d";
+$revicon-compass3: "\ea2e";
+$revicon-compass4: "\ea2f";
+$revicon-compass5: "\ea30";
+$revicon-compass6: "\ea31";
+$revicon-compass7: "\ea32";
+$revicon-compass8: "\ea33";
+$revicon-thermometer: "\ea34";
+$revicon-thermometer-low: "\ea35";
+$revicon-thermometer-low2: "\ea36";
+$revicon-thermometer-quarter: "\ea37";
+$revicon-thermometer-quarter2: "\ea38";
+$revicon-thermometer-half: "\ea39";
+$revicon-thermometer-half2: "\ea3a";
+$revicon-thermometer-three-quarters: "\ea3b";
+$revicon-thermometer-three-quarters2: "\ea3c";
+$revicon-thermometer-full: "\ea3d";
+$revicon-thermometer-full2: "\ea3e";
+$revicon-middle-finger: "\ea3f";
+$revicon-high-five: "\ea40";
+$revicon-high-five2: "\ea41";
+$revicon-thumb-up: "\ea42";
+$revicon-thumb-up2: "\ea43";
+$revicon-thumb-down: "\ea44";
+$revicon-two-fingers-swipe-left: "\ea45";
+$revicon-two-fingers-swipe-left2: "\ea46";
+$revicon-two-fingers-swipe-right: "\ea47";
+$revicon-two-fingers-swipe-right2: "\ea48";
+$revicon-two-fingers-swipe-up: "\ea49";
+$revicon-two-fingers-swipe-up2: "\ea4a";
+$revicon-two-fingers-swipe-down: "\ea4b";
+$revicon-two-fingers-swipe-down2: "\ea4c";
+$revicon-two-fingers-resize-out: "\ea4d";
+$revicon-two-fingers-resize-out2: "\ea4e";
+$revicon-two-fingers-resize-in: "\ea4f";
+$revicon-two-fingers-resize-in2: "\ea50";
+$revicon-two-fingers-rotate: "\ea51";
+$revicon-two-fingers-rotate2: "\ea52";
+$revicon-one-finger-swipe-left: "\ea53";
+$revicon-one-finger-swipe-left2: "\ea54";
+$revicon-one-finger-swipe-right: "\ea55";
+$revicon-one-finger-double-tap: "\ea56";
+$revicon-one-finger-double-tap2: "\ea57";
+$revicon-one-finger-tap-hold: "\ea58";
+$revicon-two-fingers-double-tap: "\ea59";
+$revicon-two-fingers-double-tap2: "\ea5a";
+$revicon-two-fingers-tap: "\ea5b";
+$revicon-document-file-numbers: "\ea5c";
+$revicon-document-file-numbers2: "\ea5d";
+$revicon-document-file-pages: "\ea5e";
+$revicon-document-file-pages2: "\ea5f";
+$revicon-document-file-app: "\ea60";
+$revicon-document-file-app2: "\ea61";
+$revicon-document-file-png: "\ea62";
+$revicon-document-file-png2: "\ea63";
+$revicon-document-file-pdf: "\ea64";
+$revicon-document-file-pdf2: "\ea65";
+$revicon-document-file-mp3: "\ea66";
+$revicon-document-file-mp32: "\ea67";
+$revicon-document-file-mp4: "\ea68";
+$revicon-document-file-mp42: "\ea69";
+$revicon-document-file-mov: "\ea6a";
+$revicon-document-file-mov2: "\ea6b";
+$revicon-document-file-jpg: "\ea6c";
+$revicon-document-file-jpg2: "\ea6d";
+$revicon-document-file-key: "\ea6e";
+$revicon-document-file-key2: "\ea6f";
+$revicon-document-file-html: "\ea70";
+$revicon-document-file-html2: "\ea71";
+$revicon-document-file-css: "\ea72";
+$revicon-document-file-css2: "\ea73";
+$revicon-document-file-java: "\ea74";
+$revicon-document-file-java2: "\ea75";
+$revicon-document-file-psd: "\ea76";
+$revicon-document-file-psd2: "\ea77";
+$revicon-document-file-ai: "\ea78";
+$revicon-document-file-ai2: "\ea79";
+$revicon-document-file-bmp: "\ea7a";
+$revicon-document-file-bmp2: "\ea7b";
+$revicon-document-file-dwg: "\ea7c";
+$revicon-document-file-dwg2: "\ea7d";
+$revicon-document-file-eps: "\ea7e";
+$revicon-document-file-eps2: "\ea7f";
+$revicon-document-file-tiff: "\ea80";
+$revicon-document-file-tiff2: "\ea81";
+$revicon-document-file-ots: "\ea82";
+$revicon-document-file-ots2: "\ea83";
+$revicon-document-file-php: "\ea84";
+$revicon-document-file-php2: "\ea85";
+$revicon-document-file-py: "\ea86";
+$revicon-document-file-py2: "\ea87";
+$revicon-document-file-c: "\ea88";
+$revicon-document-file-c2: "\ea89";
+$revicon-document-file-sql: "\ea8a";
+$revicon-document-file-sql2: "\ea8b";
+$revicon-document-file-rb: "\ea8c";
+$revicon-document-file-rb2: "\ea8d";
+$revicon-document-file-cpp: "\ea8e";
+$revicon-document-file-cpp2: "\ea8f";
+$revicon-document-file-tga: "\ea90";
+$revicon-document-file-tga2: "\ea91";
+$revicon-document-file-dxf: "\ea92";
+$revicon-document-file-dxf2: "\ea93";
+$revicon-document-file-doc: "\ea94";
+$revicon-document-file-doc2: "\ea95";
+$revicon-document-file-odt: "\ea96";
+$revicon-document-file-odt2: "\ea97";
+$revicon-document-file-xls: "\ea98";
+$revicon-document-file-xls2: "\ea99";
+$revicon-document-file-docx: "\ea9a";
+$revicon-document-file-docx2: "\ea9b";
+$revicon-document-file-ppt: "\ea9c";
+$revicon-document-file-ppt2: "\ea9d";
+$revicon-document-file-asp: "\ea9e";
+$revicon-document-file-asp2: "\ea9f";
+$revicon-document-file-ics: "\eaa0";
+$revicon-document-file-ics2: "\eaa1";
+$revicon-document-file-dat: "\eaa2";
+$revicon-document-file-dat2: "\eaa3";
+$revicon-document-file-xml: "\eaa4";
+$revicon-document-file-xml2: "\eaa5";
+$revicon-document-file-yml: "\eaa6";
+$revicon-document-file-yml2: "\eaa7";
+$revicon-document-file-h: "\eaa8";
+$revicon-document-file-h2: "\eaa9";
+$revicon-document-file-exe: "\eaaa";
+$revicon-document-file-exe2: "\eaab";
+$revicon-document-file-avi: "\eaac";
+$revicon-document-file-avi2: "\eaad";
+$revicon-document-file-odp: "\eaae";
+$revicon-document-file-odp2: "\eaaf";
+$revicon-document-file-dotx: "\eab0";
+$revicon-document-file-dotx2: "\eab1";
+$revicon-document-file-xlsx: "\eab2";
+$revicon-document-file-xlsx2: "\eab3";
+$revicon-document-file-ods: "\eab4";
+$revicon-document-file-ods2: "\eab5";
+$revicon-document-file-pps: "\eab6";
+$revicon-document-file-pps2: "\eab7";
+$revicon-document-file-dot: "\eab8";
+$revicon-document-file-dot2: "\eab9";
+$revicon-document-file-txt: "\eaba";
+$revicon-document-file-txt2: "\eabb";
+$revicon-document-file-rtf: "\eabc";
+$revicon-document-file-rtf2: "\eabd";
+$revicon-document-file-m4v: "\eabe";
+$revicon-document-file-m4v2: "\eabf";
+$revicon-document-file-flv: "\eac0";
+$revicon-document-file-flv2: "\eac1";
+$revicon-document-file-mpg: "\eac2";
+$revicon-document-file-mpg2: "\eac3";
+$revicon-document-file-qt: "\eac4";
+$revicon-document-file-qt2: "\eac5";
+$revicon-document-file-mid: "\eac6";
+$revicon-document-file-mid2: "\eac7";
+$revicon-document-file-3gp: "\eac8";
+$revicon-document-file-3gp2: "\eac9";
+$revicon-document-file-aiff: "\eaca";
+$revicon-document-file-aiff2: "\eacb";
+$revicon-document-file-aac: "\eacc";
+$revicon-document-file-aac2: "\eacd";
+$revicon-document-file-wav: "\eace";
+$revicon-document-file-wav2: "\eacf";
+$revicon-document-file-zip: "\ead0";
+$revicon-document-file-zip2: "\ead1";
+$revicon-document-file-ott: "\ead2";
+$revicon-document-file-ott2: "\ead3";
+$revicon-document-file-tgz: "\ead4";
+$revicon-document-file-tgz2: "\ead5";
+$revicon-document-file-dmg: "\ead6";
+$revicon-document-file-dmg2: "\ead7";
+$revicon-document-file-iso: "\ead8";
+$revicon-document-file-iso2: "\ead9";
+$revicon-document-file-rar: "\eada";
+$revicon-document-file-rar2: "\eadb";
+$revicon-document-file-gif: "\eadc";
+$revicon-document-file-gif2: "\eadd";
+$revicon-power: "\e63c";
+$revicon-settings: "\eade";
+$revicon-refresh: "\eadf";
+$revicon-email: "\eae0";
+$revicon-users: "\eae1";
+$revicon-user: "\eae2";
+$revicon-users2: "\eae3";
+$revicon-user2: "\eae4";
+$revicon-camera: "\eae5";
+$revicon-microwaveoven: "\eae6";
+$revicon-mapmarker: "\eae7";
+$revicon-bones: "\eae8";
+$revicon-image: "\eae9";
+$revicon-box7: "\eb03";
+$revicon-write: "\eb04";
+$revicon-camera3: "\eb05";
+$revicon-image2: "\eb06";
+$revicon-heart: "\eb07";
+$revicon-monitor2: "\eb08";
+$revicon-cross: "\eb09";
+$revicon-plus: "\eb0a";
+$revicon-left: "\eb0b";
+$revicon-up: "\eb0c";
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$icomoon-font-path}/icomoon.eot?n9xeq2');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?n9xeq2#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/icomoon.ttf?n9xeq2') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff?n9xeq2') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg?n9xeq2#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="revicon-"], [class*=" revicon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.revicon-mobile {
+  &:before {
+    content: $revicon-mobile;
+  }
+}
+.revicon-laptop {
+  &:before {
+    content: $revicon-laptop;
+  }
+}
+.revicon-desktop {
+  &:before {
+    content: $revicon-desktop;
+  }
+}
+.revicon-tablet {
+  &:before {
+    content: $revicon-tablet;
+  }
+}
+.revicon-phone {
+  &:before {
+    content: $revicon-phone;
+  }
+}
+.revicon-picture {
+  &:before {
+    content: $revicon-picture;
+  }
+}
+.revicon-pictures {
+  &:before {
+    content: $revicon-pictures;
+  }
+}
+.revicon-video {
+  &:before {
+    content: $revicon-video;
+  }
+}
+.revicon-camera2 {
+  &:before {
+    content: $revicon-camera2;
+  }
+}
+.revicon-printer5 {
+  &:before {
+    content: $revicon-printer5;
+  }
+}
+.revicon-focus {
+  &:before {
+    content: $revicon-focus;
+  }
+}
+.revicon-puzzle {
+  &:before {
+    content: $revicon-puzzle;
+  }
+}
+.revicon-gears {
+  &:before {
+    content: $revicon-gears;
+  }
+}
+.revicon-anchor {
+  &:before {
+    content: $revicon-anchor;
+  }
+}
+.revicon-profile-male {
+  &:before {
+    content: $revicon-profile-male;
+  }
+}
+.revicon-profile-female {
+  &:before {
+    content: $revicon-profile-female;
+  }
+}
+.revicon-chat {
+  &:before {
+    content: $revicon-chat;
+  }
+}
+.revicon-compass9 {
+  &:before {
+    content: $revicon-compass9;
+  }
+}
+.revicon-link {
+  &:before {
+    content: $revicon-link;
+  }
+}
+.revicon-phone2 {
+  &:before {
+    content: $revicon-phone2;
+  }
+}
+.revicon-tablet2 {
+  &:before {
+    content: $revicon-tablet2;
+  }
+}
+.revicon-window {
+  &:before {
+    content: $revicon-window;
+  }
+}
+.revicon-monitor {
+  &:before {
+    content: $revicon-monitor;
+  }
+}
+.revicon-cog {
+  &:before {
+    content: $revicon-cog;
+  }
+}
+.revicon-cogs {
+  &:before {
+    content: $revicon-cogs;
+  }
+}
+.revicon-cog2 {
+  &:before {
+    content: $revicon-cog2;
+  }
+}
+.revicon-picture2 {
+  &:before {
+    content: $revicon-picture2;
+  }
+}
+.revicon-pictures2 {
+  &:before {
+    content: $revicon-pictures2;
+  }
+}
+.revicon-pictures3 {
+  &:before {
+    content: $revicon-pictures3;
+  }
+}
+.revicon-cord {
+  &:before {
+    content: $revicon-cord;
+  }
+}
+.revicon-layout {
+  &:before {
+    content: $revicon-layout;
+  }
+}
+.revicon-layout2 {
+  &:before {
+    content: $revicon-layout2;
+  }
+}
+.revicon-layout3 {
+  &:before {
+    content: $revicon-layout3;
+  }
+}
+.revicon-layout4 {
+  &:before {
+    content: $revicon-layout4;
+  }
+}
+.revicon-chat2 {
+  &:before {
+    content: $revicon-chat2;
+  }
+}
+.revicon-comments {
+  &:before {
+    content: $revicon-comments;
+  }
+}
+.revicon-chat3 {
+  &:before {
+    content: $revicon-chat3;
+  }
+}
+.revicon-chat4 {
+  &:before {
+    content: $revicon-chat4;
+  }
+}
+.revicon-stats {
+  &:before {
+    content: $revicon-stats;
+  }
+}
+.revicon-stats2 {
+  &:before {
+    content: $revicon-stats2;
+  }
+}
+.revicon-abacus {
+  &:before {
+    content: $revicon-abacus;
+  }
+}
+.revicon-atom {
+  &:before {
+    content: $revicon-atom;
+  }
+}
+.revicon-switch {
+  &:before {
+    content: $revicon-switch;
+  }
+}
+.revicon-mail-envelope-open {
+  &:before {
+    content: $revicon-mail-envelope-open;
+  }
+}
+.revicon-mail-envelope-open2 {
+  &:before {
+    content: $revicon-mail-envelope-open2;
+  }
+}
+.revicon-mail-envelope-closed {
+  &:before {
+    content: $revicon-mail-envelope-closed;
+  }
+}
+.revicon-mail-envelope-closed2 {
+  &:before {
+    content: $revicon-mail-envelope-closed2;
+  }
+}
+.revicon-mail-envelope-open3 {
+  &:before {
+    content: $revicon-mail-envelope-open3;
+  }
+}
+.revicon-mail-envelope-open4 {
+  &:before {
+    content: $revicon-mail-envelope-open4;
+  }
+}
+.revicon-mail-envelope-open5 {
+  &:before {
+    content: $revicon-mail-envelope-open5;
+  }
+}
+.revicon-mail-envelope-open6 {
+  &:before {
+    content: $revicon-mail-envelope-open6;
+  }
+}
+.revicon-mail-envelope-closed3 {
+  &:before {
+    content: $revicon-mail-envelope-closed3;
+  }
+}
+.revicon-mail-envelope-closed4 {
+  &:before {
+    content: $revicon-mail-envelope-closed4;
+  }
+}
+.revicon-mail-envelope-open7 {
+  &:before {
+    content: $revicon-mail-envelope-open7;
+  }
+}
+.revicon-mail-envelope-open8 {
+  &:before {
+    content: $revicon-mail-envelope-open8;
+  }
+}
+.revicon-mail-error {
+  &:before {
+    content: $revicon-mail-error;
+  }
+}
+.revicon-mail-error2 {
+  &:before {
+    content: $revicon-mail-error2;
+  }
+}
+.revicon-mail-checked {
+  &:before {
+    content: $revicon-mail-checked;
+  }
+}
+.revicon-mail-checked2 {
+  &:before {
+    content: $revicon-mail-checked2;
+  }
+}
+.revicon-mail-cancel {
+  &:before {
+    content: $revicon-mail-cancel;
+  }
+}
+.revicon-mail-cancel2 {
+  &:before {
+    content: $revicon-mail-cancel2;
+  }
+}
+.revicon-mail--forbidden {
+  &:before {
+    content: $revicon-mail--forbidden;
+  }
+}
+.revicon-mail--forbidden2 {
+  &:before {
+    content: $revicon-mail--forbidden2;
+  }
+}
+.revicon-mail-add {
+  &:before {
+    content: $revicon-mail-add;
+  }
+}
+.revicon-mail-add2 {
+  &:before {
+    content: $revicon-mail-add2;
+  }
+}
+.revicon-mail-remove {
+  &:before {
+    content: $revicon-mail-remove;
+  }
+}
+.revicon-mail-remove2 {
+  &:before {
+    content: $revicon-mail-remove2;
+  }
+}
+.revicon-flag {
+  &:before {
+    content: $revicon-flag;
+  }
+}
+.revicon-flag2 {
+  &:before {
+    content: $revicon-flag2;
+  }
+}
+.revicon-flag3 {
+  &:before {
+    content: $revicon-flag3;
+  }
+}
+.revicon-flag4 {
+  &:before {
+    content: $revicon-flag4;
+  }
+}
+.revicon-bookmark-add {
+  &:before {
+    content: $revicon-bookmark-add;
+  }
+}
+.revicon-bookmark-add2 {
+  &:before {
+    content: $revicon-bookmark-add2;
+  }
+}
+.revicon-bookmark-remove {
+  &:before {
+    content: $revicon-bookmark-remove;
+  }
+}
+.revicon-bookmark-remove2 {
+  &:before {
+    content: $revicon-bookmark-remove2;
+  }
+}
+.revicon-eye-hidden {
+  &:before {
+    content: $revicon-eye-hidden;
+  }
+}
+.revicon-eye-hidden2 {
+  &:before {
+    content: $revicon-eye-hidden2;
+  }
+}
+.revicon-eye {
+  &:before {
+    content: $revicon-eye;
+  }
+}
+.revicon-eye2 {
+  &:before {
+    content: $revicon-eye2;
+  }
+}
+.revicon-star {
+  &:before {
+    content: $revicon-star;
+  }
+}
+.revicon-star2 {
+  &:before {
+    content: $revicon-star2;
+  }
+}
+.revicon-key {
+  &:before {
+    content: $revicon-key;
+  }
+}
+.revicon-key2 {
+  &:before {
+    content: $revicon-key2;
+  }
+}
+.revicon-key3 {
+  &:before {
+    content: $revicon-key3;
+  }
+}
+.revicon-key4 {
+  &:before {
+    content: $revicon-key4;
+  }
+}
+.revicon-trash-can {
+  &:before {
+    content: $revicon-trash-can;
+  }
+}
+.revicon-trash-can2 {
+  &:before {
+    content: $revicon-trash-can2;
+  }
+}
+.revicon-trash-can3 {
+  &:before {
+    content: $revicon-trash-can3;
+  }
+}
+.revicon-trash-can4 {
+  &:before {
+    content: $revicon-trash-can4;
+  }
+}
+.revicon-information {
+  &:before {
+    content: $revicon-information;
+  }
+}
+.revicon-information2 {
+  &:before {
+    content: $revicon-information2;
+  }
+}
+.revicon-information3 {
+  &:before {
+    content: $revicon-information3;
+  }
+}
+.revicon-information4 {
+  &:before {
+    content: $revicon-information4;
+  }
+}
+.revicon-book {
+  &:before {
+    content: $revicon-book;
+  }
+}
+.revicon-book2 {
+  &:before {
+    content: $revicon-book2;
+  }
+}
+.revicon-book-bookmark {
+  &:before {
+    content: $revicon-book-bookmark;
+  }
+}
+.revicon-book-bookmark2 {
+  &:before {
+    content: $revicon-book-bookmark2;
+  }
+}
+.revicon-clipboard-edit {
+  &:before {
+    content: $revicon-clipboard-edit;
+  }
+}
+.revicon-clipboard-edit2 {
+  &:before {
+    content: $revicon-clipboard-edit2;
+  }
+}
+.revicon-clipboard-add {
+  &:before {
+    content: $revicon-clipboard-add;
+  }
+}
+.revicon-clipboard-add2 {
+  &:before {
+    content: $revicon-clipboard-add2;
+  }
+}
+.revicon-clipboard-remove {
+  &:before {
+    content: $revicon-clipboard-remove;
+  }
+}
+.revicon-clipboard-remove2 {
+  &:before {
+    content: $revicon-clipboard-remove2;
+  }
+}
+.revicon-clipboard-checked {
+  &:before {
+    content: $revicon-clipboard-checked;
+  }
+}
+.revicon-clipboard-list {
+  &:before {
+    content: $revicon-clipboard-list;
+  }
+}
+.revicon-clipboard-list2 {
+  &:before {
+    content: $revicon-clipboard-list2;
+  }
+}
+.revicon-note {
+  &:before {
+    content: $revicon-note;
+  }
+}
+.revicon-note2 {
+  &:before {
+    content: $revicon-note2;
+  }
+}
+.revicon-note-add {
+  &:before {
+    content: $revicon-note-add;
+  }
+}
+.revicon-note-add2 {
+  &:before {
+    content: $revicon-note-add2;
+  }
+}
+.revicon-note-remove {
+  &:before {
+    content: $revicon-note-remove;
+  }
+}
+.revicon-note-remove2 {
+  &:before {
+    content: $revicon-note-remove2;
+  }
+}
+.revicon-note-text {
+  &:before {
+    content: $revicon-note-text;
+  }
+}
+.revicon-note-text2 {
+  &:before {
+    content: $revicon-note-text2;
+  }
+}
+.revicon-note-list {
+  &:before {
+    content: $revicon-note-list;
+  }
+}
+.revicon-note-list2 {
+  &:before {
+    content: $revicon-note-list2;
+  }
+}
+.revicon-note-checked {
+  &:before {
+    content: $revicon-note-checked;
+  }
+}
+.revicon-note-checked2 {
+  &:before {
+    content: $revicon-note-checked2;
+  }
+}
+.revicon-note-important {
+  &:before {
+    content: $revicon-note-important;
+  }
+}
+.revicon-note-important2 {
+  &:before {
+    content: $revicon-note-important2;
+  }
+}
+.revicon-notebook {
+  &:before {
+    content: $revicon-notebook;
+  }
+}
+.revicon-notebook2 {
+  &:before {
+    content: $revicon-notebook2;
+  }
+}
+.revicon-notebook3 {
+  &:before {
+    content: $revicon-notebook3;
+  }
+}
+.revicon-notebook4 {
+  &:before {
+    content: $revicon-notebook4;
+  }
+}
+.revicon-notebook5 {
+  &:before {
+    content: $revicon-notebook5;
+  }
+}
+.revicon-notebook6 {
+  &:before {
+    content: $revicon-notebook6;
+  }
+}
+.revicon-notebook7 {
+  &:before {
+    content: $revicon-notebook7;
+  }
+}
+.revicon-notebook8 {
+  &:before {
+    content: $revicon-notebook8;
+  }
+}
+.revicon-notebook-text {
+  &:before {
+    content: $revicon-notebook-text;
+  }
+}
+.revicon-notebook-text2 {
+  &:before {
+    content: $revicon-notebook-text2;
+  }
+}
+.revicon-notebook-list {
+  &:before {
+    content: $revicon-notebook-list;
+  }
+}
+.revicon-notebook-list2 {
+  &:before {
+    content: $revicon-notebook-list2;
+  }
+}
+.revicon-document {
+  &:before {
+    content: $revicon-document;
+  }
+}
+.revicon-document2 {
+  &:before {
+    content: $revicon-document2;
+  }
+}
+.revicon-document-text {
+  &:before {
+    content: $revicon-document-text;
+  }
+}
+.revicon-document-text2 {
+  &:before {
+    content: $revicon-document-text2;
+  }
+}
+.revicon-document-text3 {
+  &:before {
+    content: $revicon-document-text3;
+  }
+}
+.revicon-document-text4 {
+  &:before {
+    content: $revicon-document-text4;
+  }
+}
+.revicon-document-download {
+  &:before {
+    content: $revicon-document-download;
+  }
+}
+.revicon-document-download2 {
+  &:before {
+    content: $revicon-document-download2;
+  }
+}
+.revicon-document-upload {
+  &:before {
+    content: $revicon-document-upload;
+  }
+}
+.revicon-document-upload2 {
+  &:before {
+    content: $revicon-document-upload2;
+  }
+}
+.revicon-document-bookmark {
+  &:before {
+    content: $revicon-document-bookmark;
+  }
+}
+.revicon-document-bookmark2 {
+  &:before {
+    content: $revicon-document-bookmark2;
+  }
+}
+.revicon-document-diagrams {
+  &:before {
+    content: $revicon-document-diagrams;
+  }
+}
+.revicon-document-diagrams2 {
+  &:before {
+    content: $revicon-document-diagrams2;
+  }
+}
+.revicon-document-recording {
+  &:before {
+    content: $revicon-document-recording;
+  }
+}
+.revicon-document-recording2 {
+  &:before {
+    content: $revicon-document-recording2;
+  }
+}
+.revicon-document-table {
+  &:before {
+    content: $revicon-document-table;
+  }
+}
+.revicon-document-table2 {
+  &:before {
+    content: $revicon-document-table2;
+  }
+}
+.revicon-document-music {
+  &:before {
+    content: $revicon-document-music;
+  }
+}
+.revicon-document-music2 {
+  &:before {
+    content: $revicon-document-music2;
+  }
+}
+.revicon-document-movie {
+  &:before {
+    content: $revicon-document-movie;
+  }
+}
+.revicon-document-movie2 {
+  &:before {
+    content: $revicon-document-movie2;
+  }
+}
+.revicon-document-play {
+  &:before {
+    content: $revicon-document-play;
+  }
+}
+.revicon-document-play2 {
+  &:before {
+    content: $revicon-document-play2;
+  }
+}
+.revicon-document-graph {
+  &:before {
+    content: $revicon-document-graph;
+  }
+}
+.revicon-document-time {
+  &:before {
+    content: $revicon-document-time;
+  }
+}
+.revicon-document-code {
+  &:before {
+    content: $revicon-document-code;
+  }
+}
+.revicon-document-code2 {
+  &:before {
+    content: $revicon-document-code2;
+  }
+}
+.revicon-document-cloud {
+  &:before {
+    content: $revicon-document-cloud;
+  }
+}
+.revicon-document-cloud2 {
+  &:before {
+    content: $revicon-document-cloud2;
+  }
+}
+.revicon-documents {
+  &:before {
+    content: $revicon-documents;
+  }
+}
+.revicon-document-search {
+  &:before {
+    content: $revicon-document-search;
+  }
+}
+.revicon-document-star {
+  &:before {
+    content: $revicon-document-star;
+  }
+}
+.revicon-document-star2 {
+  &:before {
+    content: $revicon-document-star2;
+  }
+}
+.revicon-document-unlocked {
+  &:before {
+    content: $revicon-document-unlocked;
+  }
+}
+.revicon-document-unlocked2 {
+  &:before {
+    content: $revicon-document-unlocked2;
+  }
+}
+.revicon-document-locked {
+  &:before {
+    content: $revicon-document-locked;
+  }
+}
+.revicon-document-locked2 {
+  &:before {
+    content: $revicon-document-locked2;
+  }
+}
+.revicon-document-error {
+  &:before {
+    content: $revicon-document-error;
+  }
+}
+.revicon-document-error2 {
+  &:before {
+    content: $revicon-document-error2;
+  }
+}
+.revicon-document-cancel {
+  &:before {
+    content: $revicon-document-cancel;
+  }
+}
+.revicon-document-cancel2 {
+  &:before {
+    content: $revicon-document-cancel2;
+  }
+}
+.revicon-document-checked {
+  &:before {
+    content: $revicon-document-checked;
+  }
+}
+.revicon-document-checked2 {
+  &:before {
+    content: $revicon-document-checked2;
+  }
+}
+.revicon-document-add {
+  &:before {
+    content: $revicon-document-add;
+  }
+}
+.revicon-document-add2 {
+  &:before {
+    content: $revicon-document-add2;
+  }
+}
+.revicon-document-remove {
+  &:before {
+    content: $revicon-document-remove;
+  }
+}
+.revicon-document-remove2 {
+  &:before {
+    content: $revicon-document-remove2;
+  }
+}
+.revicon-document-forbidden {
+  &:before {
+    content: $revicon-document-forbidden;
+  }
+}
+.revicon-document-forbidden2 {
+  &:before {
+    content: $revicon-document-forbidden2;
+  }
+}
+.revicon-document-information {
+  &:before {
+    content: $revicon-document-information;
+  }
+}
+.revicon-document-information2 {
+  &:before {
+    content: $revicon-document-information2;
+  }
+}
+.revicon-folder-information {
+  &:before {
+    content: $revicon-folder-information;
+  }
+}
+.revicon-folder-information2 {
+  &:before {
+    content: $revicon-folder-information2;
+  }
+}
+.revicon-document-font {
+  &:before {
+    content: $revicon-document-font;
+  }
+}
+.revicon-document-font2 {
+  &:before {
+    content: $revicon-document-font2;
+  }
+}
+.revicon-inbox {
+  &:before {
+    content: $revicon-inbox;
+  }
+}
+.revicon-inbox2 {
+  &:before {
+    content: $revicon-inbox2;
+  }
+}
+.revicon-inboxes {
+  &:before {
+    content: $revicon-inboxes;
+  }
+}
+.revicon-inboxes2 {
+  &:before {
+    content: $revicon-inboxes2;
+  }
+}
+.revicon-inbox-document {
+  &:before {
+    content: $revicon-inbox-document;
+  }
+}
+.revicon-inbox-document2 {
+  &:before {
+    content: $revicon-inbox-document2;
+  }
+}
+.revicon-inbox-document-text {
+  &:before {
+    content: $revicon-inbox-document-text;
+  }
+}
+.revicon-inbox-document-text2 {
+  &:before {
+    content: $revicon-inbox-document-text2;
+  }
+}
+.revicon-inbox-download {
+  &:before {
+    content: $revicon-inbox-download;
+  }
+}
+.revicon-inbox-download2 {
+  &:before {
+    content: $revicon-inbox-download2;
+  }
+}
+.revicon-inbox-upload {
+  &:before {
+    content: $revicon-inbox-upload;
+  }
+}
+.revicon-inbox-upload2 {
+  &:before {
+    content: $revicon-inbox-upload2;
+  }
+}
+.revicon-folder {
+  &:before {
+    content: $revicon-folder;
+  }
+}
+.revicon-folder2 {
+  &:before {
+    content: $revicon-folder2;
+  }
+}
+.revicon-folder3 {
+  &:before {
+    content: $revicon-folder3;
+  }
+}
+.revicon-folders {
+  &:before {
+    content: $revicon-folders;
+  }
+}
+.revicon-folders2 {
+  &:before {
+    content: $revicon-folders2;
+  }
+}
+.revicon-folder-download {
+  &:before {
+    content: $revicon-folder-download;
+  }
+}
+.revicon-folder-download2 {
+  &:before {
+    content: $revicon-folder-download2;
+  }
+}
+.revicon-folder-upload {
+  &:before {
+    content: $revicon-folder-upload;
+  }
+}
+.revicon-folder-upload2 {
+  &:before {
+    content: $revicon-folder-upload2;
+  }
+}
+.revicon-folder-unlocked {
+  &:before {
+    content: $revicon-folder-unlocked;
+  }
+}
+.revicon-folder-unlocked2 {
+  &:before {
+    content: $revicon-folder-unlocked2;
+  }
+}
+.revicon-folder-locked {
+  &:before {
+    content: $revicon-folder-locked;
+  }
+}
+.revicon-folder-locked2 {
+  &:before {
+    content: $revicon-folder-locked2;
+  }
+}
+.revicon-folder-search {
+  &:before {
+    content: $revicon-folder-search;
+  }
+}
+.revicon-folder-search2 {
+  &:before {
+    content: $revicon-folder-search2;
+  }
+}
+.revicon-folder-error {
+  &:before {
+    content: $revicon-folder-error;
+  }
+}
+.revicon-folder-error2 {
+  &:before {
+    content: $revicon-folder-error2;
+  }
+}
+.revicon-folder-cancel {
+  &:before {
+    content: $revicon-folder-cancel;
+  }
+}
+.revicon-folder-cancel2 {
+  &:before {
+    content: $revicon-folder-cancel2;
+  }
+}
+.revicon-folder-checked {
+  &:before {
+    content: $revicon-folder-checked;
+  }
+}
+.revicon-folder-checked2 {
+  &:before {
+    content: $revicon-folder-checked2;
+  }
+}
+.revicon-folder-add {
+  &:before {
+    content: $revicon-folder-add;
+  }
+}
+.revicon-folder-add2 {
+  &:before {
+    content: $revicon-folder-add2;
+  }
+}
+.revicon-folder-remove {
+  &:before {
+    content: $revicon-folder-remove;
+  }
+}
+.revicon-folder-remove2 {
+  &:before {
+    content: $revicon-folder-remove2;
+  }
+}
+.revicon-folder-forbidden {
+  &:before {
+    content: $revicon-folder-forbidden;
+  }
+}
+.revicon-folder-forbidden2 {
+  &:before {
+    content: $revicon-folder-forbidden2;
+  }
+}
+.revicon-folder-bookmark {
+  &:before {
+    content: $revicon-folder-bookmark;
+  }
+}
+.revicon-folder-bookmark2 {
+  &:before {
+    content: $revicon-folder-bookmark2;
+  }
+}
+.revicon-document-zip {
+  &:before {
+    content: $revicon-document-zip;
+  }
+}
+.revicon-document-zip2 {
+  &:before {
+    content: $revicon-document-zip2;
+  }
+}
+.revicon-zip {
+  &:before {
+    content: $revicon-zip;
+  }
+}
+.revicon-zip2 {
+  &:before {
+    content: $revicon-zip2;
+  }
+}
+.revicon-search {
+  &:before {
+    content: $revicon-search;
+  }
+}
+.revicon-search2 {
+  &:before {
+    content: $revicon-search2;
+  }
+}
+.revicon-search-plus {
+  &:before {
+    content: $revicon-search-plus;
+  }
+}
+.revicon-search-plus2 {
+  &:before {
+    content: $revicon-search-plus2;
+  }
+}
+.revicon-search-minus {
+  &:before {
+    content: $revicon-search-minus;
+  }
+}
+.revicon-search-minus2 {
+  &:before {
+    content: $revicon-search-minus2;
+  }
+}
+.revicon-lock {
+  &:before {
+    content: $revicon-lock;
+  }
+}
+.revicon-lock2 {
+  &:before {
+    content: $revicon-lock2;
+  }
+}
+.revicon-lock-open {
+  &:before {
+    content: $revicon-lock-open;
+  }
+}
+.revicon-lock-open2 {
+  &:before {
+    content: $revicon-lock-open2;
+  }
+}
+.revicon-lock-open3 {
+  &:before {
+    content: $revicon-lock-open3;
+  }
+}
+.revicon-lock-open4 {
+  &:before {
+    content: $revicon-lock-open4;
+  }
+}
+.revicon-lock-stripes {
+  &:before {
+    content: $revicon-lock-stripes;
+  }
+}
+.revicon-lock-stripes2 {
+  &:before {
+    content: $revicon-lock-stripes2;
+  }
+}
+.revicon-lock-rounded {
+  &:before {
+    content: $revicon-lock-rounded;
+  }
+}
+.revicon-lock-rounded2 {
+  &:before {
+    content: $revicon-lock-rounded2;
+  }
+}
+.revicon-lock-rounded-open {
+  &:before {
+    content: $revicon-lock-rounded-open;
+  }
+}
+.revicon-lock-rounded-open2 {
+  &:before {
+    content: $revicon-lock-rounded-open2;
+  }
+}
+.revicon-lock-rounded-open3 {
+  &:before {
+    content: $revicon-lock-rounded-open3;
+  }
+}
+.revicon-lock-rounded-open4 {
+  &:before {
+    content: $revicon-lock-rounded-open4;
+  }
+}
+.revicon-combination-lock {
+  &:before {
+    content: $revicon-combination-lock;
+  }
+}
+.revicon-combination-lock2 {
+  &:before {
+    content: $revicon-combination-lock2;
+  }
+}
+.revicon-printer {
+  &:before {
+    content: $revicon-printer;
+  }
+}
+.revicon-printer2 {
+  &:before {
+    content: $revicon-printer2;
+  }
+}
+.revicon-printer3 {
+  &:before {
+    content: $revicon-printer3;
+  }
+}
+.revicon-printer4 {
+  &:before {
+    content: $revicon-printer4;
+  }
+}
+.revicon-printer-text {
+  &:before {
+    content: $revicon-printer-text;
+  }
+}
+.revicon-printer-text2 {
+  &:before {
+    content: $revicon-printer-text2;
+  }
+}
+.revicon-printer-text3 {
+  &:before {
+    content: $revicon-printer-text3;
+  }
+}
+.revicon-printer-text4 {
+  &:before {
+    content: $revicon-printer-text4;
+  }
+}
+.revicon-cloud-download {
+  &:before {
+    content: $revicon-cloud-download;
+  }
+}
+.revicon-cloud-download2 {
+  &:before {
+    content: $revicon-cloud-download2;
+  }
+}
+.revicon-cloud-upload {
+  &:before {
+    content: $revicon-cloud-upload;
+  }
+}
+.revicon-cloud-upload2 {
+  &:before {
+    content: $revicon-cloud-upload2;
+  }
+}
+.revicon-cloud-error {
+  &:before {
+    content: $revicon-cloud-error;
+  }
+}
+.revicon-cloud-error2 {
+  &:before {
+    content: $revicon-cloud-error2;
+  }
+}
+.revicon-cloud {
+  &:before {
+    content: $revicon-cloud;
+  }
+}
+.revicon-cloud2 {
+  &:before {
+    content: $revicon-cloud2;
+  }
+}
+.revicon-inbox-filled {
+  &:before {
+    content: $revicon-inbox-filled;
+  }
+}
+.revicon-inbox-filled2 {
+  &:before {
+    content: $revicon-inbox-filled2;
+  }
+}
+.revicon-pen {
+  &:before {
+    content: $revicon-pen;
+  }
+}
+.revicon-pen2 {
+  &:before {
+    content: $revicon-pen2;
+  }
+}
+.revicon-pen-angled {
+  &:before {
+    content: $revicon-pen-angled;
+  }
+}
+.revicon-pen-angled2 {
+  &:before {
+    content: $revicon-pen-angled2;
+  }
+}
+.revicon-document-edit {
+  &:before {
+    content: $revicon-document-edit;
+  }
+}
+.revicon-document-edit2 {
+  &:before {
+    content: $revicon-document-edit2;
+  }
+}
+.revicon-package {
+  &:before {
+    content: $revicon-package;
+  }
+}
+.revicon-package2 {
+  &:before {
+    content: $revicon-package2;
+  }
+}
+.revicon-box {
+  &:before {
+    content: $revicon-box;
+  }
+}
+.revicon-box2 {
+  &:before {
+    content: $revicon-box2;
+  }
+}
+.revicon-box-filled {
+  &:before {
+    content: $revicon-box-filled;
+  }
+}
+.revicon-box-filled2 {
+  &:before {
+    content: $revicon-box-filled2;
+  }
+}
+.revicon-box3 {
+  &:before {
+    content: $revicon-box3;
+  }
+}
+.revicon-box4 {
+  &:before {
+    content: $revicon-box4;
+  }
+}
+.revicon-box5 {
+  &:before {
+    content: $revicon-box5;
+  }
+}
+.revicon-box6 {
+  &:before {
+    content: $revicon-box6;
+  }
+}
+.revicon-box-bookmark {
+  &:before {
+    content: $revicon-box-bookmark;
+  }
+}
+.revicon-box-bookmark2 {
+  &:before {
+    content: $revicon-box-bookmark2;
+  }
+}
+.revicon-tag-cord {
+  &:before {
+    content: $revicon-tag-cord;
+  }
+}
+.revicon-tag-cord2 {
+  &:before {
+    content: $revicon-tag-cord2;
+  }
+}
+.revicon-tag {
+  &:before {
+    content: $revicon-tag;
+  }
+}
+.revicon-tag2 {
+  &:before {
+    content: $revicon-tag2;
+  }
+}
+.revicon-tags {
+  &:before {
+    content: $revicon-tags;
+  }
+}
+.revicon-tags2 {
+  &:before {
+    content: $revicon-tags2;
+  }
+}
+.revicon-tag-add {
+  &:before {
+    content: $revicon-tag-add;
+  }
+}
+.revicon-tag-add2 {
+  &:before {
+    content: $revicon-tag-add2;
+  }
+}
+.revicon-tag-remove {
+  &:before {
+    content: $revicon-tag-remove;
+  }
+}
+.revicon-tag-remove2 {
+  &:before {
+    content: $revicon-tag-remove2;
+  }
+}
+.revicon-tag-checked {
+  &:before {
+    content: $revicon-tag-checked;
+  }
+}
+.revicon-tag-checked2 {
+  &:before {
+    content: $revicon-tag-checked2;
+  }
+}
+.revicon-tag-cancel {
+  &:before {
+    content: $revicon-tag-cancel;
+  }
+}
+.revicon-tag-cancel2 {
+  &:before {
+    content: $revicon-tag-cancel2;
+  }
+}
+.revicon-paperclip {
+  &:before {
+    content: $revicon-paperclip;
+  }
+}
+.revicon-trophy {
+  &:before {
+    content: $revicon-trophy;
+  }
+}
+.revicon-trophy-one {
+  &:before {
+    content: $revicon-trophy-one;
+  }
+}
+.revicon-trophy-one2 {
+  &:before {
+    content: $revicon-trophy-one2;
+  }
+}
+.revicon-trophy2 {
+  &:before {
+    content: $revicon-trophy2;
+  }
+}
+.revicon-trophy3 {
+  &:before {
+    content: $revicon-trophy3;
+  }
+}
+.revicon-medal {
+  &:before {
+    content: $revicon-medal;
+  }
+}
+.revicon-medal2 {
+  &:before {
+    content: $revicon-medal2;
+  }
+}
+.revicon-medal3 {
+  &:before {
+    content: $revicon-medal3;
+  }
+}
+.revicon-medal4 {
+  &:before {
+    content: $revicon-medal4;
+  }
+}
+.revicon-weights {
+  &:before {
+    content: $revicon-weights;
+  }
+}
+.revicon-award {
+  &:before {
+    content: $revicon-award;
+  }
+}
+.revicon-award2 {
+  &:before {
+    content: $revicon-award2;
+  }
+}
+.revicon-medal5 {
+  &:before {
+    content: $revicon-medal5;
+  }
+}
+.revicon-medal6 {
+  &:before {
+    content: $revicon-medal6;
+  }
+}
+.revicon-medal7 {
+  &:before {
+    content: $revicon-medal7;
+  }
+}
+.revicon-medal8 {
+  &:before {
+    content: $revicon-medal8;
+  }
+}
+.revicon-target-arrow {
+  &:before {
+    content: $revicon-target-arrow;
+  }
+}
+.revicon-clouds {
+  &:before {
+    content: $revicon-clouds;
+  }
+}
+.revicon-clouds2 {
+  &:before {
+    content: $revicon-clouds2;
+  }
+}
+.revicon-moonrise {
+  &:before {
+    content: $revicon-moonrise;
+  }
+}
+.revicon-moonrise2 {
+  &:before {
+    content: $revicon-moonrise2;
+  }
+}
+.revicon-moonset {
+  &:before {
+    content: $revicon-moonset;
+  }
+}
+.revicon-moonset2 {
+  &:before {
+    content: $revicon-moonset2;
+  }
+}
+.revicon-wind {
+  &:before {
+    content: $revicon-wind;
+  }
+}
+.revicon-wind2 {
+  &:before {
+    content: $revicon-wind2;
+  }
+}
+.revicon-barometer {
+  &:before {
+    content: $revicon-barometer;
+  }
+}
+.revicon-barometer2 {
+  &:before {
+    content: $revicon-barometer2;
+  }
+}
+.revicon-compass-north {
+  &:before {
+    content: $revicon-compass-north;
+  }
+}
+.revicon-compass-north2 {
+  &:before {
+    content: $revicon-compass-north2;
+  }
+}
+.revicon-compass-west {
+  &:before {
+    content: $revicon-compass-west;
+  }
+}
+.revicon-compass-west2 {
+  &:before {
+    content: $revicon-compass-west2;
+  }
+}
+.revicon-compass-east {
+  &:before {
+    content: $revicon-compass-east;
+  }
+}
+.revicon-compass-east2 {
+  &:before {
+    content: $revicon-compass-east2;
+  }
+}
+.revicon-compass-south {
+  &:before {
+    content: $revicon-compass-south;
+  }
+}
+.revicon-compass-south2 {
+  &:before {
+    content: $revicon-compass-south2;
+  }
+}
+.revicon-warning {
+  &:before {
+    content: $revicon-warning;
+  }
+}
+.revicon-warning2 {
+  &:before {
+    content: $revicon-warning2;
+  }
+}
+.revicon-compass {
+  &:before {
+    content: $revicon-compass;
+  }
+}
+.revicon-compass2 {
+  &:before {
+    content: $revicon-compass2;
+  }
+}
+.revicon-compass3 {
+  &:before {
+    content: $revicon-compass3;
+  }
+}
+.revicon-compass4 {
+  &:before {
+    content: $revicon-compass4;
+  }
+}
+.revicon-compass5 {
+  &:before {
+    content: $revicon-compass5;
+  }
+}
+.revicon-compass6 {
+  &:before {
+    content: $revicon-compass6;
+  }
+}
+.revicon-compass7 {
+  &:before {
+    content: $revicon-compass7;
+  }
+}
+.revicon-compass8 {
+  &:before {
+    content: $revicon-compass8;
+  }
+}
+.revicon-thermometer {
+  &:before {
+    content: $revicon-thermometer;
+  }
+}
+.revicon-thermometer-low {
+  &:before {
+    content: $revicon-thermometer-low;
+  }
+}
+.revicon-thermometer-low2 {
+  &:before {
+    content: $revicon-thermometer-low2;
+  }
+}
+.revicon-thermometer-quarter {
+  &:before {
+    content: $revicon-thermometer-quarter;
+  }
+}
+.revicon-thermometer-quarter2 {
+  &:before {
+    content: $revicon-thermometer-quarter2;
+  }
+}
+.revicon-thermometer-half {
+  &:before {
+    content: $revicon-thermometer-half;
+  }
+}
+.revicon-thermometer-half2 {
+  &:before {
+    content: $revicon-thermometer-half2;
+  }
+}
+.revicon-thermometer-three-quarters {
+  &:before {
+    content: $revicon-thermometer-three-quarters;
+  }
+}
+.revicon-thermometer-three-quarters2 {
+  &:before {
+    content: $revicon-thermometer-three-quarters2;
+  }
+}
+.revicon-thermometer-full {
+  &:before {
+    content: $revicon-thermometer-full;
+  }
+}
+.revicon-thermometer-full2 {
+  &:before {
+    content: $revicon-thermometer-full2;
+  }
+}
+.revicon-middle-finger {
+  &:before {
+    content: $revicon-middle-finger;
+  }
+}
+.revicon-high-five {
+  &:before {
+    content: $revicon-high-five;
+  }
+}
+.revicon-high-five2 {
+  &:before {
+    content: $revicon-high-five2;
+  }
+}
+.revicon-thumb-up {
+  &:before {
+    content: $revicon-thumb-up;
+  }
+}
+.revicon-thumb-up2 {
+  &:before {
+    content: $revicon-thumb-up2;
+  }
+}
+.revicon-thumb-down {
+  &:before {
+    content: $revicon-thumb-down;
+  }
+}
+.revicon-two-fingers-swipe-left {
+  &:before {
+    content: $revicon-two-fingers-swipe-left;
+  }
+}
+.revicon-two-fingers-swipe-left2 {
+  &:before {
+    content: $revicon-two-fingers-swipe-left2;
+  }
+}
+.revicon-two-fingers-swipe-right {
+  &:before {
+    content: $revicon-two-fingers-swipe-right;
+  }
+}
+.revicon-two-fingers-swipe-right2 {
+  &:before {
+    content: $revicon-two-fingers-swipe-right2;
+  }
+}
+.revicon-two-fingers-swipe-up {
+  &:before {
+    content: $revicon-two-fingers-swipe-up;
+  }
+}
+.revicon-two-fingers-swipe-up2 {
+  &:before {
+    content: $revicon-two-fingers-swipe-up2;
+  }
+}
+.revicon-two-fingers-swipe-down {
+  &:before {
+    content: $revicon-two-fingers-swipe-down;
+  }
+}
+.revicon-two-fingers-swipe-down2 {
+  &:before {
+    content: $revicon-two-fingers-swipe-down2;
+  }
+}
+.revicon-two-fingers-resize-out {
+  &:before {
+    content: $revicon-two-fingers-resize-out;
+  }
+}
+.revicon-two-fingers-resize-out2 {
+  &:before {
+    content: $revicon-two-fingers-resize-out2;
+  }
+}
+.revicon-two-fingers-resize-in {
+  &:before {
+    content: $revicon-two-fingers-resize-in;
+  }
+}
+.revicon-two-fingers-resize-in2 {
+  &:before {
+    content: $revicon-two-fingers-resize-in2;
+  }
+}
+.revicon-two-fingers-rotate {
+  &:before {
+    content: $revicon-two-fingers-rotate;
+  }
+}
+.revicon-two-fingers-rotate2 {
+  &:before {
+    content: $revicon-two-fingers-rotate2;
+  }
+}
+.revicon-one-finger-swipe-left {
+  &:before {
+    content: $revicon-one-finger-swipe-left;
+  }
+}
+.revicon-one-finger-swipe-left2 {
+  &:before {
+    content: $revicon-one-finger-swipe-left2;
+  }
+}
+.revicon-one-finger-swipe-right {
+  &:before {
+    content: $revicon-one-finger-swipe-right;
+  }
+}
+.revicon-one-finger-double-tap {
+  &:before {
+    content: $revicon-one-finger-double-tap;
+  }
+}
+.revicon-one-finger-double-tap2 {
+  &:before {
+    content: $revicon-one-finger-double-tap2;
+  }
+}
+.revicon-one-finger-tap-hold {
+  &:before {
+    content: $revicon-one-finger-tap-hold;
+  }
+}
+.revicon-two-fingers-double-tap {
+  &:before {
+    content: $revicon-two-fingers-double-tap;
+  }
+}
+.revicon-two-fingers-double-tap2 {
+  &:before {
+    content: $revicon-two-fingers-double-tap2;
+  }
+}
+.revicon-two-fingers-tap {
+  &:before {
+    content: $revicon-two-fingers-tap;
+  }
+}
+.revicon-document-file-numbers {
+  &:before {
+    content: $revicon-document-file-numbers;
+  }
+}
+.revicon-document-file-numbers2 {
+  &:before {
+    content: $revicon-document-file-numbers2;
+  }
+}
+.revicon-document-file-pages {
+  &:before {
+    content: $revicon-document-file-pages;
+  }
+}
+.revicon-document-file-pages2 {
+  &:before {
+    content: $revicon-document-file-pages2;
+  }
+}
+.revicon-document-file-app {
+  &:before {
+    content: $revicon-document-file-app;
+  }
+}
+.revicon-document-file-app2 {
+  &:before {
+    content: $revicon-document-file-app2;
+  }
+}
+.revicon-document-file-png {
+  &:before {
+    content: $revicon-document-file-png;
+  }
+}
+.revicon-document-file-png2 {
+  &:before {
+    content: $revicon-document-file-png2;
+  }
+}
+.revicon-document-file-pdf {
+  &:before {
+    content: $revicon-document-file-pdf;
+  }
+}
+.revicon-document-file-pdf2 {
+  &:before {
+    content: $revicon-document-file-pdf2;
+  }
+}
+.revicon-document-file-mp3 {
+  &:before {
+    content: $revicon-document-file-mp3;
+  }
+}
+.revicon-document-file-mp32 {
+  &:before {
+    content: $revicon-document-file-mp32;
+  }
+}
+.revicon-document-file-mp4 {
+  &:before {
+    content: $revicon-document-file-mp4;
+  }
+}
+.revicon-document-file-mp42 {
+  &:before {
+    content: $revicon-document-file-mp42;
+  }
+}
+.revicon-document-file-mov {
+  &:before {
+    content: $revicon-document-file-mov;
+  }
+}
+.revicon-document-file-mov2 {
+  &:before {
+    content: $revicon-document-file-mov2;
+  }
+}
+.revicon-document-file-jpg {
+  &:before {
+    content: $revicon-document-file-jpg;
+  }
+}
+.revicon-document-file-jpg2 {
+  &:before {
+    content: $revicon-document-file-jpg2;
+  }
+}
+.revicon-document-file-key {
+  &:before {
+    content: $revicon-document-file-key;
+  }
+}
+.revicon-document-file-key2 {
+  &:before {
+    content: $revicon-document-file-key2;
+  }
+}
+.revicon-document-file-html {
+  &:before {
+    content: $revicon-document-file-html;
+  }
+}
+.revicon-document-file-html2 {
+  &:before {
+    content: $revicon-document-file-html2;
+  }
+}
+.revicon-document-file-css {
+  &:before {
+    content: $revicon-document-file-css;
+  }
+}
+.revicon-document-file-css2 {
+  &:before {
+    content: $revicon-document-file-css2;
+  }
+}
+.revicon-document-file-java {
+  &:before {
+    content: $revicon-document-file-java;
+  }
+}
+.revicon-document-file-java2 {
+  &:before {
+    content: $revicon-document-file-java2;
+  }
+}
+.revicon-document-file-psd {
+  &:before {
+    content: $revicon-document-file-psd;
+  }
+}
+.revicon-document-file-psd2 {
+  &:before {
+    content: $revicon-document-file-psd2;
+  }
+}
+.revicon-document-file-ai {
+  &:before {
+    content: $revicon-document-file-ai;
+  }
+}
+.revicon-document-file-ai2 {
+  &:before {
+    content: $revicon-document-file-ai2;
+  }
+}
+.revicon-document-file-bmp {
+  &:before {
+    content: $revicon-document-file-bmp;
+  }
+}
+.revicon-document-file-bmp2 {
+  &:before {
+    content: $revicon-document-file-bmp2;
+  }
+}
+.revicon-document-file-dwg {
+  &:before {
+    content: $revicon-document-file-dwg;
+  }
+}
+.revicon-document-file-dwg2 {
+  &:before {
+    content: $revicon-document-file-dwg2;
+  }
+}
+.revicon-document-file-eps {
+  &:before {
+    content: $revicon-document-file-eps;
+  }
+}
+.revicon-document-file-eps2 {
+  &:before {
+    content: $revicon-document-file-eps2;
+  }
+}
+.revicon-document-file-tiff {
+  &:before {
+    content: $revicon-document-file-tiff;
+  }
+}
+.revicon-document-file-tiff2 {
+  &:before {
+    content: $revicon-document-file-tiff2;
+  }
+}
+.revicon-document-file-ots {
+  &:before {
+    content: $revicon-document-file-ots;
+  }
+}
+.revicon-document-file-ots2 {
+  &:before {
+    content: $revicon-document-file-ots2;
+  }
+}
+.revicon-document-file-php {
+  &:before {
+    content: $revicon-document-file-php;
+  }
+}
+.revicon-document-file-php2 {
+  &:before {
+    content: $revicon-document-file-php2;
+  }
+}
+.revicon-document-file-py {
+  &:before {
+    content: $revicon-document-file-py;
+  }
+}
+.revicon-document-file-py2 {
+  &:before {
+    content: $revicon-document-file-py2;
+  }
+}
+.revicon-document-file-c {
+  &:before {
+    content: $revicon-document-file-c;
+  }
+}
+.revicon-document-file-c2 {
+  &:before {
+    content: $revicon-document-file-c2;
+  }
+}
+.revicon-document-file-sql {
+  &:before {
+    content: $revicon-document-file-sql;
+  }
+}
+.revicon-document-file-sql2 {
+  &:before {
+    content: $revicon-document-file-sql2;
+  }
+}
+.revicon-document-file-rb {
+  &:before {
+    content: $revicon-document-file-rb;
+  }
+}
+.revicon-document-file-rb2 {
+  &:before {
+    content: $revicon-document-file-rb2;
+  }
+}
+.revicon-document-file-cpp {
+  &:before {
+    content: $revicon-document-file-cpp;
+  }
+}
+.revicon-document-file-cpp2 {
+  &:before {
+    content: $revicon-document-file-cpp2;
+  }
+}
+.revicon-document-file-tga {
+  &:before {
+    content: $revicon-document-file-tga;
+  }
+}
+.revicon-document-file-tga2 {
+  &:before {
+    content: $revicon-document-file-tga2;
+  }
+}
+.revicon-document-file-dxf {
+  &:before {
+    content: $revicon-document-file-dxf;
+  }
+}
+.revicon-document-file-dxf2 {
+  &:before {
+    content: $revicon-document-file-dxf2;
+  }
+}
+.revicon-document-file-doc {
+  &:before {
+    content: $revicon-document-file-doc;
+  }
+}
+.revicon-document-file-doc2 {
+  &:before {
+    content: $revicon-document-file-doc2;
+  }
+}
+.revicon-document-file-odt {
+  &:before {
+    content: $revicon-document-file-odt;
+  }
+}
+.revicon-document-file-odt2 {
+  &:before {
+    content: $revicon-document-file-odt2;
+  }
+}
+.revicon-document-file-xls {
+  &:before {
+    content: $revicon-document-file-xls;
+  }
+}
+.revicon-document-file-xls2 {
+  &:before {
+    content: $revicon-document-file-xls2;
+  }
+}
+.revicon-document-file-docx {
+  &:before {
+    content: $revicon-document-file-docx;
+  }
+}
+.revicon-document-file-docx2 {
+  &:before {
+    content: $revicon-document-file-docx2;
+  }
+}
+.revicon-document-file-ppt {
+  &:before {
+    content: $revicon-document-file-ppt;
+  }
+}
+.revicon-document-file-ppt2 {
+  &:before {
+    content: $revicon-document-file-ppt2;
+  }
+}
+.revicon-document-file-asp {
+  &:before {
+    content: $revicon-document-file-asp;
+  }
+}
+.revicon-document-file-asp2 {
+  &:before {
+    content: $revicon-document-file-asp2;
+  }
+}
+.revicon-document-file-ics {
+  &:before {
+    content: $revicon-document-file-ics;
+  }
+}
+.revicon-document-file-ics2 {
+  &:before {
+    content: $revicon-document-file-ics2;
+  }
+}
+.revicon-document-file-dat {
+  &:before {
+    content: $revicon-document-file-dat;
+  }
+}
+.revicon-document-file-dat2 {
+  &:before {
+    content: $revicon-document-file-dat2;
+  }
+}
+.revicon-document-file-xml {
+  &:before {
+    content: $revicon-document-file-xml;
+  }
+}
+.revicon-document-file-xml2 {
+  &:before {
+    content: $revicon-document-file-xml2;
+  }
+}
+.revicon-document-file-yml {
+  &:before {
+    content: $revicon-document-file-yml;
+  }
+}
+.revicon-document-file-yml2 {
+  &:before {
+    content: $revicon-document-file-yml2;
+  }
+}
+.revicon-document-file-h {
+  &:before {
+    content: $revicon-document-file-h;
+  }
+}
+.revicon-document-file-h2 {
+  &:before {
+    content: $revicon-document-file-h2;
+  }
+}
+.revicon-document-file-exe {
+  &:before {
+    content: $revicon-document-file-exe;
+  }
+}
+.revicon-document-file-exe2 {
+  &:before {
+    content: $revicon-document-file-exe2;
+  }
+}
+.revicon-document-file-avi {
+  &:before {
+    content: $revicon-document-file-avi;
+  }
+}
+.revicon-document-file-avi2 {
+  &:before {
+    content: $revicon-document-file-avi2;
+  }
+}
+.revicon-document-file-odp {
+  &:before {
+    content: $revicon-document-file-odp;
+  }
+}
+.revicon-document-file-odp2 {
+  &:before {
+    content: $revicon-document-file-odp2;
+  }
+}
+.revicon-document-file-dotx {
+  &:before {
+    content: $revicon-document-file-dotx;
+  }
+}
+.revicon-document-file-dotx2 {
+  &:before {
+    content: $revicon-document-file-dotx2;
+  }
+}
+.revicon-document-file-xlsx {
+  &:before {
+    content: $revicon-document-file-xlsx;
+  }
+}
+.revicon-document-file-xlsx2 {
+  &:before {
+    content: $revicon-document-file-xlsx2;
+  }
+}
+.revicon-document-file-ods {
+  &:before {
+    content: $revicon-document-file-ods;
+  }
+}
+.revicon-document-file-ods2 {
+  &:before {
+    content: $revicon-document-file-ods2;
+  }
+}
+.revicon-document-file-pps {
+  &:before {
+    content: $revicon-document-file-pps;
+  }
+}
+.revicon-document-file-pps2 {
+  &:before {
+    content: $revicon-document-file-pps2;
+  }
+}
+.revicon-document-file-dot {
+  &:before {
+    content: $revicon-document-file-dot;
+  }
+}
+.revicon-document-file-dot2 {
+  &:before {
+    content: $revicon-document-file-dot2;
+  }
+}
+.revicon-document-file-txt {
+  &:before {
+    content: $revicon-document-file-txt;
+  }
+}
+.revicon-document-file-txt2 {
+  &:before {
+    content: $revicon-document-file-txt2;
+  }
+}
+.revicon-document-file-rtf {
+  &:before {
+    content: $revicon-document-file-rtf;
+  }
+}
+.revicon-document-file-rtf2 {
+  &:before {
+    content: $revicon-document-file-rtf2;
+  }
+}
+.revicon-document-file-m4v {
+  &:before {
+    content: $revicon-document-file-m4v;
+  }
+}
+.revicon-document-file-m4v2 {
+  &:before {
+    content: $revicon-document-file-m4v2;
+  }
+}
+.revicon-document-file-flv {
+  &:before {
+    content: $revicon-document-file-flv;
+  }
+}
+.revicon-document-file-flv2 {
+  &:before {
+    content: $revicon-document-file-flv2;
+  }
+}
+.revicon-document-file-mpg {
+  &:before {
+    content: $revicon-document-file-mpg;
+  }
+}
+.revicon-document-file-mpg2 {
+  &:before {
+    content: $revicon-document-file-mpg2;
+  }
+}
+.revicon-document-file-qt {
+  &:before {
+    content: $revicon-document-file-qt;
+  }
+}
+.revicon-document-file-qt2 {
+  &:before {
+    content: $revicon-document-file-qt2;
+  }
+}
+.revicon-document-file-mid {
+  &:before {
+    content: $revicon-document-file-mid;
+  }
+}
+.revicon-document-file-mid2 {
+  &:before {
+    content: $revicon-document-file-mid2;
+  }
+}
+.revicon-document-file-3gp {
+  &:before {
+    content: $revicon-document-file-3gp;
+  }
+}
+.revicon-document-file-3gp2 {
+  &:before {
+    content: $revicon-document-file-3gp2;
+  }
+}
+.revicon-document-file-aiff {
+  &:before {
+    content: $revicon-document-file-aiff;
+  }
+}
+.revicon-document-file-aiff2 {
+  &:before {
+    content: $revicon-document-file-aiff2;
+  }
+}
+.revicon-document-file-aac {
+  &:before {
+    content: $revicon-document-file-aac;
+  }
+}
+.revicon-document-file-aac2 {
+  &:before {
+    content: $revicon-document-file-aac2;
+  }
+}
+.revicon-document-file-wav {
+  &:before {
+    content: $revicon-document-file-wav;
+  }
+}
+.revicon-document-file-wav2 {
+  &:before {
+    content: $revicon-document-file-wav2;
+  }
+}
+.revicon-document-file-zip {
+  &:before {
+    content: $revicon-document-file-zip;
+  }
+}
+.revicon-document-file-zip2 {
+  &:before {
+    content: $revicon-document-file-zip2;
+  }
+}
+.revicon-document-file-ott {
+  &:before {
+    content: $revicon-document-file-ott;
+  }
+}
+.revicon-document-file-ott2 {
+  &:before {
+    content: $revicon-document-file-ott2;
+  }
+}
+.revicon-document-file-tgz {
+  &:before {
+    content: $revicon-document-file-tgz;
+  }
+}
+.revicon-document-file-tgz2 {
+  &:before {
+    content: $revicon-document-file-tgz2;
+  }
+}
+.revicon-document-file-dmg {
+  &:before {
+    content: $revicon-document-file-dmg;
+  }
+}
+.revicon-document-file-dmg2 {
+  &:before {
+    content: $revicon-document-file-dmg2;
+  }
+}
+.revicon-document-file-iso {
+  &:before {
+    content: $revicon-document-file-iso;
+  }
+}
+.revicon-document-file-iso2 {
+  &:before {
+    content: $revicon-document-file-iso2;
+  }
+}
+.revicon-document-file-rar {
+  &:before {
+    content: $revicon-document-file-rar;
+  }
+}
+.revicon-document-file-rar2 {
+  &:before {
+    content: $revicon-document-file-rar2;
+  }
+}
+.revicon-document-file-gif {
+  &:before {
+    content: $revicon-document-file-gif;
+  }
+}
+.revicon-document-file-gif2 {
+  &:before {
+    content: $revicon-document-file-gif2;
+  }
+}
+.revicon-power {
+  &:before {
+    content: $revicon-power;
+  }
+}
+.revicon-settings {
+  &:before {
+    content: $revicon-settings;
+  }
+}
+.revicon-refresh {
+  &:before {
+    content: $revicon-refresh;
+  }
+}
+.revicon-email {
+  &:before {
+    content: $revicon-email;
+  }
+}
+.revicon-users {
+  &:before {
+    content: $revicon-users;
+  }
+}
+.revicon-user {
+  &:before {
+    content: $revicon-user;
+  }
+}
+.revicon-users2 {
+  &:before {
+    content: $revicon-users2;
+  }
+}
+.revicon-user2 {
+  &:before {
+    content: $revicon-user2;
+  }
+}
+.revicon-camera {
+  &:before {
+    content: $revicon-camera;
+  }
+}
+.revicon-microwaveoven {
+  &:before {
+    content: $revicon-microwaveoven;
+  }
+}
+.revicon-mapmarker {
+  &:before {
+    content: $revicon-mapmarker;
+  }
+}
+.revicon-bones {
+  &:before {
+    content: $revicon-bones;
+  }
+}
+.revicon-image {
+  &:before {
+    content: $revicon-image;
+  }
+}
+.revicon-box7 {
+  &:before {
+    content: $revicon-box7;
+  }
+}
+.revicon-write {
+  &:before {
+    content: $revicon-write;
+  }
+}
+.revicon-camera3 {
+  &:before {
+    content: $revicon-camera3;
+  }
+}
+.revicon-image2 {
+  &:before {
+    content: $revicon-image2;
+  }
+}
+.revicon-heart {
+  &:before {
+    content: $revicon-heart;
+  }
+}
+.revicon-monitor2 {
+  &:before {
+    content: $revicon-monitor2;
+  }
+}
+.revicon-cross {
+  &:before {
+    content: $revicon-cross;
+  }
+}
+.revicon-plus {
+  &:before {
+    content: $revicon-plus;
+  }
+}
+.revicon-left {
+  &:before {
+    content: $revicon-left;
+  }
+}
+.revicon-up {
+  &:before {
+    content: $revicon-up;
+  }
+}
+

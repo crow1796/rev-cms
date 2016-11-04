@@ -24,13 +24,22 @@ class CustomMenuServiceProvider extends ServiceProvider
     public function register()
     {
         \RevCMS::router()
-                ->register('web', array(
+                ->register(array(
                         'uri' => '/custom-menu',
                         'uses' => 'CustomMenuController@index',
-                        'type' => 'get',
                         'title' => 'Menu 1',
-                        'iconClass' => 'fa fa-home',
-                        'params' => array(),
+                        'iconClass' => 'revicon-package',
+                        'params' => array(
+                            'middleware' => array(),
+                            ),
+                        'children' => array(
+                                array(
+                                        'uri' => '/custom-submenu-1',
+                                        'uses' => 'CustomMenuController@submenu1',
+                                        'title' => 'SubMenu 1',
+                                        'params' => array(),
+                                    ),
+                            ),
                     ));
     }
 }

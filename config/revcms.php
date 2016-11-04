@@ -13,7 +13,7 @@ return [
 	/**
 	 * Logo visibility.
 	 */
-	'show_logo' => false,
+	'show_logo' => true,
 
 	/**
 	 * Url of the logo.
@@ -23,7 +23,7 @@ return [
 	/**
 	 * Header visibility.
 	 */
-	'show_header' => true,
+	'sticky_header' => true,
 
 	/**
 	 * Collapsible sidebar.
@@ -39,7 +39,7 @@ return [
 	 * Controllers Base Path
 	 * Default: app/Http/Controllers/
 	 */
-	'controller_base_path' => 'app/Http/Controllers',
+	'controller_base_path' => 'app/Http/Controllers/',
 
 	/**
 	 * Models Base Path
@@ -63,12 +63,17 @@ return [
 	 * Current active theme.
 	 * Default: 
 	 */
-	'active_theme' => 'themes\TestTheme1',
+	'active_theme' => 'themes/Aimer',
 
 	/**
-	 * User Mode
-	 * Default: developer
-	 * Values: developer, simple
+	 * Page Model.
+	 * Default: App\Page
 	 */
-	'user_mode' => 'developer'
+	'page_model' => 'App\Page',
+
+	/**
+	 * User Model.
+	 * Default: App\User
+	 */
+	'user_model' => 'App\User',
 ];

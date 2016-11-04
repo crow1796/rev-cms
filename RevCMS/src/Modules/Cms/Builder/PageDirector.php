@@ -2,9 +2,11 @@
 namespace RevCMS\Modules\Cms\Builder;
 use RevCMS\Modules\Cms\Builder\ActionBlockBuilder;
 use RevCMS\Modules\Cms\Builder\ViewBuilder;
+use RevCMS\Modules\Cms\Builder\PageRecordBuilder;
 use RevCMS\Traits\Cms\Builder\PermalinkValidatorTrait;
 use Illuminate\Support\Str;
 use File;
+use Illuminate\Container\Container as App;
 
 class PageDirector {
 
@@ -12,10 +14,13 @@ class PageDirector {
 
 	protected $actionBlockBuilder;
 	protected $viewBuilder;
+	protected $pageRecordBuilder;
 
-	public function __construct(){
-		$this->actionBlockBuilder = new ActionBlockBuilder();
-		$this->viewBuilder = new ViewBuilder();
+	public function __construct(App $app){
+		$this->actionBlockBuilder = new ActionBlockBuilder($app);
+		$this->viewBuilder = new ViewBuilder($app);
+		$this->pageRecordBuilder = new PageRecordBuilder($app);
+		$this->routeBuilder = new RouteBuilder($app);
 	}
 
 	/**
@@ -25,31 +30,14 @@ class PageDirector {
 	 */
 	public function buildActionFor($page){
 		$page = $this->actionBlockBuilder
-						->buildFor($page);
+			->buildFor($page);
 		$page = $this->viewBuilder
-						->buildFor($page);
-		if($page){
-			$this->createRouteFor($page);
-		}
+			->buildFor($page);
+		$page = $this->pageRecordBuilder
+			->buildFor($page);
+		$page = $this->routeBuilder
+			->buildFor($page);
 		return $page;
-	}
-
-	/**
-	 * Create route for page.
-	 * @param  array  $page 
-	 * @return mixed       
-	 */
-	private function createRouteFor($page = array()){
-		$route = "Route::get('{$page['slug']}', ['uses' => '\\{$page['controller']}@{$page['action_name']}']);";
-		$revWebRoutesPath = base_path('routes/revcms_web.php');
-		$routeMatch = str_replace('\\', '\\\\', $route);
-		$routeMatch = preg_replace('~([\(|\)|\[|\]])~si', '\\\$1', $routeMatch);
-		preg_match('~' . $routeMatch . '~is', File::get($revWebRoutesPath), $matches);
-		if(!count($matches)){
-			$route = "\n" . $route;
-			File::append($revWebRoutesPath, $route);
-		}
-		return $route;
 	}
 
 	/**

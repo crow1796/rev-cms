@@ -7,4 +7,4 @@
 <link rel="stylesheet" type="text/css" href="{{ url('/revcms-deps/sweetalert2/sweetalert2.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('/revcms-deps/toastr/toastr.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url('/revcms-deps/animate/animate.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ url('/css/revcms.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url('/revcms-deps/rev-assets/css/revcms.css') }}">

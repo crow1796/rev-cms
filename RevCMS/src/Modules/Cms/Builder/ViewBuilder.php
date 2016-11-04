@@ -11,8 +11,8 @@ class ViewBuilder extends PageBuilder{
 	 * @return mixed       
 	 */
 	public function buildFor($page = array()){
-	    if(!is_array($page) || empty($page)) return '';
-
+	    parent::buildFor($page);
+	    
 	    $source = $page['view_source'];
 	    $exploded = explode('/', $page['view_names']['filePath']);
 	    array_pop($exploded);

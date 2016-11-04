@@ -6,7 +6,9 @@ use File;
 use Illuminate\Support\Str;
 use RevCMS\Modules\Theme\Wrapper\Theme;
 use Larapack\ConfigWriter\Repository as LarapackRepository;
-class ThemeManager {
+use RevCMS\Modules\Abstracts\RevCMSModule;
+
+class ThemeManager extends RevCMSModule {
 	/**
 	 * Get Installed Themes.
 	 * @return collection 

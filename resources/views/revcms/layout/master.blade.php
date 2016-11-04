@@ -12,10 +12,8 @@
 </head>
 <body id="rev-cms-app">
 	<div id="page-wrapper">
-		@if(\Config::get('revcms.show_header'))
-			@include('revcms.layout.partials._header')
-		@endif
-		@include('revcms.layout.partials._sidebar')
+		@include('revcms.layout.partials._header')
+		@include('revcms.layout.partials._sidebar', ['revActiveMenu' => $revActiveMenu])
 		<div id="page-container">
 			@yield('content')
 		</div>

@@ -14,6 +14,7 @@ class RevBaseController extends BaseController
 	use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 	protected $rev;
+	protected $menuOrder;
 
 	public function __construct(RevCMS $rev){
 		$this->rev = $rev;
@@ -28,10 +29,11 @@ class RevBaseController extends BaseController
 	protected function makeView($viewPath, $title, $data = array()){
 		$viewData = [
 			'title' => $title,
+			'revActiveMenu' => $this->menuOrder,
 		];
 		
 		if(!empty($data)){
-			array_merge($viewData, $data);
+			$viewData = array_merge($viewData, $data);
 		}
 		return view($viewPath, $viewData);
 	}

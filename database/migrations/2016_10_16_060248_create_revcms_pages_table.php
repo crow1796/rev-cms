@@ -16,7 +16,6 @@ class CreateRevcmsPagesTable extends Migration
         Schema::create('revcms_pages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('controller');
             $table->string('action');
             $table->string('slug')
                     ->unique();
@@ -24,6 +23,8 @@ class CreateRevcmsPagesTable extends Migration
                     ->default('default');
             $table->boolean('hidden')
                     ->default(false);
+            $table->string('featured_image')
+                    ->nullable();
             $table->timestamps();
         });
     }
