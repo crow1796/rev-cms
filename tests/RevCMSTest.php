@@ -130,7 +130,7 @@ $viewData["post"] = $post;';
     public function testEditRevConfig(){
         $config = new Larapack\ConfigWriter\Repository('revcms');
         $config->set('active_theme', 'themes/Aimer');
-        $config->save();
+        // $config->save();
     }
 
     public function testDashboardSidebarFactory(){

@@ -29,6 +29,7 @@ class Router extends RevCMSModule {
 			Route::group(['prefix' => 'pages', 'as' => 'revpages.'], function(){
 				Route::get('/', ['as' => 'index', 'uses' => '\RevCMS\Http\Controllers\PagesController@index']);
 				Route::get('/create', ['as' => 'create', 'uses' => '\RevCMS\Http\Controllers\PagesController@create']);
+				Route::get('/edit/{id}', ['as' => 'edit', 'uses' => '\RevCMS\Http\Controllers\PagesController@edit']);
 			});
 
 			Route::group(['prefix' => '/media', 'as' => 'revmedia.'], function(){
@@ -89,6 +90,7 @@ class Router extends RevCMSModule {
 
 			Route::group(['prefix' => 'pages'], function(){
 				Route::post('/store', '\RevCMS\Http\Controllers\PagesController@store');
+				Route::get('/all-pages', '\RevCMS\Http\COntrollers\PagesController@allPages');
 				Route::get('/populate-fields', '\RevCMS\Http\Controllers\PagesController@populateFields');
 				Route::get('/generate-fields', '\RevCMS\Http\Controllers\PagesController@generateFields');
 			});

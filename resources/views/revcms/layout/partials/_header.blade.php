@@ -28,7 +28,7 @@
 					<div class="info">
 						<span class="fullname">Joshua Tundag</span>
 						<span class="role">Administrator</span>
-						<button type="button" class="mode rev-btn -flat {{ config('revcms.developer_mode') ? '-danger' : '-success' }}">
+						<button type="button" class="mode rev-btn -danger">
 							{{ config('revcms.developer_mode') ? 'Dev' : 'Simple' }} Mode
 						</button>
 					</div>

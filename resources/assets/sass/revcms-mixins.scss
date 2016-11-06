@@ -20,8 +20,16 @@
 }
 
 @mixin backgrounding(){
+	&.-default{
+		background: $brand-default;
+	}
+
 	&.-primary{
 		background: $brand-primary;
+	}
+
+	&.-default:hover{
+		@include materialShadow($brand-default);
 	}
 
 	&.-primary:hover{
@@ -50,15 +58,6 @@
 
 	&.-success:hover{
 		@include materialShadow($brand-success);
-	}
-
-	&.-default{
-		// @include materialShadow($btn-default-color);
-		background: $btn-default-color;
-	}
-
-	&.-default:hover{
-		@include materialShadow($btn-default-color);
 	}
 }
 

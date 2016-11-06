@@ -23,7 +23,7 @@ return [
 	/**
 	 * Header visibility.
 	 */
-	'sticky_header' => true,
+	'sticky_header' => false,
 
 	/**
 	 * Collapsible sidebar.
@@ -63,7 +63,7 @@ return [
 	 * Current active theme.
 	 * Default: 
 	 */
-	'active_theme' => 'themes/Aimer',
+	'active_theme' => 'themes\Aimer',
 
 	/**
 	 * Page Model.

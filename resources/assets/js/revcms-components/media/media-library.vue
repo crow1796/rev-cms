@@ -31,14 +31,14 @@
 				<i class="fa fa-upload"></i>
 				Upload
 			</button>
-			<button type="button" class="rev-btn -md -danger">
+			<button type="button" class="rev-btn -md -default">
 				<i class="fa fa-folder"></i>
 				Add Folder
 			</button>
-			<button type="button" class="rev-btn -md -danger">
+			<button type="button" class="rev-btn -md -default">
 				<i class="fa fa-reply-all"></i>
 			</button>
-			<button type="button" class="rev-btn -md -danger" title="Delete">
+			<button type="button" class="rev-btn -md -default" title="Delete">
 				<i class="fa fa-trash"></i>
 			</button>
 			<button class="rev-btn -md -default">
@@ -48,20 +48,20 @@
 				<form class="search-form">
 					<div class="rev-input-group">
 						<input type="text" name="s" id="s" placeholder="Search a media here..." class="rev-field -md">
-						<button type="submit" class="rev-btn -md -danger">
+						<button type="submit" class="rev-btn -md -default">
 							<i class="fa fa-search"></i>
 						</button>
 					</div>
 				</form>
 				<div class="rev-input-group">
 					<button type="button" 
-							class="rev-btn -md -danger grid" 
+							class="rev-btn -md -default grid" 
 							:class="{ '-toggled': isGridView }" 
 							@click="toggleViewType('grid')">
 						<i class="fa fa-th"></i>
 					</button>
 					<button type="button" 
-							class="rev-btn -md -danger list" 
+							class="rev-btn -md -default list" 
 							:class="{ '-toggled': isListView }" 
 							@click="toggleViewType('list')">
 						<i class="fa fa-list"></i>

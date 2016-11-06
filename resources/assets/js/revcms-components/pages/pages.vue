@@ -2,6 +2,7 @@
 	export default{
 		created() {
 			// Get all pages.
+			this.getAllPages();
 		},
 		data() {
 			return {
@@ -22,7 +23,7 @@
 		},
 		methods: {
 			toggleViewType(type){
-				this.viewType = type;
+				this.$set('viewType', type);
 			},
 			toggleSelectionMode(){
 				this.selections = [];
@@ -92,6 +93,15 @@
 				function(dismiss){
 					no(dismiss);
 				});
+			},
+			getAllPages(){
+				showRevLoader();
+				this.$http
+					.get("{admin_base_url}/api/revcms/pages/all-pages")
+					.then((response) => {
+						this.pages = response.data;
+						hideRevLoader();
+					});
 			}
 		},
 		computed: {
@@ -112,7 +122,7 @@
 			<a href="{{ adminBaseUrl }}/pages/create" class="rev-btn -md -danger">
 				Add New
 			</a>
-			<button class="rev-btn -md -danger" 
+			<button class="rev-btn -md -default" 
 					@click="toggleSelectionMode"
 					:class="{ '-toggled': selectionMode }">
 						Selection Mode:
@@ -129,20 +139,20 @@
 				<form class="search-form">
 					<div class="rev-input-group">
 						<input type="text" name="s" id="s" placeholder="Search a page here..." class="rev-field -md">
-						<button type="submit" class="rev-btn -md -danger">
+						<button type="submit" class="rev-btn -md -default">
 							<i class="fa fa-search"></i>
 						</button>
 					</div>
 				</form>
 				<div class="rev-input-group">
 					<button type="button" 
-							class="rev-btn -md -danger grid" 
+							class="rev-btn -md -default grid" 
 							:class="{ '-toggled': isGridView }" 
 							@click="toggleViewType('grid')">
 						<i class="fa fa-th"></i>
 					</button>
 					<button type="button" 
-							class="rev-btn -md -danger list" 
+							class="rev-btn -md -default list" 
 							:class="{ '-toggled': isListView }" 
 							@click="toggleViewType('list')">
 						<i class="fa fa-list"></i>
@@ -153,7 +163,7 @@
 		<!-- Page Nav -->
 		<div class="row" v-if="!pages.length">
 			<h2 class="text-center">
-				You have no Pages. 
+				You have no Page(s). 
 				<a href="/admin/pages/create" class="rev-btn -sm -danger _v-middle">
 					Add New
 				</a>

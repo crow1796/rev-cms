@@ -40,6 +40,23 @@ class PagesController extends RevBaseController
     	return $this->makeView('revcms.pages.create', 'New Page');
     }
 
+    public function edit($id){
+        dd($id);
+    }
+
+    /**
+     * Retreive all pages.
+     * @param  Request $request 
+     * @return array           
+     */
+    public function allPages(Request $request){
+        $this->checkAjaxRequest($request);
+        
+        return $this->rev
+                    ->cms()
+                    ->getPageArray();
+    }
+
     /**
      * Populate controllers and layouts fields.
      * @param  Request $request 

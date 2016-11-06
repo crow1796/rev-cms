@@ -29,6 +29,23 @@
 				fontSize: "13pt",
 				enableEmmet: true
 			});
+			this.viewEditor.$blockScrolling = Infinity;
+
+			this.viewEditor
+				.on('input', () => {
+					if(this.whichEditor === 'raw'){
+						tinyMCE.editors[0].setContent(this.viewEditor.getValue());
+					}
+				});
+
+			mceConfig.setup = (ed) => {
+				ed.on('NodeChange', function(e){
+						if(this.whichEditor === 'wysiwyg'){
+							this.viewEditor.setValue(tinyMCE.editors[0].getContent());
+						}
+					}.bind(this));
+			};
+			tinymce.init(mceConfig);
 		},
 		props: {
 			pagedata : {
@@ -42,6 +59,7 @@
 				layouts: [],
 				actionEditor: null,
 				viewEditor: null,
+				whichEditor: null,
 				page: {
 					meta: {}
 				},
@@ -53,15 +71,6 @@
 				this.page.action_source = this.actionEditor.getValue().trim();
 				this.page.view_source = this.viewEditor.getValue().trim();
 				let viewMceContent = tinyMCE.editors[0].getContent().trim();
-				if(this.page.view_source == ''
-					&& viewMceContent != ''){
-					this.page.view_source = viewMceContent;
-				}
-				if(viewMceContent == ''
-					&& this.page.view_source != ''){
-					tinyMCE.editors[0].setContent(this.page.view_source);
-				}
-				console.log(this.page.view_source);
 				toastr.remove();
 				showRevLoader();
 				this.$http
@@ -81,12 +90,7 @@
 							hideRevLoader();
 							return false;
 						}
-						swal(
-							'Success',
-							'Page Saved!',
-							'success'
-							);
-						hideRevLoader();
+						window.location.href = admin_base_url + "/pages/edit/3";
 					});
 			},
 			populateFields(){
@@ -120,13 +124,15 @@
 						this.$set('page.action_name', response.data.action_name);
 					});
 			},
-			convertMCEContent(){
-				let mceContent = tinyMCE.editors[0].getContent();
-				this.viewEditor.setValue(mceContent);
+			changeWhichEditor(which){
+				this.whichEditor = which;
+				this.slideToEditors();
 			},
-			convertRawContent(){
-				let rawContent = this.viewEditor.getValue();
-				tinyMCE.editors[0].setContent(rawContent);
+			slideToEditors(){
+				$('html, body')
+					.animate({
+						'scrollTop': $('#rev-page-editor-tabpanel').offset().top - 50
+					}, 300);
 			}
 		}
 	}
@@ -177,7 +183,7 @@
 								Save
 							</button>
 							<button type="button" 
-									class="rev-btn -sm -primary"
+									class="rev-btn -sm -default"
 									@click="togglePermalinkEdit()">
 								{{ permalink_editing ? 'Cancel' : 'Edit' }}
 							</button>
@@ -250,14 +256,14 @@
 							Hidden?
 						</label>
 						<a href="{{ baseUrl }}/{{ page.slug ? page.slug : '' }}"
-							class="rev-btn -md -danger"
+							class="rev-btn -md -default"
 							target="_blank"
 							v-if="page.slug">
 							Go To Page
 							<i class="fa fa-external-link"></i>
 						</a> 
 						<button type="submit" 
-								class="rev-btn -md -success">
+								class="rev-btn -md -danger">
 							Save
 						</button>
 					</div>
@@ -266,32 +272,44 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<div role="tabpanel" class="-rev-tabpanel">
+				<div role="tabpanel" 
+						id="rev-page-editor-tabpanel"
+						class="-rev-tabpanel">
 					<!-- Nav tabs -->
 					<ul class="nav nav-pills" role="tablist">
 						<li role="presentation" class="active">
-							<a href="#action-editor-tab" class="rev-btn -md -danger" aria-controls="home" role="tab" data-toggle="tab">Action</a>
+							<a href="#action-editor-tab" 
+								class="rev-btn -md -default" 
+								aria-controls="home" 
+								role="tab" 
+								data-toggle="tab"
+								@click="slideToEditors()">Action</a>
 						</li>
 						<li role="presentation">
 							<a href="#view-editor-tab" 
-								class="rev-btn -md -danger" 
+								class="rev-btn -md -default" 
 								aria-controls="tab" 
 								role="tab" 
 								data-toggle="tab"
-								@click="convertMCEContent()">View</a>
+								@click="changeWhichEditor('raw')">View (Raw)</a>
 						</li>
 						<li role="presentation">
 							<a href="#wysiwyg-editor-tab" 
-								class="rev-btn -md -danger" 
+								class="rev-btn -md -default" 
 								aria-controls="tab" 
 								role="tab" 
 								data-toggle="tab"
-								@click="convertRawContent()">
-								WYSIWYG
+								@click="changeWhichEditor('wysiwyg')">
+								View (WYSIWYG)
 							</a>
 						</li>
 						<li role="presentation">
-							<a href="#meta-editor-tab" class="rev-btn -md -danger" aria-controls="tab" role="tab" data-toggle="tab">
+							<a href="#meta-editor-tab" 
+								class="rev-btn -md -default" 
+								aria-controls="tab" 
+								role="tab" 
+								data-toggle="tab"
+								@click="slideToEditors()">
 								Meta
 							</a>
 						</li>
@@ -313,7 +331,7 @@
 							class="tab-pane" 
 							id="wysiwyg-editor-tab">
 							<!-- WYSIWYG Editor -->
-							<textarea name="wysiwyg_editor" id="wysiwyg_editor" cols="30" rows="10" class="rev-input-mce"></textarea>
+							<textarea name="wysiwyg_editor" id="view_wysiwyg_editor" cols="30" rows="10" class="rev-input-mce"></textarea>
 						</div>
 						<div role="tabpanel"
 							class="tab-pane" 

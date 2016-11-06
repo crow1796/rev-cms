@@ -75,6 +75,19 @@
 	<div class="preview -lg" 
 		:style="{ 'background-image': 'url(' + themeScreenshot + ')' }">
 	</div>
+	<button type="button" 
+			class="rev-btn -md -danger theme-activate-btn"
+			@click="activateTheme(theme)"
+			v-if="!theme.active"
+			title="Activate">
+		<i class="revicon-switch"></i>
+	</button>
+	<button type="button" 
+			class="rev-btn -md -default theme-delete-btn"
+			v-if="!theme.active"
+			title="Delete">
+		<i class="revicon-trash-can"></i>
+	</button>
 	<div class="info">
 		<h3 class="text-center _no-margin">
 			{{ theme.info.name }}
@@ -99,7 +112,7 @@
 				</div>
 			</div>
 		</p>
-		<div class="text-center theme-controls">
+		<!-- <div class="text-center theme-controls">
 			<div class="rev-input-group">
 				<button type="button" 
 						class="rev-btn -md -success"
@@ -115,6 +128,6 @@
 					<i class="fa fa-times-circle"></i>
 				</button>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </template>

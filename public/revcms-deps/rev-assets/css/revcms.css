@@ -7637,7 +7637,7 @@ button.close {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2) !important; }
 
 ._rev-editor-height {
-  height: 660px !important; }
+  height: 560px !important; }
 
 ._weight-normal {
   font-weight: normal !important; }
@@ -7986,8 +7986,12 @@ select {
   .rev-btn.-lg, .rev-btn:focus.-lg {
     padding: 6px 28px;
     font-size: 16px; }
+  .rev-btn.-default, .rev-btn:focus.-default {
+    background: #2C383C; }
   .rev-btn.-primary, .rev-btn:focus.-primary {
     background: #3273DC; }
+  .rev-btn.-default:hover, .rev-btn:focus.-default:hover {
+    box-shadow: 0 14px 26px -12px rgba(44, 56, 60, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(44, 56, 60, 0.2); }
   .rev-btn.-primary:hover, .rev-btn:focus.-primary:hover {
     box-shadow: 0 14px 26px -12px rgba(50, 115, 220, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(50, 115, 220, 0.2); }
   .rev-btn.-danger, .rev-btn:focus.-danger {
@@ -8002,10 +8006,6 @@ select {
     background: #23D160; }
   .rev-btn.-success:hover, .rev-btn:focus.-success:hover {
     box-shadow: 0 14px 26px -12px rgba(35, 209, 96, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(35, 209, 96, 0.2); }
-  .rev-btn.-default, .rev-btn:focus.-default {
-    background: #607D8B; }
-  .rev-btn.-default:hover, .rev-btn:focus.-default:hover {
-    box-shadow: 0 14px 26px -12px rgba(96, 125, 139, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(96, 125, 139, 0.2); }
   .rev-btn.-success.-toggled, .rev-btn:focus.-success.-toggled {
     background: #1ca54c; }
   .rev-btn.-primary.-toggled, .rev-btn:focus.-primary.-toggled {
@@ -8015,7 +8015,7 @@ select {
   .rev-btn.-warning.-toggled, .rev-btn:focus.-warning.-toggled {
     background: #ffe608; }
   .rev-btn.-default.-toggled, .rev-btn:focus.-default.-toggled {
-    background: #4b626d; }
+    background: #161d1f; }
 
 .rev-input-group {
   display: inline-block; }
@@ -8141,7 +8141,7 @@ select {
     background: #fff;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2); }
   .rev-navbar.-default * {
-    color: white; }
+    color: #2C383C; }
   .rev-navbar.-fixed {
     z-index: 999;
     padding-left: 80px;
@@ -8165,13 +8165,14 @@ select {
   .rev-navbar > .right > a,
   .rev-navbar > .right > a:focus {
     display: inline-block;
-    background: #DA0523;
     padding: 0 25px;
-    background: #DA0523;
-    text-decoration: none; }
+    text-decoration: none;
+    background: transparent;
+    color: #2C383C; }
   .rev-navbar > .right > a:hover,
   .rev-navbar > .right > a:active {
-    background: #c1041f; }
+    color: #2C383C;
+    background: #f2f2f2; }
   .rev-navbar > .right > .rev-dropdown-toggle {
     width: 90%;
     right: 0;
@@ -8209,12 +8210,15 @@ select {
     position: absolute;
     top: 5px;
     left: -25px;
-    line-height: normal; }
+    line-height: normal;
+    color: #fff; }
   .rev-navbar > .right > .rev-dropdown-toggle > .item > .rev-user-info > .image > img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover; }
+  .rev-navbar > .right > .rev-dropdown-toggle > .item > a * {
+    color: #fff; }
   .rev-navbar > .right > .rev-dropdown-toggle > .item > a,
   .rev-navbar > .right > .rev-dropdown-toggle > .item > a:focus {
     display: block;
@@ -8293,7 +8297,7 @@ select {
   margin: 0; }
 
 .-rev-tabpanel .nav-pills > li > a, .-rev-tabpanel .nav-pills > li > a:focus {
-  background: #DA0523;
+  background: #2C383C;
   color: white;
   border: 0;
   min-width: 140px;
@@ -8307,10 +8311,10 @@ select {
   border-top-right-radius: 4px; }
 
 .-rev-tabpanel .nav-pills > li > a:hover, .-rev-tabpanel .nav-pills > li.active a:hover {
-  background: #a8041b; }
+  background: #161d1f; }
 
 .-rev-tabpanel .nav-pills > li.active a {
-  background: #a8041b; }
+  background: #161d1f; }
 
 .rev-field-group {
   position: relative;
@@ -8479,6 +8483,21 @@ textarea {
     box-shadow: 0 0 25px rgba(218, 5, 35, 0.42);
     background: #DA0523;
     color: white; }
+
+.theme-activate-btn,
+.theme-delete-btn {
+  position: absolute;
+  top: -7px;
+  width: 50px;
+  height: 50px;
+  padding: 0 !important;
+  font-size: 1.5em !important; }
+
+.theme-activate-btn {
+  left: 23px; }
+
+.theme-delete-btn {
+  right: 23px; }
 
 @media only screen and (max-width: 475px) {
   .rev-sidebar {

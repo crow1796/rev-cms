@@ -35,4 +35,43 @@ class TestController1 extends Controller
 		//endrevpageblock
 		 return view('pages.test.test.aimer', $viewData);
 	}
+
+
+	public function test(){
+		$viewData = array();
+		$viewData['title'] = 'Test';
+		$viewData['meta_title'] = '';
+		$viewData['meta_description'] = '';
+		$viewData['meta_keywords'] = '';
+		//revpageblock:
+		
+		//endrevpageblock
+		 return view('pages.test.test.test', $viewData);
+	}
+
+
+	public function test1(){
+		$viewData = array();
+		$viewData['title'] = 'Test';
+		$viewData['meta_title'] = '';
+		$viewData['meta_description'] = '';
+		$viewData['meta_keywords'] = '';
+		//revpageblock:
+		
+		//endrevpageblock
+		 return view('pages.test.test.test1', $viewData);
+	}
+
+
+	public function test2(){
+		$viewData = array();
+		$viewData['title'] = 'Test';
+		$viewData['meta_title'] = '';
+		$viewData['meta_description'] = '';
+		$viewData['meta_keywords'] = '';
+		//revpageblock:
+		
+		//endrevpageblock
+		 return view('pages.test.test.test2', $viewData);
+	}
 }

@@ -73,4 +73,8 @@ class Cms extends RevCMSModule{
 		}
 		return $layoutMaps;
 	}
+
+	public function getPageArray(){
+		
+	}
 }

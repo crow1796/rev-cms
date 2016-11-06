@@ -447,7 +447,7 @@ select{
 	}
 
 	&.-default.-toggled{
-		background: darken($btn-default-color, 10%);	
+		background: darken($brand-default, 10%);	
 	}
 }
 
@@ -633,7 +633,7 @@ select{
 	}
 
 	&.-default * {
-		color: white;
+		color: $theme-logo-color;
 	}
 
 	&.-fixed{
@@ -672,15 +672,18 @@ select{
 	& > .right > a,
 	& > .right > a:focus{
 		display: inline-block;
-		background: #DA0523;
 		padding: 0 25px;
-		background: $theme-btn-color;
+		// background: $brand-default;
 		text-decoration: none;
+		background: transparent;
+		color: $theme-logo-color;
 	}
 
 	& > .right > a:hover,
 	& > .right > a:active{
-		background: darken($theme-btn-color, 5%);
+		// background: darken($brand-default, 5%);
+		color: $theme-logo-color;
+		background: darken($theme-header-bg, 5%);
 	}
 
 	& > .right > .rev-dropdown-toggle{
@@ -746,6 +749,7 @@ select{
 		top: 5px;
 		left: -25px;
 		line-height: normal;
+		color: $theme-text-color;
 	}
 
 	& > .right > .rev-dropdown-toggle > .item > .rev-user-info > .image > img{
@@ -754,7 +758,11 @@ select{
 		object-fit: cover;
 	}
 
-	& > .right > .rev-dropdown-toggle > .item > a,,
+	& > .right > .rev-dropdown-toggle > .item > a * {
+		color: $theme-text-color;
+	}
+
+	& > .right > .rev-dropdown-toggle > .item > a,
 	& > .right > .rev-dropdown-toggle > .item > a:focus{
 		display: block;
 		padding: 15px 10px;
@@ -857,7 +865,7 @@ select{
 	}
 
 	.nav-pills > li > a, .nav-pills > li > a:focus{
-		background: $theme-btn-color;
+		background: $brand-default;
 		color: white;
 		border: 0;
 		min-width: 140px;
@@ -873,11 +881,11 @@ select{
 	}
 
 	.nav-pills > li > a:hover, .nav-pills > li.active a:hover{
-		background: darken($theme-btn-color, 10%);
+		background: darken($brand-default, 10%);
 	}
 
 	.nav-pills > li.active a{
-		background: darken($theme-btn-color, 10%);
+		background: darken($brand-default, 10%);
 	}
 }
 
@@ -1133,6 +1141,24 @@ textarea{
 		background: $theme-btn-color;
 		color: white;
 	}
+}
+
+.theme-activate-btn,
+.theme-delete-btn{
+	position: absolute;
+    top: -7px;
+    width: 50px;
+    height: 50px;
+    padding: 0 !important;
+    font-size: 1.5em !important;
+}
+
+.theme-activate-btn{
+	left: 23px;
+}
+
+.theme-delete-btn{
+	right: 23px;
 }
 
 @media only screen and (max-width: 475px){

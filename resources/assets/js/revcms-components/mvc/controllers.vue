@@ -199,13 +199,13 @@
 		<div class="view-nav _relative">
 			<rev-controller-maker :controllers.sync="controllers"></rev-controller-maker>
 			<button type="button" 
-					class="rev-btn -md -danger"
+					class="rev-btn -md -default"
 					:class="{ '-toggled': selectionMode }"
 					@click="toggleSelectionMode()">
 				Selection Mode : {{ selectionModeText }}
 			</button>
 			<button type="button"
-					class="rev-btn -md -danger"
+					class="rev-btn -md -default"
 					@click="selectAllItems()"
 					v-if="selectionMode && controllers.length"
 					title="{{ selectAllText }}">
@@ -253,7 +253,7 @@
 				v-show="hasSelectedController">
 				<div style="margin-top: 1px; margin-bottom: 7px;">
 					<button type="button" 
-							class="rev-btn -md -success" 
+							class="rev-btn -md -danger" 
 							title="Save Changes"
 							@click="saveChanges()">
 						<i class="fa fa-save"></i>
@@ -266,7 +266,7 @@
 							<i class="fa fa-refresh"></i>
 						</button>
 						<button type="button" 
-								class="rev-btn -md -danger" 
+								class="rev-btn -md -default" 
 								title="Delete Controller"
 								@click="deleteSelectedController()">
 							<i class="fa fa-trash"></i>

@@ -68,7 +68,7 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="rev-field-group text-right">
-							<button type="submit" class="rev-btn -md -success">
+							<button type="submit" class="rev-btn -md -danger">
 								Save
 							</button>
 						</div>
