@@ -68,8 +68,11 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="rev-field-group text-right">
-							<button type="submit" class="rev-btn -md -danger">
+							<button type="submit" class="rev-btn -md -danger -has-icon-right">
 								Save
+								<span class="icon">
+									<i class="revicon-note-checked"></i>
+								</span>
 							</button>
 						</div>
 					</div>

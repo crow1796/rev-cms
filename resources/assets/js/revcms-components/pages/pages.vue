@@ -119,15 +119,22 @@
 	<div class="rev-grid">
 		<!-- Page Nav -->
 		<div class="view-nav">
-			<a href="{{ adminBaseUrl }}/pages/create" class="rev-btn -md -danger">
+			<a href="{{ adminBaseUrl }}/pages/create" class="rev-btn -md -danger -has-icon-right">
 				Add New
+				<span class="icon">
+					<i class="revicon-bookmark-add"></i>
+				</span>
 			</a>
-			<button class="rev-btn -md -default" 
+			<button class="rev-btn -md -default -has-icon-right" 
 					@click="toggleSelectionMode"
-					:class="{ '-toggled': selectionMode }">
+					:class="{ '-toggled': selectionMode }"
+					v-if="pages.length">
 						Selection Mode:
 						<span v-if="selectionMode">On</span>
 						<span v-else="!selectionModel">Off</span>
+					<span class="icon">
+						<i class="revicon-tag-checked"></i>
+					</span>
 			</button>
 			<button class="rev-btn -md -danger" 
 					v-if="selectionMode && selections.length" 
@@ -164,8 +171,11 @@
 		<div class="row" v-if="!pages.length">
 			<h2 class="text-center">
 				You have no Page(s). 
-				<a href="/admin/pages/create" class="rev-btn -sm -danger _v-middle">
+				<a href="/admin/pages/create" class="rev-btn -md -danger _v-middle -has-icon-right">
 					Add New
+				<span class="icon">
+					<i class="revicon-bookmark-add"></i>
+				</span>
 				</a>
 			</h2>
 		</div>

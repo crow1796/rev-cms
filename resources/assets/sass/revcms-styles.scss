@@ -66,7 +66,9 @@ select{
 }
 
 .login-form{
-	h2, label{
+	h2, 
+	label,
+	& > form input{
 		color: $theme-text-color;
 	}
 	
@@ -95,7 +97,7 @@ select{
 	}
 
 	& > .breadcrumb > li > a{
-		color: $theme-btn-color;
+		color: $brand-danger;
 	}
 }
 
@@ -233,7 +235,7 @@ select{
 	}
 	
 	& > .menu-container > .menu > .item.active > a{
-		border-left: 5px solid $theme-btn-color;
+		border-left: 5px solid $brand-danger;
 	}
 
 	& > .menu-container > .menu > .item > a, 
@@ -413,9 +415,53 @@ select{
 		padding: 1px 20px;
 	}
 
+	&.-xs.-has-icon-left{
+		padding-left: 50px;
+	}
+
+	&.-xs.-has-icon,
+	&.-xs.-has-icon-right{
+		padding-right: 50px;
+	}
+
+	&.-xs.-has-icon-left > .icon{
+		top: 0;
+		left: 0;
+	    height: 18px;
+	    width: 18px;
+	}
+
+	&.-xs.-has-icon > .icon,
+	&.-xs.-has-icon-right > .icon{
+		top: 0;
+		right: 0;
+	    height: 18px;
+	    width: 18px;
+	}
+
 	&.-sm{
 		padding: 2px 24px;
 		font-size: 13px;
+	}
+
+	&.-sm.-has-icon-left{
+		padding-left: 54px;
+	}
+
+	&.-sm.-has-icon,
+	&.-sm.-has-icon-right{
+		padding-right: 54px;
+	}
+
+	&.-sm.-has-icon-left > .icon{
+		top: 0;
+		left: 0;
+	}
+
+	&.-sm.-has-icon > .icon,
+	&.-sm.-has-icon-right > .icon{
+		top: 0;
+		right: 0;
 	}
 
 	&.-md{
@@ -423,9 +469,49 @@ select{
 		font-size: 14px;
 	}
 
+	&.-md.-has-icon-left{
+		padding-left: 56px;
+	}
+
+	&.-md.-has-icon,
+	&.-md.-has-icon-right{
+		padding-right: 56px;
+	}
+
+	&.-md.-has-icon-left > .icon{
+		top: 0;
+		left: 0;
+	}
+
+	&.-md.-has-icon > .icon,
+	&.-md.-has-icon-right > .icon{
+		top: 0;
+		right: 0;
+	}
+
 	&.-lg{
 		padding: 6px 28px;
 		font-size: 16px;
+	}
+
+	&.-lg.-has-icon-left{
+		padding-left: 58px;
+	}
+
+	&.-lg.-has-icon,
+	&.-lg.-has-icon-right{
+		padding-right: 58px;
+	}
+
+	&.-lg.-has-icon-left > .icon{
+		top: 0;
+		left: 0;
+	}
+
+	&.-lg.-has-icon > .icon,
+	&.-lg.-has-icon-right > .icon{
+		top: 0;
+		right: 0;
 	}
 
 	@include backgrounding;
@@ -439,7 +525,7 @@ select{
 	}
 
 	&.-danger.-toggled{
-		background: darken($theme-btn-color, 10%);	
+		background: darken($brand-danger, 10%);	
 	}
 
 	&.-warning.-toggled{
@@ -480,16 +566,15 @@ select{
 	background-size: 0 2px, 100% 1px;
 	background-repeat: no-repeat;
 	background-position: center bottom, center calc(100% - 1px);
-	background-color: transparent;
 	transition: background 0s ease-out;
 	float: none;
 	box-shadow: none;
-	// background-image: linear-gradient($theme-btn-color, $theme-btn-color), linear-gradient(#D2D2D2, #D2D2D2);
+	// background-image: linear-gradient($brand-danger, $brand-danger), linear-gradient(#D2D2D2, #D2D2D2);
 	border-radius: 4px;
 	// border-radius: 4px;
 	// box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
-	background: white;
+	background: rgba(0, 0, 0, 0.02);
 	box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1);
 
 	&:focus{
@@ -548,7 +633,7 @@ select{
 
 	& .grid-view > .grid-item.-selection-mode:hover > .info,
 	& .grid-view > .grid-item.-selected > .info{
-		border-bottom-color: $theme-btn-color;
+		border-bottom-color: $brand-danger;
 	}
 
 	& .grid-view > .grid-item > .preview{
@@ -585,6 +670,41 @@ select{
 	& .grid-view > .grid-item > .info > .nav{
 		
 	}
+}
+
+.-has-icon,
+.-has-icon-right,
+.-has-icon-left{
+	position: relative;
+	
+	& > .icon {
+		position: absolute;
+	    text-align: center;
+	    color: white;
+	    width: 30px;
+	    height: 100%;
+	    line-height: normal;
+	    font-size: 1.3em;
+	}
+
+	& > .icon > i,
+	& > .icon > span{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);	
+	}
+}
+
+.-has-icon > .icon,
+.-has-icon-right > .icon{
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.-has-icon-left{
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
 }
 
 .view-nav{
@@ -792,7 +912,7 @@ select{
 	display: inline-block;
 	
 	& > a{
-		color: $theme-btn-color;
+		color: $brand-danger;
 	}
 	
 	& > .sub-menu:before{
@@ -950,7 +1070,7 @@ select{
 	}
 
 	& > .error-message.-danger{
-		color: $theme-btn-color;
+		color: $brand-danger;
 	}
 }
 
@@ -970,7 +1090,7 @@ select{
 	    left: 46%;
 	    text-align: center;
 	    font-size: 2em;
-	    color: $theme-btn-color;
+	    color: $brand-danger;
 	}
 	
 	& > .rev-spinner-container{
@@ -994,9 +1114,9 @@ select{
 		position: absolute;
 		width: 20px;
 		height: 20px;
-		border: 2px solid $theme-btn-color;
+		border: 2px solid $brand-danger;
 		border-radius: 50%;
-		background: $theme-btn-color;
+		background: $brand-danger;
 	}
 
 	& > .rev-spinner-container > .rev-spinner-large > .rev-spinner-mini-circle-1{
@@ -1074,7 +1194,7 @@ select{
 		transition: background 0s ease-out;
 		float: none;
 		box-shadow: none;
-		background-image: linear-gradient($theme-btn-color, $theme-btn-color), linear-gradient(#D2D2D2, #D2D2D2);
+		background-image: linear-gradient($brand-danger, $brand-danger), linear-gradient(#D2D2D2, #D2D2D2);
 		border-radius: 0;
 	}
 
@@ -1089,10 +1209,10 @@ select{
 
 	& > .list-group-item.-active > a{
 		// background: #22303D;
-		background: $theme-btn-color;
+		background: $brand-danger;
 		color: white;
 		padding-left: 25px;
-		border-left: 4px solid darken($theme-btn-color, 10%);
+		border-left: 4px solid darken($brand-danger, 10%);
 	}
 
 	& > .list-group-item > a > .path{
@@ -1116,7 +1236,7 @@ select{
 	}
 
 	&.-danger{
-		background: $theme-btn-color;
+		background: $brand-danger;
 	}
 
 	&.-flat{
@@ -1125,7 +1245,7 @@ select{
 }
 
 #controller-list{
-	max-height: 420px;
+	max-height: 560px;
 }
 
 textarea{
@@ -1136,9 +1256,9 @@ textarea{
 	background: rgba($body-bg,0.6);
 	
 	& > span{
-		border: 1px solid rgba($theme-btn-color, 0.62);
-		box-shadow: 0 0 25px rgba($theme-btn-color, 0.42);
-		background: $theme-btn-color;
+		border: 1px solid rgba($brand-danger, 0.62);
+		box-shadow: 0 0 25px rgba($brand-danger, 0.42);
+		background: $brand-danger;
 		color: white;
 	}
 }

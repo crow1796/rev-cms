@@ -45,6 +45,7 @@
 						}
 					}.bind(this));
 			};
+			mceConfig.height = 480;
 			tinymce.init(mceConfig);
 		},
 		props: {
@@ -146,6 +147,10 @@
 	#permalink{
 		height: 29px;
 	}
+
+	#goto-page-btn{
+		margin-right: 10px;
+	}
 </style>
 
 <template>
@@ -177,10 +182,13 @@
 									v-model="page.slug"
 									v-if="permalink_editing">
 							<button type="button" 
-									class="rev-btn -sm -danger"
+									class="rev-btn -sm -danger -has-icon-right"
 									v-if="permalink_editing"
 									@click="updatePermalink()">
 								Save
+								<span class="icon">
+									<i class="revicon-note-checked"></i>
+								</span>
 							</button>
 							<button type="button" 
 									class="rev-btn -sm -default"
@@ -256,15 +264,21 @@
 							Hidden?
 						</label>
 						<a href="{{ baseUrl }}/{{ page.slug ? page.slug : '' }}"
-							class="rev-btn -md -default"
+							class="rev-btn -md -default -has-icon-right"
 							target="_blank"
-							v-if="page.slug">
+							v-if="page.slug"
+							id="goto-page-btn">
 							Go To Page
-							<i class="fa fa-external-link"></i>
+							<span class="icon">
+								<i class="revicon-link"></i>
+							</span>
 						</a> 
 						<button type="submit" 
-								class="rev-btn -md -danger">
+								class="rev-btn -md -danger -has-icon-right">
 							Save
+							<span class="icon">
+								<i class="revicon-note-checked"></i>
+							</span>
 						</button>
 					</div>
 				</div>

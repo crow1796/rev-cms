@@ -70,10 +70,13 @@
 
 <template>
 	<button type="button"
-		class="rev-btn -danger"
+		class="rev-btn -default -has-icon-right"
 		:class="[{ '-toggled': showMakeForm }, size]"
 		@click.prevent="toggleMakeForm()">
 		{{ makeBtnText }}
+		<span class="icon">
+			<i class="revicon-document-add"></i>
+		</span>
 	</button>
 
 	<div class="view-nav _floating-form animated _rev-radius"
@@ -99,8 +102,11 @@
 				</label>
 			</div>
 			<div class="rev-field-group -xs text-right">
-				<button type="submit" class="rev-btn -md -danger">
+				<button type="submit" class="rev-btn -md -danger -has-icon-right">
 					Make
+					<span class="icon">
+						<i class="revicon-document-add"></i>
+					</span>
 				</button>
 			</div>
 		</form>

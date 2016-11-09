@@ -199,10 +199,13 @@
 		<div class="view-nav _relative">
 			<rev-controller-maker :controllers.sync="controllers"></rev-controller-maker>
 			<button type="button" 
-					class="rev-btn -md -default"
+					class="rev-btn -md -default -has-icon-right"
 					:class="{ '-toggled': selectionMode }"
 					@click="toggleSelectionMode()">
-				Selection Mode : {{ selectionModeText }}
+					Selection Mode : {{ selectionModeText }}
+					<span class="icon">
+						<i class="revicon-tag-checked"></i>
+					</span>
 			</button>
 			<button type="button"
 					class="rev-btn -md -default"
@@ -213,10 +216,13 @@
 					:class="{ 'fa-square-o': selections.length, 'fa-check-square-o': selections.length < controllers.length }"></i>
 			</button>
 			<button type="button" 
-					class="rev-btn -md -danger"
+					class="rev-btn -md -danger -has-icon-right"
 					v-if="selectionMode && selections.length > 0"
 					@click="deleteSelectedItems()">
-				Delete
+					Delete
+					<span class="icon">
+						<i class="revicon-trash-can"></i>
+					</span>
 			</button>
 		</div>
 

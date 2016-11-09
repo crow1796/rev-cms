@@ -24,8 +24,11 @@
 
 <template>
 	<div class="view-nav">
-		<button class="rev-btn -md -danger" type="button">
+		<button class="rev-btn -md -danger -has-icon-right" type="button">
 			Add New
+			<span class="icon">
+				<i class="revicon-layout4"></i>
+			</span>
 		</button>
 	</div>
 	<div class="rev-grid">

@@ -27,22 +27,29 @@
 			style="padding-bottom: 35px;">
 		<!-- Library Nav -->
 		<div class="view-nav">
-			<button type="button" class="rev-btn -md -danger">
-				<i class="fa fa-upload"></i>
+			<button type="button" class="rev-btn -md -danger -has-icon-right">
 				Upload
+				<span class="icon">
+					<i class="revicon-cloud-upload"></i>
+				</span>
 			</button>
-			<button type="button" class="rev-btn -md -default">
-				<i class="fa fa-folder"></i>
+			<button type="button" class="rev-btn -md -default -has-icon-right">
 				Add Folder
+				<span class="icon">
+					<i class="revicon-folder-add"></i>
+				</span>
 			</button>
-			<button type="button" class="rev-btn -md -default">
+			<button type="button" class="rev-btn -md -default" title="Move">
 				<i class="fa fa-reply-all"></i>
 			</button>
 			<button type="button" class="rev-btn -md -default" title="Delete">
-				<i class="fa fa-trash"></i>
+				<i class="revicon-trash-can"></i>
 			</button>
-			<button class="rev-btn -md -default">
-				<i class="fa fa-refresh"></i>
+			<button class="rev-btn -md -default -has-icon-right">
+				Reload
+				<span class="icon">
+					<i class="revicon-refresh"></i>
+				</span>
 			</button>
 			<div class="right">
 				<form class="search-form">

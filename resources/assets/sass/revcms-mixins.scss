@@ -37,11 +37,11 @@
 	}
 
 	&.-danger{
-		background: $theme-btn-color;
+		background: $brand-danger;
 	}
 
 	&.-danger:hover{
-		@include materialShadow($theme-btn-color);
+		@include materialShadow($brand-danger);
 	}
 
 	&.-warning{
@@ -58,6 +58,30 @@
 
 	&.-success:hover{
 		@include materialShadow($brand-success);
+	}
+
+	&.-default > .icon{
+		background: darken($brand-default, 10%);
+	}
+
+	&.-primary > .icon{
+		background: darken($brand-primary, 10%);
+	}
+
+	&.-info > .icon{
+		background: darken($brand-info, 10%);
+	}
+
+	&.-warning > .icon{
+		background: darken($brand-warning, 10%);
+	}
+
+	&.-success > .icon{
+		background: darken($brand-success, 10%);
+	}
+
+	&.-danger > .icon{
+		background: darken($brand-danger, 10%);
 	}
 }
 
