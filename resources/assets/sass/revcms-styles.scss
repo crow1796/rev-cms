@@ -115,6 +115,7 @@ select{
 }
 
 .rev-panel{
+	min-height: 530px;
 	background: $theme-panel-bg;
 	padding: 20px;
 	// margin-top: 80px;
@@ -415,6 +416,13 @@ select{
 		padding: 1px 20px;
 	}
 
+	&.-xs.-outlined{
+		background: transparent;
+	    padding: 0px 18px;
+	    border-width: 1px;
+	    border-style: solid;
+	}
+
 	&.-xs.-has-icon-left{
 		padding-left: 50px;
 	}
@@ -444,6 +452,13 @@ select{
 		font-size: 13px;
 	}
 
+	&.-sm.-outlined{
+		background: transparent;
+	    padding: 1px 22px;
+	    border-width: 1px;
+	    border-style: solid;
+	}
+
 	&.-sm.-has-icon-left{
 		padding-left: 54px;
 	}
@@ -467,6 +482,13 @@ select{
 	&.-md{
 		padding: 5px 26px;
 		font-size: 14px;
+	}
+
+	&.-md.-outlined{
+		background: transparent;
+	    padding: 4px 24px;
+	    border-width: 1px;
+	    border-style: solid;
 	}
 
 	&.-md.-has-icon-left{
@@ -494,6 +516,13 @@ select{
 		font-size: 16px;
 	}
 
+	&.-lg.-outlined{
+		background: transparent;
+	    padding: 5px 26px;
+	    border-width: 1px;
+	    border-style: solid;
+	}
+
 	&.-lg.-has-icon-left{
 		padding-left: 58px;
 	}
@@ -516,23 +545,23 @@ select{
 
 	@include backgrounding;
 
-	&.-success.-toggled{
+	&.-success.-toggled:not(.-outlined){
 		background: darken($brand-success, 10%);	
 	}
 
-	&.-primary.-toggled{
+	&.-primary.-toggled:not(.-outlined){
 		background: darken($brand-primary, 10%);	
 	}
 
-	&.-danger.-toggled{
+	&.-danger.-toggled:not(.-outlined){
 		background: darken($brand-danger, 10%);	
 	}
 
-	&.-warning.-toggled{
+	&.-warning.-toggled:not(.-outlined){
 		background: darken($brand-warning, 10%);	
 	}
 
-	&.-default.-toggled{
+	&.-default.-toggled:not(.-outlined){
 		background: darken($brand-default, 10%);	
 	}
 }
@@ -660,11 +689,23 @@ select{
 		border-bottom: 4px solid $theme-bg;
 	}
 
-	& .grid-view > .grid-item > .info > tbody > tr > td{
-		width: 50%;
+	& .grid-view > .grid-item > .info > tbody > tr > td:nth-child(even){
+		width: 70%;
 		padding: 3px;
 		line-height: 1.6;
-		vertical-align: middle;	
+		vertical-align: middle;
+		display: inline-block;
+		text-overflow: ellipsis;
+	    overflow: hidden;
+	}
+
+	& .grid-view > .grid-item > .info > tbody > tr > td:nth-child(odd){
+		width: 30%;
+		display: inline-block;
+	}
+
+	& .grid-view > .grid-item > .info > tbody > tr:last-child > td{
+		width: 100%;
 	}
 
 	& .grid-view > .grid-item > .info > .nav{
@@ -1075,11 +1116,11 @@ select{
 }
 
 .rev-spinner-wrapper{
-	display: none;
+	display: block;
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: rgba($body-bg, 0.95);
+	background: rgba($body-bg, 1);
 	z-index: 998;
 	left: 0;
 	top: 0;

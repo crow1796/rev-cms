@@ -83,8 +83,8 @@
 							timeout: 5000,
 							extendedTimeOut: 2500
 						}
-						if(responseData.failed){
-							delete responseData.failed
+						if(!responseData.status){
+							delete responseData.status
 							for(let counter = 0; counter < Object.keys(responseData).length; counter++){
 								toastr.error(responseData[counter], 'Oops!');
 							}
@@ -191,7 +191,7 @@
 								</span>
 							</button>
 							<button type="button" 
-									class="rev-btn -sm -default"
+									class="rev-btn -sm -default -outlined"
 									@click="togglePermalinkEdit()">
 								{{ permalink_editing ? 'Cancel' : 'Edit' }}
 							</button>
@@ -263,7 +263,7 @@
 									v-model="page.hidden">
 							Hidden?
 						</label>
-						<a href="{{ baseUrl }}/{{ page.slug ? page.slug : '' }}"
+						<a href="{{ baseUrl }}/{{ page.slug ? page.slug.replace('/', '') : '' }}"
 							class="rev-btn -md -default -has-icon-right"
 							target="_blank"
 							v-if="page.slug"

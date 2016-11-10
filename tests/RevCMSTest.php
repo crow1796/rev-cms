@@ -7,6 +7,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class RevCMSTest extends TestCase
 {
+
 	public function tearDown(){
 		Mockery::close();
 	}
@@ -56,14 +57,13 @@ class RevCMSTest extends TestCase
     public function testThemesInfoReader(){
         $themes = \RevCMS::theme()
                         ->getInstalledThemes();
-        // return $themes;
-        // dd($themes);
+        $this->assertInstanceOf('\Illuminate\Support\Collection', $themes);
+        $this->assertGreaterThan(0, $themes->count());
     }
 
     public function testGetActiveThemesLayouts(){
         $layouts = \RevCMS::cms()->getActiveThemesLayouts();
-
-        // dd($layouts);
+        $this->assertGreaterThan(0, count($layouts));
     }
 
     public function testPageCodeTrimmer(){
@@ -102,9 +102,11 @@ $viewData["post"] = $post;';
                     'response' => 'pages.products.aimer'
                 ]
             );
-        // $pageSource = \RevCMS::cms()->createPage($pageInfo);
-
-        // dd($this->buildBlockFor($page, $codeSample1));
+        $page = \RevCMS::cms()->createPage($pageInfo);
+        // If record already exists, then the following assert will fail:
+        // $this->assertInstanceOf('RevCMS\Modules\Cms\Wrapper\Page', $page);
+        // And this will pass:
+        $this->assertFalse($page);
     }
 
     public function testGenerateViewName(){
@@ -123,8 +125,8 @@ $viewData["post"] = $post;';
         // Returned by actions
         $actionResponseView = str_replace('/', '.', $viewPath);
 
-        // dd($this->generateSlugFrom($title));
-        // dd($this->generateActionNameFrom($title));
+        $this->assertStringEndsWith('.blade.php', $actualBladePath);
+        $this->assertContains('.', $actionResponseView);
     }
 
     public function testEditRevConfig(){
@@ -133,7 +135,12 @@ $viewData["post"] = $post;';
         // $config->save();
     }
 
-    public function testDashboardSidebarFactory(){
-        (\RevCMS::dashboard()->addSidebarMenu('test/menu', 'MyTestController@index'));
+    public function testPageRepository(){
+        $pageRepository = \App::make('\RevCMS\Repositories\CMS\PageRepository');
+        
+        $this->assertNotNull($pageRepository);
+        $this->assertInstanceOf('\RevCMS\Repositories\Contracts\Repository', $pageRepository);
+        $this->assertInstanceOf('\RevCMS\Repositories\Contracts\AbstractRepository', $pageRepository);
+        $this->assertInstanceOf('\Illuminate\Support\Collection', $pageRepository->all());
     }
 }

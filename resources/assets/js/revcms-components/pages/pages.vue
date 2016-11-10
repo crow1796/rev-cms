@@ -7,15 +7,8 @@
 		data() {
 			return {
 				adminBaseUrl: admin_base_url,
-				pages: [
-					{
-						id: 1,
-						title: 'Homepage',
-						url: '/homepage',
-						controller: 'PagesController',
-						action: 'index'
-					}
-				],
+				baseUrl: base_url,
+				pages: [],
 				viewType: 'grid',
 				selectionMode: false,
 				selections: []
@@ -95,7 +88,6 @@
 				});
 			},
 			getAllPages(){
-				showRevLoader();
 				this.$http
 					.get("{admin_base_url}/api/revcms/pages/all-pages")
 					.then((response) => {
@@ -193,7 +185,7 @@
 					<tbody>
 						<tr class="title">
 							<td>
-								<strong>Page Title:</strong>
+								<strong>Title:</strong>
 							</td>
 							<td>
 								{{ page.title }}
@@ -204,7 +196,7 @@
 								<strong>URL:</strong>
 							</td>
 							<td>
-								<a href="#">
+								<a href="{{ baseUrl + '/' +  page.url.replace('/', '') }}" target="_blank">
 									{{ page.url }}
 								</a>
 							</td>
@@ -213,7 +205,7 @@
 							<td>
 								<strong>Controller:</strong>
 							</td>
-							<td>
+							<td title="{{ page.controller }}">
 								{{ page.controller }}
 							</td>
 						</tr>
@@ -227,11 +219,11 @@
 						</tr>
 						<tr v-if="!selectionMode">
 							<td colspan="2">
-								<a href="#" class="rev-btn -xs -danger" title="Edit the Page">
+								<a href="#" class="rev-btn -xs -warning -outlined" title="Edit the Page">
 									Edit
 								</a>
 								<button type="button" 
-										class="rev-btn -xs -danger"
+										class="rev-btn -xs -warning -outlined"
 										title="Delete the Page"
 										@click="deletePage(page)">
 									Delete

@@ -15,7 +15,11 @@ class PageRecordBuilder extends PageBuilder {
 		$model = $this->app
 						->make(config('revcms.page_model'));
 		$page['action'] = $page['controller'] . '@' . $page['action_name'];
-		$model->create($page);
+		try {
+			$model->create($page);
+		} catch (\Illuminate\Database\QueryException $e) {
+			return false;
+		}
 
 		return $page;
 	}

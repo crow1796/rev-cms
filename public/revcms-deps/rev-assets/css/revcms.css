@@ -7759,6 +7759,7 @@ select {
     transition: all .3s ease; }
 
 .rev-panel {
+  min-height: 530px;
   background: #fff;
   padding: 20px;
   box-shadow: 0px 7px 8px rgba(0, 0, 0, 0.3);
@@ -7979,6 +7980,11 @@ select {
   .rev-btn.-xs, .rev-btn:focus.-xs {
     font-size: 12px;
     padding: 1px 20px; }
+  .rev-btn.-xs.-outlined, .rev-btn:focus.-xs.-outlined {
+    background: transparent;
+    padding: 0px 18px;
+    border-width: 1px;
+    border-style: solid; }
   .rev-btn.-xs.-has-icon-left, .rev-btn:focus.-xs.-has-icon-left {
     padding-left: 50px; }
   .rev-btn.-xs.-has-icon, .rev-btn.-xs.-has-icon-right, .rev-btn:focus.-xs.-has-icon, .rev-btn:focus.-xs.-has-icon-right {
@@ -7998,6 +8004,11 @@ select {
   .rev-btn.-sm, .rev-btn:focus.-sm {
     padding: 2px 24px;
     font-size: 13px; }
+  .rev-btn.-sm.-outlined, .rev-btn:focus.-sm.-outlined {
+    background: transparent;
+    padding: 1px 22px;
+    border-width: 1px;
+    border-style: solid; }
   .rev-btn.-sm.-has-icon-left, .rev-btn:focus.-sm.-has-icon-left {
     padding-left: 54px; }
   .rev-btn.-sm.-has-icon, .rev-btn.-sm.-has-icon-right, .rev-btn:focus.-sm.-has-icon, .rev-btn:focus.-sm.-has-icon-right {
@@ -8013,6 +8024,11 @@ select {
   .rev-btn.-md, .rev-btn:focus.-md {
     padding: 5px 26px;
     font-size: 14px; }
+  .rev-btn.-md.-outlined, .rev-btn:focus.-md.-outlined {
+    background: transparent;
+    padding: 4px 24px;
+    border-width: 1px;
+    border-style: solid; }
   .rev-btn.-md.-has-icon-left, .rev-btn:focus.-md.-has-icon-left {
     padding-left: 56px; }
   .rev-btn.-md.-has-icon, .rev-btn.-md.-has-icon-right, .rev-btn:focus.-md.-has-icon, .rev-btn:focus.-md.-has-icon-right {
@@ -8028,6 +8044,11 @@ select {
   .rev-btn.-lg, .rev-btn:focus.-lg {
     padding: 6px 28px;
     font-size: 16px; }
+  .rev-btn.-lg.-outlined, .rev-btn:focus.-lg.-outlined {
+    background: transparent;
+    padding: 5px 26px;
+    border-width: 1px;
+    border-style: solid; }
   .rev-btn.-lg.-has-icon-left, .rev-btn:focus.-lg.-has-icon-left {
     padding-left: 58px; }
   .rev-btn.-lg.-has-icon, .rev-btn.-lg.-has-icon-right, .rev-btn:focus.-lg.-has-icon, .rev-btn:focus.-lg.-has-icon-right {
@@ -8072,15 +8093,30 @@ select {
     background: #1ca54c; }
   .rev-btn.-danger > .icon, .rev-btn:focus.-danger > .icon {
     background: #dd0a0a; }
-  .rev-btn.-success.-toggled, .rev-btn:focus.-success.-toggled {
+  .rev-btn.-default.-outlined, .rev-btn:focus.-default.-outlined {
+    border-color: #2C383C;
+    color: #2C383C; }
+  .rev-btn.-primary.-outlined, .rev-btn:focus.-primary.-outlined {
+    border-color: #3273DC;
+    color: #3273DC; }
+  .rev-btn.-warning.-outlined, .rev-btn:focus.-warning.-outlined {
+    border-color: #FFEB3B;
+    color: #FFEB3B; }
+  .rev-btn.-success.-outlined, .rev-btn:focus.-success.-outlined {
+    border-color: #23D160;
+    color: #23D160; }
+  .rev-btn.-danger.-outlined, .rev-btn:focus.-danger.-outlined {
+    border-color: #f52525;
+    color: #f52525; }
+  .rev-btn.-success.-toggled:not(.-outlined), .rev-btn:focus.-success.-toggled:not(.-outlined) {
     background: #1ca54c; }
-  .rev-btn.-primary.-toggled, .rev-btn:focus.-primary.-toggled {
+  .rev-btn.-primary.-toggled:not(.-outlined), .rev-btn:focus.-primary.-toggled:not(.-outlined) {
     background: #205bbb; }
-  .rev-btn.-danger.-toggled, .rev-btn:focus.-danger.-toggled {
+  .rev-btn.-danger.-toggled:not(.-outlined), .rev-btn:focus.-danger.-toggled:not(.-outlined) {
     background: #dd0a0a; }
-  .rev-btn.-warning.-toggled, .rev-btn:focus.-warning.-toggled {
+  .rev-btn.-warning.-toggled:not(.-outlined), .rev-btn:focus.-warning.-toggled:not(.-outlined) {
     background: #ffe608; }
-  .rev-btn.-default.-toggled, .rev-btn:focus.-default.-toggled {
+  .rev-btn.-default.-toggled:not(.-outlined), .rev-btn:focus.-default.-toggled:not(.-outlined) {
     background: #161d1f; }
 
 .rev-input-group {
@@ -8174,11 +8210,21 @@ select {
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   border-bottom: 4px solid #2C383C; }
 
-.rev-grid .grid-view > .grid-item > .info > tbody > tr > td {
-  width: 50%;
+.rev-grid .grid-view > .grid-item > .info > tbody > tr > td:nth-child(even) {
+  width: 70%;
   padding: 3px;
   line-height: 1.6;
-  vertical-align: middle; }
+  vertical-align: middle;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+.rev-grid .grid-view > .grid-item > .info > tbody > tr > td:nth-child(odd) {
+  width: 30%;
+  display: inline-block; }
+
+.rev-grid .grid-view > .grid-item > .info > tbody > tr:last-child > td {
+  width: 100%; }
 
 .-has-icon,
 .-has-icon-right,
@@ -8431,11 +8477,11 @@ select {
     color: #f52525; }
 
 .rev-spinner-wrapper {
-  display: none;
+  display: block;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(239, 239, 239, 0.95);
+  background: #efefef;
   z-index: 998;
   left: 0;
   top: 0; }

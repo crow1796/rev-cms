@@ -22,16 +22,14 @@ class TestController1 extends Controller
 	}
 
 
-	public function aimer($post_slug){
+	public function aimer(){
 		$viewData = array();
 		$viewData['title'] = 'Products Page';
 		$viewData['meta_title'] = 'Simple Product Page';
 		$viewData['meta_description'] = 'Simple Product Page';
 		$viewData['meta_keywords'] = 'product, simple, page';
 		//revpageblock:
-		
-		$post = \App\Post::findBySlugOrFail($post_slug);
-		$viewData["post"] = $post;
+		dd('Aimer');
 		//endrevpageblock
 		 return view('pages.test.test.aimer', $viewData);
 	}
@@ -73,5 +71,18 @@ class TestController1 extends Controller
 		
 		//endrevpageblock
 		 return view('pages.test.test.test2', $viewData);
+	}
+
+
+	public function aimer1(){
+		$viewData = array();
+		$viewData['title'] = 'aimer';
+		$viewData['meta_title'] = '';
+		$viewData['meta_description'] = '';
+		$viewData['meta_keywords'] = '';
+		//revpageblock:
+		
+		//endrevpageblock
+		 return view('pages.test.test.aimer1', $viewData);
 	}
 }

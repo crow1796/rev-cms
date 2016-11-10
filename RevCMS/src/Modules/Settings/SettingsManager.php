@@ -4,9 +4,6 @@ use Larapack\ConfigWriter\Repository as LarapackRepository;
 use RevCMS\Modules\Abstracts\RevCMSModule;
 
 class SettingsManager extends RevCMSModule{
-	public function __construct(){
-
-	}
 
 	/**
 	 * Update site's general settings

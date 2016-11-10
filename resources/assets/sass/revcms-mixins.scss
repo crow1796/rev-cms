@@ -83,6 +83,31 @@
 	&.-danger > .icon{
 		background: darken($brand-danger, 10%);
 	}
+
+	&.-default.-outlined{
+		border-color: $brand-default;
+		color: $brand-default;
+	}
+
+	&.-primary.-outlined{
+		border-color: $brand-primary;
+		color: $brand-primary;
+	}
+
+	&.-warning.-outlined{
+		border-color: $brand-warning;
+		color: $brand-warning;
+	}
+
+	&.-success.-outlined{
+		border-color: $brand-success;
+		color: $brand-success;
+	}
+
+	&.-danger.-outlined{
+		border-color: $brand-danger;
+		color: $brand-danger;
+	}
 }
 
 @mixin wordWrap(){

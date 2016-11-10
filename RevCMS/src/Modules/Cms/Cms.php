@@ -1,16 +1,21 @@
 <?php 
 namespace RevCMS\Modules\Cms;
+use Illuminate\Container\Container as App;
 use RevCMS\Modules\Cms\Builder\PageDirector;
 use RevCMS\Modules\Cms\Wrapper\Page;
 use Validator;
 use RevCMS\Modules\Abstracts\RevCMSModule;
+use RevCMS\Repositories\CMS\PageRepository;
 
 class Cms extends RevCMSModule{
 
+	protected $pageRepository;
 	protected $pageDirector;
 
-	public function __construct(PageDirector $pageDirector){
+	public function __construct(App $app, PageDirector $pageDirector, PageRepository $pageRepository){
+		parent::__construct($app);
 		$this->pageDirector = $pageDirector;
+		$this->pageRepository = $pageRepository;
 	}
 
 	/**
@@ -29,7 +34,7 @@ class Cms extends RevCMSModule{
 
 		$page = $this->pageDirector
 						->buildActionFor($pageInfo);
-		return (new Page($page));
+		return $page ? (new Page($page)) : $page;
 	}
 
 	private function validatePageCreation($pageInfo){
@@ -75,6 +80,6 @@ class Cms extends RevCMSModule{
 	}
 
 	public function getPageArray(){
-		
+		return $this->pageRepository->allForDisplay();
 	}
 }

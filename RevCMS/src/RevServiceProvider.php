@@ -30,26 +30,17 @@ class RevServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('revcms', function(){
-            return (new RevCMS(
-                new Mvc(),
-                new Router(),
-                new ThemeManager(),
-                new Dashboard(),
-                new Cms(new PageDirector($this->app)),
-                new SettingsManager()
-            ));
-        });
+        $this->app->bind('RevCMS\Modules\Mvc\Mvc', 'RevCMS\Modules\Mvc\Mvc');
+        $this->app->bind('RevCMS\Modules\Router\Router', 'RevCMS\Modules\Router\Router');
+        $this->app->bind('RevCMS\Modules\Theme\ThemeManager', 'RevCMS\Modules\Theme\ThemeManager');
+        $this->app->bind('RevCMS\Modules\Dashboard\Dashboard', 'RevCMS\Modules\Dashboard\Dashboard');
+        $this->app->bind('RevCMS\Modules\Cms\Cms', 'RevCMS\Modules\Cms\Cms');
+        $this->app->bind('RevCMS\Modules\Cms\Builder\PageDirector', 'RevCMS\Modules\Cms\Builder\PageDirector');
+        $this->app->bind('RevCMS\Modules\Settings\SettingsManager', 'RevCMS\Modules\Settings\SettingsManager');
 
-        $this->app->singleton('RevCMS\RevCMS', function(){
-           return (new RevCMS(
-                new Mvc(),
-                new Router(),
-                new ThemeManager(),
-                new Dashboard(),
-                new Cms(new PageDirector($this->app)),
-                new SettingsManager()
-            )); 
-        });
+        $this->app->singleton('revcms', 'RevCMS\RevCMS');
+        $this->app->singleton('RevCMS\RevCMS', 'RevCMS\RevCMS');
+
+        $this->app->bind('RevCMS\Repositories\CMS\PageRepository', 'RevCMS\Repositories\CMS\PageRepository');
     }
 }

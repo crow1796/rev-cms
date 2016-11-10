@@ -29,11 +29,12 @@ class PageDirector {
 	 * @return mixed       
 	 */
 	public function buildActionFor($page){
+		if(!$this->pageRecordBuilder->buildFor($page)){
+			return false;
+		}
 		$page = $this->actionBlockBuilder
 			->buildFor($page);
 		$page = $this->viewBuilder
-			->buildFor($page);
-		$page = $this->pageRecordBuilder
 			->buildFor($page);
 		$page = $this->routeBuilder
 			->buildFor($page);

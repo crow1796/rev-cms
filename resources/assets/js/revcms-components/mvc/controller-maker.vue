@@ -70,13 +70,10 @@
 
 <template>
 	<button type="button"
-		class="rev-btn -default -has-icon-right"
+		class="rev-btn -default -outlined"
 		:class="[{ '-toggled': showMakeForm }, size]"
 		@click.prevent="toggleMakeForm()">
 		{{ makeBtnText }}
-		<span class="icon">
-			<i class="revicon-document-add"></i>
-		</span>
 	</button>
 
 	<div class="view-nav _floating-form animated _rev-radius"

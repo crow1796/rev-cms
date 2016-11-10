@@ -3,6 +3,7 @@ namespace RevCMS\Modules\Router;
 use RevCMS\Traits\Router\RegistersRoute;
 use Route;
 use RevCMS\Modules\Abstracts\RevCMSModule;
+use Illuminate\Container\Container as App;
 
 class Router extends RevCMSModule {
 
@@ -11,7 +12,8 @@ class Router extends RevCMSModule {
 	protected $webRoutes;
 	protected $apiRoutes;
 
-	public function __construct(){
+	public function __construct(App $app){
+		parent::__construct($app);
 		$this->webRoutes = array();
 		$this->apiRoutes = array();
 	}

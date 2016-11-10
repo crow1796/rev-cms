@@ -27,10 +27,11 @@ class PagesController extends RevBaseController
     			->createPage($request->all());
 
     	if(!$page instanceof Page) {
-    		return $page->fails() ? $page->errors()->all() + ['failed' => true] : $page;
+            // If page is not equal to false/null, then return all errors with a failed status, else return failed
+            return $page ? $page->errors()->all() + ['status' => false] : [0 => 'Something went wrong. Please make sure that the permalink is unique.','status' => false];
     	}
 
-        $response = $page instanceof Page ? ['creation' => true] : ['creation' => false];
+        $response = ['status' => true];
 
     	return $response;
     }

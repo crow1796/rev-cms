@@ -1,5 +1,8 @@
 <script type="text/javascript">
 	export default {
+		created(){
+			hideRevLoader();
+		},
 		data() {
 			return {
 				viewType: 'grid',
