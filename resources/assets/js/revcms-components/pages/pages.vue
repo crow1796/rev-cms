@@ -179,7 +179,7 @@
 				:class="{ '-selected': page.selected, '-selection-mode': selectionMode }" 
 				@click="toggleSelected(page)">
 				<div class="preview">
-					
+					<span class="revicon-picture"></span>
 				</div>
 				<table class="info">
 					<tbody>
@@ -196,8 +196,11 @@
 								<strong>URL:</strong>
 							</td>
 							<td>
-								<a href="{{ baseUrl + '/' +  page.url.replace('/', '') }}" target="_blank">
+								<a href="{{ baseUrl + '/' +  page.url.replace('/', '') }}" 
+									target="_blank"
+									class="_block">
 									{{ page.url }}
+									<span class="pull-right"><i class="revicon-link"></i></span>
 								</a>
 							</td>
 						</tr>
@@ -217,16 +220,22 @@
 								{{ page.action }}
 							</td>
 						</tr>
-						<tr v-if="!selectionMode">
-							<td colspan="2">
-								<a href="#" class="rev-btn -xs -warning -outlined" title="Edit the Page">
+						<tr v-show="!selectionMode">
+							<td colspan="2" class="text-center">
+								<a href="#" class="rev-btn -sm -default -has-icon-right" title="Edit the Page">
 									Edit
+									<span class="icon">
+										<i class="revicon-document-edit"></i>
+									</span>
 								</a>
 								<button type="button" 
-										class="rev-btn -xs -warning -outlined"
+										class="rev-btn -sm -default -has-icon-right"
 										title="Delete the Page"
 										@click="deletePage(page)">
 									Delete
+									<span class="icon">
+										<i class="revicon-trash-can"></i>
+									</span>
 								</button>
 							</td>
 						</tr>

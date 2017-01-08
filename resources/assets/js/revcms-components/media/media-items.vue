@@ -74,6 +74,7 @@
 									{{ media.size /1000 }} KB
 								</td>
 							</tr>
+							<tr></tr>
 						</tbody>
 					</table>
 				</div>
@@ -132,6 +133,7 @@
 									{{ selectedMedia.last_modified }}
 								</td>
 							</tr>
+							<tr></tr>
 						</tbody>
 					</table>
 				</div>

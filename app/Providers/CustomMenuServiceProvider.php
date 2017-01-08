@@ -41,5 +41,8 @@ class CustomMenuServiceProvider extends ServiceProvider
                                     ),
                             ),
                     ));
+        // \RevCMS::cms()
+        //         ->admin()
+        //         ->register('App\Post');
     }
 }

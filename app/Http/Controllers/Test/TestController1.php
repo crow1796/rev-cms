@@ -85,4 +85,43 @@ class TestController1 extends Controller
 		//endrevpageblock
 		 return view('pages.test.test.aimer1', $viewData);
 	}
+
+
+	public function user(){
+		$viewData = array();
+		$viewData['title'] = 'User';
+		$viewData['meta_title'] = '';
+		$viewData['meta_description'] = '';
+		$viewData['meta_keywords'] = '';
+		//revpageblock:
+		
+		//endrevpageblock
+		 return view('pages.test.test.user', $viewData);
+	}
+
+
+	public function test3(){
+		$viewData = array();
+		$viewData['title'] = 'Test';
+		$viewData['meta_title'] = '';
+		$viewData['meta_description'] = '';
+		$viewData['meta_keywords'] = '';
+		//revpageblock:
+		
+		//endrevpageblock
+		 return view('pages.test.test.test3', $viewData);
+	}
+
+
+	public function reFarLyrics(){
+		$viewData = array();
+		$viewData['title'] = 'Re: Far Lyrics';
+		$viewData['meta_title'] = '';
+		$viewData['meta_description'] = '';
+		$viewData['meta_keywords'] = '';
+		//revpageblock:
+		
+		//endrevpageblock
+		 return view('pages.test.test.refarlyrics', $viewData);
+	}
 }

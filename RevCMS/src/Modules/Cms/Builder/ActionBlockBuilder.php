@@ -26,13 +26,13 @@ class ActionBlockBuilder extends PageBuilder{
 	    $page['view_names'] = $this->generateViewNameFor($page);
 	    
 	    $data = array(
-	    		'page' => $page,
-	    		'extractedUses' => $extractedUses,
-	    		'extractedInjections' => $extractedInjections,
-	    		'trimmedSource' => $trimmedSource,
-	    		'explodedSource' => $explodedSource,
-	    		'newSource' => $newSource,
-	    	);
+    		'page' => $page,
+    		'extractedUses' => $extractedUses,
+    		'extractedInjections' => $extractedInjections,
+    		'trimmedSource' => $trimmedSource,
+    		'explodedSource' => $explodedSource,
+    		'newSource' => $newSource,
+    	);
 	   	return $this->buildAndWriteMethod($data);
 	}
 

@@ -7,6 +7,9 @@
 			controllers: {},
 			size: {
 				default: '-md'
+			},
+			color: {
+				default: '-default -outlined'
 			}
 		},
 		data(){
@@ -70,8 +73,8 @@
 
 <template>
 	<button type="button"
-		class="rev-btn -default -outlined"
-		:class="[{ '-toggled': showMakeForm }, size]"
+		class="rev-btn"
+		:class="[{ '-toggled': showMakeForm }, size, color]"
 		@click.prevent="toggleMakeForm()">
 		{{ makeBtnText }}
 	</button>

@@ -197,7 +197,7 @@
 <template>
 	<div class="rev-controllers">
 		<div class="view-nav _relative">
-			<rev-controller-maker :controllers.sync="controllers"></rev-controller-maker>
+			<rev-controller-maker :controllers.sync="controllers" color="-danger"></rev-controller-maker>
 			<button type="button" 
 					class="rev-btn -md -default -has-icon-right"
 					:class="{ '-toggled': selectionMode }"

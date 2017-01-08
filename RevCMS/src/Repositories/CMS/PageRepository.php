@@ -12,7 +12,10 @@ class PageRepository extends AbstractRepository{
 	 * @return array 
 	 */
 	public function allForDisplay(){
-		$pages = $this->model->all();
+		$pages = $this->model
+						->orderBy('title')
+						->get();
+
 		$pages = $pages->map(function($page){
 			$action = explode('@', $page->action);
 			return array(

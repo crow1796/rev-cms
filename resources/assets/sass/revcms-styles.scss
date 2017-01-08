@@ -669,8 +669,18 @@ select{
 		border-top-left-radius: 4px;
 		border-top-right-radius: 4px;
 		height: 150px;
-		background: rgba(197, 197, 197, 0.11) url('/images/welcome-featured-bg.jpg');
+		background: darken($theme-panel-bg, 10%);
 		background-size: cover;
+		position: relative;
+	}
+
+	& .grid-view > .grid-item > .preview > span{
+		font-size: 8em;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		color: rgba(darken($theme-panel-bg, 15%), .5);
 	}
 
 	& .grid-view > .grid-item > .preview.-lg{
@@ -682,15 +692,15 @@ select{
 		border-bottom-right-radius: 4px;
 		display: block;
 		padding: 9px 7px;
-		background: $theme-bg;
-		color: $theme-text-color;
+		background: $theme-panel-bg;
+		color: $theme-content-text-color;
 		font-size: 13px;
-		box-shadow: 0px 1px 4px rgba(black, .1);
-		border-bottom: 4px solid $theme-bg;
+		box-shadow: 0px 2px 6px rgba(black, .1);
+		border-bottom: 4px solid $theme-panel-bg;
 	}
 
 	& .grid-view > .grid-item > .info > tbody > tr > td:nth-child(even){
-		width: 70%;
+		width: 55%;
 		padding: 3px;
 		line-height: 1.6;
 		vertical-align: middle;
@@ -700,12 +710,15 @@ select{
 	}
 
 	& .grid-view > .grid-item > .info > tbody > tr > td:nth-child(odd){
-		width: 30%;
+		width: 40%;
 		display: inline-block;
 	}
 
 	& .grid-view > .grid-item > .info > tbody > tr:last-child > td{
 		width: 100%;
+		padding-top: 10px;
+		border-top: 1px solid rgba(darken($theme-bg, 10%), .2);
+		margin-top: 10px;
 	}
 
 	& .grid-view > .grid-item > .info > .nav{
@@ -743,7 +756,7 @@ select{
 	border-bottom-right-radius: 3px;
 }
 
-.-has-icon-left{
+.-has-icon-left > .icon{
 	border-top-left-radius: 3px;
 	border-bottom-left-radius: 3px;
 }
@@ -1294,6 +1307,7 @@ textarea{
 }
 
 .active-theme{
+	z-index: 1;
 	background: rgba($body-bg,0.6);
 	
 	& > span{

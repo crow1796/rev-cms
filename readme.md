@@ -87,6 +87,17 @@ Inside CustomMenuController add the following code:
 
 ##### Output:
 ![ajs](docsimages/custom-menu-panel.png "Custom menu panel")
+#--------------------------------------------------------
+# Pending Tasks...
+## Admin Model Registration
+	\RevCMS::cms()->admin()->register('App\Post');
+
+## Page Update
+	...
+## Page Delete
+	...
+## Theming
+	...
 
 ## License
 
